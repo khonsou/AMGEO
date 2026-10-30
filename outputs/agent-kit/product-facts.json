@@ -1,0 +1,400 @@
+{
+  "delivery_status": "prepared",
+  "publication_status": "not_published",
+  "product": "AM INFINITY MOUSE .97",
+  "prepared_date": "2026-10-29",
+  "source_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+  "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+  "source_snapshot_sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062",
+  "source_retrieval_date": "2026-10-29",
+  "exact_snapshot_retrieval_time": "not_recorded",
+  "evidence_scope": "Previously captured public initial HTML. Source claims are not independently measured performance. No new requests, storefront writes or live publication.",
+  "facts": [
+    {
+      "id": "F-WIRED-WEIGHT",
+      "fact": {
+        "field": "wired_weight_g",
+        "value": null
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 622371,
+          "end_char_exclusive": 622381,
+          "line_1_based": 4107,
+          "exact_excerpt": "37g wired.",
+          "excerpt_sha256": "95abdb193533b97ff70b5c75dd88d38d9e2b30000611cb0527f3a53c5355de51"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 638161,
+          "end_char_exclusive": 638171,
+          "line_1_based": 4159,
+          "exact_excerpt": "37g wired.",
+          "excerpt_sha256": "95abdb193533b97ff70b5c75dd88d38d9e2b30000611cb0527f3a53c5355de51"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 677502,
+          "end_char_exclusive": 677541,
+          "line_1_based": 4662,
+          "exact_excerpt": "Wired 39g (excl. battery), Wireless 47g",
+          "excerpt_sha256": "8c966c7b9699e1d1d7605a249ad7e41154413f168dfe00e35ae0e093753a1630"
+        }
+      ],
+      "conditions": [
+        "Model .97 only.",
+        "Marketing block and specification disagree; no source is selected as correct."
+      ],
+      "status": "conflicting",
+      "note": "Withhold wired weight in prepared copy. The conflict remains unresolved in the fact store."
+    },
+    {
+      "id": "F-WIRELESS-WEIGHT",
+      "fact": {
+        "field": "wireless_weight_g",
+        "value": 47
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 622335,
+          "end_char_exclusive": 622370,
+          "line_1_based": 4107,
+          "exact_excerpt": "47g wireless with magnetic battery.",
+          "excerpt_sha256": "2df570b826c5b11eafc90fbc631d4efe067e719216ac0d9d83b210fe2f7f6d23"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 638125,
+          "end_char_exclusive": 638160,
+          "line_1_based": 4159,
+          "exact_excerpt": "47g wireless with magnetic battery.",
+          "excerpt_sha256": "2df570b826c5b11eafc90fbc631d4efe067e719216ac0d9d83b210fe2f7f6d23"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 677502,
+          "end_char_exclusive": 677541,
+          "line_1_based": 4662,
+          "exact_excerpt": "Wired 39g (excl. battery), Wireless 47g",
+          "excerpt_sha256": "8c966c7b9699e1d1d7605a249ad7e41154413f168dfe00e35ae0e093753a1630"
+        }
+      ],
+      "conditions": [
+        "With magnetic battery according to marketing copy.",
+        "Not independently weighed."
+      ],
+      "status": "source_claim"
+    },
+    {
+      "id": "F-SWAP-MECHANISM",
+      "fact": {
+        "field": "battery_system",
+        "value": "hot-swappable magnetic battery; one battery powers the mouse while a spare charges on the receiver"
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 466984,
+          "end_char_exclusive": 467030,
+          "line_1_based": 2047,
+          "exact_excerpt": "Hot-Swappable Battery - 1.2s Instant Reconnect",
+          "excerpt_sha256": "9f39d1ea8f0cbc5fe20f3bdb09fb9f7bd7281fd179ec53902d4dc4cee82e4515"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 643397,
+          "end_char_exclusive": 643471,
+          "line_1_based": 4193,
+          "exact_excerpt": "While one battery powers the mouse, the other charges on the 2.4G receiver",
+          "excerpt_sha256": "ba32ee6c36c467bcbc69d0772fa6b4c633bdb784df789e161f039bab5f657b2e"
+        }
+      ],
+      "conditions": [
+        "Requires a charged spare battery.",
+        "Battery charging and battery replacement are different processes."
+      ],
+      "status": "source_claim"
+    },
+    {
+      "id": "F-BOX-BATTERIES",
+      "fact": {
+        "field": "included_batteries",
+        "value": 2
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 525286,
+          "end_char_exclusive": 525313,
+          "line_1_based": 2591,
+          "exact_excerpt": "Batteries *2 (orange/black)",
+          "excerpt_sha256": "2e2b3e6c5e3cc22875b77a0d5b5b5ad4b41c9dc3501cf98c9f22abff61ec0539"
+        }
+      ],
+      "conditions": [
+        "Box contents listed on the captured .97 page.",
+        "Verify variant-specific changes before future publication."
+      ],
+      "status": "source_claim"
+    },
+    {
+      "id": "F-CHARGING-RECEIVER",
+      "fact": {
+        "field": "receiver_battery_charging",
+        "value": true
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 525239,
+          "end_char_exclusive": 525277,
+          "line_1_based": 2591,
+          "exact_excerpt": "2.4G receiver with battery charging *1",
+          "excerpt_sha256": "773def26308dac053070878cdb1ceed7f2be051d8c31174d3d260d6d309cf446"
+        }
+      ],
+      "conditions": [
+        "Included receiver is described as charging a battery."
+      ],
+      "status": "source_claim"
+    },
+    {
+      "id": "F-SWAP-TIME",
+      "fact": {
+        "field": "swap_or_reconnect_seconds",
+        "value": null
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 467008,
+          "end_char_exclusive": 467030,
+          "line_1_based": 2047,
+          "exact_excerpt": "1.2s Instant Reconnect",
+          "excerpt_sha256": "d696fea6f08eb1b097d9eb5d22d0f73b4970c89cab717d5569869c9883f7966d"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 646090,
+          "end_char_exclusive": 646109,
+          "line_1_based": 4213,
+          "exact_excerpt": "Full Charge in 1.2s",
+          "excerpt_sha256": "974481121fc3505e7581b2896ff915a1cee55ca4b55683235f0d1cb4e405bf25"
+        }
+      ],
+      "conditions": [
+        "The page combines a reconnect claim with a full-charge heading.",
+        "No measured charging duration or independently verified reconnection timing is available in this evidence."
+      ],
+      "status": "ambiguous_performance_claim",
+      "note": "Prepared copy omits timing and explains the swap mechanism; it does not reinterpret 1.2 seconds as a verified charge time."
+    },
+    {
+      "id": "F-RUNTIME",
+      "fact": {
+        "field": "runtime_hours",
+        "value": null
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 644964,
+          "end_char_exclusive": 644996,
+          "line_1_based": 4195,
+          "exact_excerpt": "30 hours of continuous 8K gaming",
+          "excerpt_sha256": "0ba9882ffca6dfce0e3eccbeaaa29508a7f0769a931566a2472b6853f418137a"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 678685,
+          "end_char_exclusive": 678727,
+          "line_1_based": 4686,
+          "exact_excerpt": "[Optimized Runtime] 165 hrs 1K / 30 hrs 8K",
+          "excerpt_sha256": "35259d2c4101c9676081618af717ba7a1b05d2c3124b3abf1ee1181e1a521942"
+        }
+      ],
+      "conditions": [
+        "Page claims values for 1K and 8K.",
+        "Complete firmware, connection, test procedure and environmental conditions were not captured.",
+        "No numerical runtime is approved for the prepared draft."
+      ],
+      "status": "unverified_performance_claim",
+      "note": "Retained as source claims for later verification; not silently discarded from the evidence."
+    },
+    {
+      "id": "F-BATTERY-CAPACITY",
+      "fact": {
+        "field": "battery_capacity_mAh",
+        "value": 340
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 678780,
+          "end_char_exclusive": 678847,
+          "line_1_based": 4689,
+          "exact_excerpt": "<span class=\"label\">Battery</span><span class=\"value\">340mAh</span>",
+          "excerpt_sha256": "b8ed017835db73dc01babd5e529f660c6a8f0caf51dedd405df562fa9685ac5d"
+        }
+      ],
+      "conditions": [
+        "Capacity printed on the .97 page.",
+        "Not independently verified; no derived runtime calculation."
+      ],
+      "status": "source_claim"
+    },
+    {
+      "id": "F-PRESALE-SCHEDULE",
+      "fact": {
+        "field": "current_shipping_schedule",
+        "value": null
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 522983,
+          "end_char_exclusive": 523121,
+          "line_1_based": 2580,
+          "exact_excerpt": "Notice: This is a <strong>pre-sale</strong>. Shipping will begin after we’ve processed all KS orders, likely starting in batches from May.",
+          "excerpt_sha256": "8eb473c352e55cd072b2915593a47472da7fe5def3c070232debea38820bb72e"
+        }
+      ],
+      "conditions": [
+        "Page mentions presale, KS orders and May without a year.",
+        "This does not establish current stock or dispatch dates."
+      ],
+      "status": "currentness_unverified"
+    },
+    {
+      "id": "F-HELP-PLACEHOLDERS",
+      "fact": {
+        "field": "help_cards_content",
+        "value": null
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 551411,
+          "end_char_exclusive": 551494,
+          "line_1_based": 2749,
+          "exact_excerpt": "Use this text to answer questions in as much detail as possible for your customers.",
+          "excerpt_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 554038,
+          "end_char_exclusive": 554121,
+          "line_1_based": 2759,
+          "exact_excerpt": "Use this text to answer questions in as much detail as possible for your customers.",
+          "excerpt_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 555933,
+          "end_char_exclusive": 556016,
+          "line_1_based": 2766,
+          "exact_excerpt": "Use this text to answer questions in as much detail as possible for your customers.",
+          "excerpt_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 558724,
+          "end_char_exclusive": 558807,
+          "line_1_based": 2773,
+          "exact_excerpt": "Use this text to answer questions in as much detail as possible for your customers.",
+          "excerpt_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+        }
+      ],
+      "conditions": [
+        "Four help-card paragraphs contain theme placeholder text."
+      ],
+      "status": "template_content"
+    },
+    {
+      "id": "F-SUPPORT-LINKS",
+      "fact": {
+        "field": "existing_support_destinations",
+        "value": {
+          "shipping_policy": "https://store.angrymiao.com/policies/shipping-policy",
+          "user_manual": "https://store.angrymiao.com/pages/user-manual",
+          "email": "support@angrymiao.com"
+        }
+      },
+      "source": [
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 356888,
+          "end_char_exclusive": 356920,
+          "line_1_based": 1603,
+          "exact_excerpt": "href=\"/policies/shipping-policy\"",
+          "excerpt_sha256": "7b689f15e99e463817b26fdf43a517883d766b5cdab4f85680071ad3cf5d4c1d"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 794367,
+          "end_char_exclusive": 794399,
+          "line_1_based": 5307,
+          "exact_excerpt": "href=\"/policies/shipping-policy\"",
+          "excerpt_sha256": "7b689f15e99e463817b26fdf43a517883d766b5cdab4f85680071ad3cf5d4c1d"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 810745,
+          "end_char_exclusive": 810777,
+          "line_1_based": 5439,
+          "exact_excerpt": "href=\"/policies/shipping-policy\"",
+          "excerpt_sha256": "7b689f15e99e463817b26fdf43a517883d766b5cdab4f85680071ad3cf5d4c1d"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 793883,
+          "end_char_exclusive": 793908,
+          "line_1_based": 5301,
+          "exact_excerpt": "href=\"/pages/user-manual\"",
+          "excerpt_sha256": "a4d922944995f505528193a992f04bdbe7d5a98781e7baafdf8972fe9ee6c57f"
+        },
+        {
+          "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+          "representation": "initial_html_utf8_decoded",
+          "start_char_0_based": 797043,
+          "end_char_exclusive": 797078,
+          "line_1_based": 5340,
+          "exact_excerpt": "href=\"mailto:support@angrymiao.com\"",
+          "excerpt_sha256": "2b917c878b9527026e08e8741647f480f4a32c8d36c0f8ba3e69de73828c953f"
+        }
+      ],
+      "conditions": [
+        "Addresses already present in the captured page.",
+        "Support contact is the storefront contact; it is not asserted to be the China domestic warranty channel."
+      ],
+      "status": "source_observed"
+    }
+  ],
+  "packaged_date": "2026-10-30"
+}

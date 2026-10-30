@@ -1,0 +1,14 @@
+{
+  "status": "prepared_not_published",
+  "production_writes": 0,
+  "proposed_operations": 13,
+  "target_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+  "payload_status": "Exact edits against captured public HTML; not Shopify Admin mutation payloads or theme source patches.",
+  "requires": [
+    "Actual CMS/theme source object mapping",
+    "Write capability within explicit target scope",
+    "Fresh source read and conflict detection",
+    "Post-write verification and rollback capability"
+  ],
+  "shopify_note": "Do not set an existing product to DRAFT to stage revisions. Product edits can change production; theme edits require appropriate write_themes capabilities and policy."
+}

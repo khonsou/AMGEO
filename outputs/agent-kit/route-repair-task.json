@@ -1,0 +1,18 @@
+{
+  "status": "waiting_access",
+  "agent": "engineering-agent",
+  "required_input": "Actual www site repository and its serving/deployment configuration",
+  "actions": [
+    "Identify existing framework and static-file routing; do not assume nginx or Next.js.",
+    "Make actual robots/sitemap bypass SPA fallback.",
+    "Repair language metadata and initial HTML based on real source structure.",
+    "Run existing build and focused route/render regression.",
+    "Produce exact patch, test log, preview evidence and rollback commit."
+  ],
+  "outputs_when_input_available": [
+    "routing-fix.patch",
+    "route-regression.json",
+    "preview-evidence/"
+  ],
+  "current_deliverable": "Evidence-backed execution contract, not an applied source patch."
+}

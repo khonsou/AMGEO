@@ -1,0 +1,86 @@
+{
+  "delivery_status": "prepared",
+  "publication_status": "not_published",
+  "product": "AM INFINITY MOUSE .97",
+  "prepared_date": "2026-10-29",
+  "source_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+  "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+  "source_snapshot_sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062",
+  "source_retrieval_date": "2026-10-29",
+  "exact_snapshot_retrieval_time": "not_recorded",
+  "evidence_scope": "Previously captured public initial HTML. Source claims are not independently measured performance. No new requests, storefront writes or live publication.",
+  "status": "prepared_not_published",
+  "claim_basis": [
+    "F-SWAP-MECHANISM",
+    "F-BOX-BATTERIES",
+    "F-CHARGING-RECEIVER",
+    "F-SWAP-TIME",
+    "F-RUNTIME"
+  ],
+  "editorial_note": "Numerical weight, swap/reconnect duration and runtime claims are deliberately not used. Chinese is a localized draft, not an assertion that a Chinese page or domestic support route has been published.",
+  "drafts": [
+    {
+      "language": "en-US",
+      "title": "How the AM Infinity .97 battery swap system works",
+      "summary": "The AM Infinity .97 uses a hot-swappable magnetic battery system. Keep one battery in the mouse while the spare charges on the receiver, then swap in the charged spare when needed.",
+      "sections": [
+        {
+          "heading": "Two batteries, two roles",
+          "body": "The captured product page lists two batteries and a receiver with battery charging. One battery powers the mouse; the receiver charges the spare."
+        },
+        {
+          "heading": "What the swap changes",
+          "body": "Swapping installs a battery that has already been charged. It does not recharge the battery inside the mouse during the swap. This system keeps a charged spare available for repeated use."
+        },
+        {
+          "heading": "Understanding battery life",
+          "body": "A single battery still needs recharging. Battery life depends on settings and use. This revision provides no charging-time, reconnection-time or runtime guarantee."
+        },
+        {
+          "heading": "Instructions and support",
+          "body": "Use the official model-specific manual for operation. Storefront customers can use the existing support address for product questions.",
+          "links": [
+            {
+              "label": "Official manuals",
+              "url": "https://store.angrymiao.com/pages/user-manual"
+            },
+            {
+              "label": "Storefront support",
+              "url": "mailto:support@angrymiao.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-CN",
+      "title": "AM Infinity .97 换电机制与续航说明",
+      "summary": "AM Infinity .97 采用磁吸可更换电池设计。一块电池为鼠标供电，另一块电池放在接收器上充电；需要换电时，装入已充好电的备用电池。",
+      "sections": [
+        {
+          "heading": "两块电池分别做什么",
+          "body": "本次抓取的产品页装箱清单列有两块电池，以及支持电池充电的接收器。使用鼠标时，可以让备用电池在接收器上充电。"
+        },
+        {
+          "heading": "换电和充电的区别",
+          "body": "换电是把已经充好电的备用电池装入鼠标。备用电池的电量来自此前在接收器上的充电过程，换电动作本身并不会瞬间充满电池。"
+        },
+        {
+          "heading": "怎样理解续航",
+          "body": "每块电池的电量仍会消耗，使用后需要再次充电。实际可用时长会受设置和使用方式影响。本稿不提供充电时间、重连时间或续航时长保证。"
+        },
+        {
+          "heading": "操作说明与支持",
+          "body": "具体操作以对应型号的官方说明书为准。下方为海外商店现有的官方资料入口；中国大陆购买与售后渠道需使用该市场对应的有效政策。",
+          "links": [
+            {
+              "label": "官方说明书索引",
+              "url": "https://store.angrymiao.com/pages/user-manual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "packaged_date": "2026-10-30"
+}

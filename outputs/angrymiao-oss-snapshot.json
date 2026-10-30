@@ -1,0 +1,763 @@
+{
+  "researched_at": "2026-10-29",
+  "timestamp_timezone": "UTC",
+  "methodology": "GitHub REST API repo/commits/releases snapshots. 30-day commits since 2026-09-29T00:00:00Z; capped at first 100, including docs, merges and dependency updates. Stars measure popularity, not SEO/GEO efficacy. pushed_at can refer to non-default branches.",
+  "repos": [
+    {
+      "repo": "AgriciDaniel/claude-seo",
+      "stars": 23663,
+      "forks": 3176,
+      "created": "2026-02-07T08:17:38Z",
+      "pushed": "2026-10-22T16:47:40Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "open_issues": 75,
+      "commits": [
+        {
+          "date": "2026-10-22T16:47:38Z",
+          "message": "docs(readme): star history and Trendshift badge",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/6be93f45064ffbadced572b5d5c95f55fd263af0"
+        },
+        {
+          "date": "2026-10-22T16:23:32Z",
+          "message": "docs(readme): tests badge shows 1077",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/84e66e681a1773eec0d3b056b5d7aa8cb50fdab6"
+        },
+        {
+          "date": "2026-10-22T16:08:19Z",
+          "message": "docs(security): installer verification moves to v2.6.0",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/219ff485bb016314bb4c15bfc7978df61c668a4f"
+        },
+        {
+          "date": "2026-10-22T16:01:48Z",
+          "message": "release: v2.5.0",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/3013278990b8476b580ca2b78260957d100a80f1"
+        },
+        {
+          "date": "2026-10-22T16:01:43Z",
+          "message": "fix: linear-time JSON depth scan, restore 2.4.1 changelog bullet",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/8d6909829b5c3b7c23581da3ad6975f8b58fd5da"
+        },
+        {
+          "date": "2026-10-22T16:01:43Z",
+          "message": "build: require Python 3.11 to 3.14 and pick a supported interpreter",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/0c79ca93faae49875154602ef6756e6d31cbdd4f"
+        },
+        {
+          "date": "2026-10-22T16:01:43Z",
+          "message": "fix(agentic): cap JSON depth before parsing so results do not depend on stack size",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/8b42cac6aea287120ad34689816a410706bc374d"
+        },
+        {
+          "date": "2026-10-22T16:01:43Z",
+          "message": "fix(auth): rename sign-in timing constants so CodeQL stops reading them as secrets",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/8bd73c263a1affb2143f701867a1cb09ed98ac37"
+        },
+        {
+          "date": "2026-10-22T15:13:44Z",
+          "message": "docs(readme): new README with animated scenes, simpler copy",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/b4da36d2fd4e2cc049b8f624b95633792ca4f9d1"
+        },
+        {
+          "date": "2026-10-22T15:13:39Z",
+          "message": "release: v2.4.3 - security and accuracy fixes, Claude Desktop installs",
+          "url": "https://github.com/AgriciDaniel/claude-seo/commit/a242aff2f767330b62d55766e41b309e97498045"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v2.5.0",
+          "date": "2026-10-22T16:20:38Z",
+          "url": "https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.5.0"
+        },
+        {
+          "tag": "v2.4.2",
+          "date": "2026-10-04T18:10:58Z",
+          "url": "https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.4.2"
+        },
+        {
+          "tag": "v2.4.1",
+          "date": "2026-09-29T09:29:22Z",
+          "url": "https://github.com/AgriciDaniel/claude-seo/releases/tag/v2.4.1"
+        }
+      ],
+      "activity": {
+        "repo": "AgriciDaniel/claude-seo",
+        "commits_since_09_29": 55,
+        "capped": false,
+        "latest_substantive": [
+          {
+            "date": "2026-10-22T16:01:43Z",
+            "message": "fix: linear-time JSON depth scan, restore 2.4.1 changelog bullet",
+            "url": "https://github.com/AgriciDaniel/claude-seo/commit/8d6909829b5c3b7c23581da3ad6975f8b58fd5da"
+          },
+          {
+            "date": "2026-10-22T16:01:43Z",
+            "message": "fix(agentic): cap JSON depth before parsing so results do not depend on stack size",
+            "url": "https://github.com/AgriciDaniel/claude-seo/commit/8b42cac6aea287120ad34689816a410706bc374d"
+          },
+          {
+            "date": "2026-10-22T16:01:43Z",
+            "message": "fix(auth): rename sign-in timing constants so CodeQL stops reading them as secrets",
+            "url": "https://github.com/AgriciDaniel/claude-seo/commit/8bd73c263a1affb2143f701867a1cb09ed98ac37"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "stars": 57207,
+      "forks": 8435,
+      "created": "2026-01-15T19:45:23Z",
+      "pushed": "2026-10-27T21:16:06Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "open_issues": 66,
+      "commits": [
+        {
+          "date": "2026-10-27T21:15:52Z",
+          "message": "Merge pull request #909 from coreyhaines31/fix/prospecting-gap-plays",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/0cd9b3a0ef4c411a1d690419ce843f2a1da32cce"
+        },
+        {
+          "date": "2026-10-27T21:12:34Z",
+          "message": "chore: bump repo to 2.13.9",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/b96fc7cfebd86b29edb91674eb88b4e0c3da817f"
+        },
+        {
+          "date": "2026-10-27T21:12:34Z",
+          "message": "feat(marketing-loops): verify gap evidence in the signal-sweep loop",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/3c849a245b5d07a596c48d5e43b26586b97ae036"
+        },
+        {
+          "date": "2026-10-27T21:12:34Z",
+          "message": "test(prospecting): add a gap-play eval",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/ec6d913b4a8c3365796547ef868c195f61de515c"
+        },
+        {
+          "date": "2026-10-27T21:12:33Z",
+          "message": "feat(prospecting): route gap-play requests to signal plays",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/40bacfe0900a61ac0ff9acc32720162a8207d79e"
+        },
+        {
+          "date": "2026-10-27T21:12:33Z",
+          "message": "feat(prospecting): add gap plays to signal plays",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/08c2612ab69eb9c9ecd4e93a9efce62770624860"
+        },
+        {
+          "date": "2026-10-27T19:47:22Z",
+          "message": "Merge pull request #908 from coreyhaines31/fix/perplexity-skill-zips",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/c90f24b3e8204ed89e8d1c2932eda81ad659d05b"
+        },
+        {
+          "date": "2026-10-27T19:39:47Z",
+          "message": "chore: bump repo to 2.13.8 to publish Perplexity ZIPs",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/614a68860d45f0c802610cbb9631d570758834cd"
+        },
+        {
+          "date": "2026-10-27T19:39:28Z",
+          "message": "docs: document the Perplexity Computer skill ZIPs",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/edf14870c37b7c8d100508596b339b234fc1f72b"
+        },
+        {
+          "date": "2026-10-27T19:39:28Z",
+          "message": "ci: build and publish Perplexity skill ZIPs with each release",
+          "url": "https://github.com/coreyhaines31/marketingskills/commit/26e46cf774ee90faf553cab3f79224125150d7cc"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v2.13.9",
+          "date": "2026-10-27T21:16:06Z",
+          "url": "https://github.com/coreyhaines31/marketingskills/releases/tag/v2.13.9"
+        },
+        {
+          "tag": "v2.13.8",
+          "date": "2026-10-27T19:47:37Z",
+          "url": "https://github.com/coreyhaines31/marketingskills/releases/tag/v2.13.8"
+        },
+        {
+          "tag": "v2.13.7",
+          "date": "2026-10-27T18:48:34Z",
+          "url": "https://github.com/coreyhaines31/marketingskills/releases/tag/v2.13.7"
+        }
+      ],
+      "activity": {
+        "repo": "coreyhaines31/marketingskills",
+        "commits_since_09_29": 100,
+        "capped": true,
+        "latest_substantive": [
+          {
+            "date": "2026-10-27T21:12:34Z",
+            "message": "feat(marketing-loops): verify gap evidence in the signal-sweep loop",
+            "url": "https://github.com/coreyhaines31/marketingskills/commit/3c849a245b5d07a596c48d5e43b26586b97ae036"
+          },
+          {
+            "date": "2026-10-27T21:12:33Z",
+            "message": "feat(prospecting): route gap-play requests to signal plays",
+            "url": "https://github.com/coreyhaines31/marketingskills/commit/40bacfe0900a61ac0ff9acc32720162a8207d79e"
+          },
+          {
+            "date": "2026-10-27T21:12:33Z",
+            "message": "feat(prospecting): add gap plays to signal plays",
+            "url": "https://github.com/coreyhaines31/marketingskills/commit/08c2612ab69eb9c9ecd4e93a9efce62770624860"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "mverab/eGEOagents",
+      "stars": 211,
+      "forks": 58,
+      "created": "2026-01-12T05:29:45Z",
+      "pushed": "2026-10-26T00:30:31Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "open_issues": 2,
+      "commits": [
+        {
+          "date": "2026-10-26T00:30:31Z",
+          "message": "chore(deps): security update for the docs site (9 non-major bumps) (#78)",
+          "url": "https://github.com/mverab/eGEOagents/commit/61ae72fd7117a2e36dabb3460bd898a89f51c783"
+        },
+        {
+          "date": "2026-10-17T21:12:09Z",
+          "message": "chore(release): 2.3.0 (#76)",
+          "url": "https://github.com/mverab/eGEOagents/commit/c49b1f629b3ce2dee9773580442ee3355341cd6d"
+        },
+        {
+          "date": "2026-10-16T18:29:01Z",
+          "message": "chore(openspec): archive update-fix-gaps-already-best-warning after #74 (#75)",
+          "url": "https://github.com/mverab/eGEOagents/commit/53941bba0073c7eaa0d99501a3600383c0eec5be"
+        },
+        {
+          "date": "2026-10-16T05:04:47Z",
+          "message": "feat(fix-gaps): already_best becomes a warning; section mode still rewrites (own_leads) (#74)",
+          "url": "https://github.com/mverab/eGEOagents/commit/28fea4db3139f75c8eb2cf4c868b06a699368284"
+        },
+        {
+          "date": "2026-10-16T02:29:17Z",
+          "message": "docs(openspec): propose update-fix-gaps-already-best-warning (#73)",
+          "url": "https://github.com/mverab/eGEOagents/commit/e49482c081aa5cd1e901dbc4a00e6d26a1c60ed5"
+        },
+        {
+          "date": "2026-10-16T00:43:41Z",
+          "message": "feat(fix-gaps): blind Jev ids + Noul scoring, v4 validation (gate fail, stays experimental) (#68)",
+          "url": "https://github.com/mverab/eGEOagents/commit/8f58dda0d9fed42e732ef748f0c3ebe0b09ce052"
+        },
+        {
+          "date": "2026-10-09T02:07:22Z",
+          "message": "feat(site): link /docs/how-it-works/, /research/ and /guides/track-ai-citations/ from the landing page (#72)",
+          "url": "https://github.com/mverab/eGEOagents/commit/ffd5b49802c800ac1c82ea3df3a95a2c50323c62"
+        },
+        {
+          "date": "2026-10-08T03:26:57Z",
+          "message": "fix(ci): ignore Cloudflare's injected analytics beacon in served-revision check (#71)",
+          "url": "https://github.com/mverab/eGEOagents/commit/58ee6544d3a442630e71b8f9cb0669228ee158cc"
+        },
+        {
+          "date": "2026-10-08T02:56:43Z",
+          "message": "docs(site): refresh star counts in llms files; mark GitHub visibility tasks done (#70)",
+          "url": "https://github.com/mverab/eGEOagents/commit/311a43af567d711ab35aa5322222ecb31cac6722"
+        },
+        {
+          "date": "2026-10-08T02:34:15Z",
+          "message": "feat(site): add og:image and twitter:card to every page; verify SEO tags in verify.sh (#69)",
+          "url": "https://github.com/mverab/eGEOagents/commit/53d34123bbb52236bf5d66bddec899fcfe49c524"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v2.3.0",
+          "date": "2026-10-19T05:23:03Z",
+          "url": "https://github.com/mverab/eGEOagents/releases/tag/v2.3.0"
+        },
+        {
+          "tag": "v2.2.0",
+          "date": "2026-09-26T03:34:20Z",
+          "url": "https://github.com/mverab/eGEOagents/releases/tag/v2.2.0"
+        },
+        {
+          "tag": "v2.1.0",
+          "date": "2026-09-25T03:29:03Z",
+          "url": "https://github.com/mverab/eGEOagents/releases/tag/v2.1.0"
+        }
+      ],
+      "activity": {
+        "repo": "mverab/eGEOagents",
+        "commits_since_09_29": 14,
+        "capped": false,
+        "latest_substantive": [
+          {
+            "date": "2026-10-16T05:04:47Z",
+            "message": "feat(fix-gaps): already_best becomes a warning; section mode still rewrites (own_leads) (#74)",
+            "url": "https://github.com/mverab/eGEOagents/commit/28fea4db3139f75c8eb2cf4c868b06a699368284"
+          },
+          {
+            "date": "2026-10-16T00:43:41Z",
+            "message": "feat(fix-gaps): blind Jev ids + Noul scoring, v4 validation (gate fail, stays experimental) (#68)",
+            "url": "https://github.com/mverab/eGEOagents/commit/8f58dda0d9fed42e732ef748f0c3ebe0b09ce052"
+          },
+          {
+            "date": "2026-10-09T02:07:22Z",
+            "message": "feat(site): link /docs/how-it-works/, /research/ and /guides/track-ai-citations/ from the landing page (#72)",
+            "url": "https://github.com/mverab/eGEOagents/commit/ffd5b49802c800ac1c82ea3df3a95a2c50323c62"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "mendableai/firecrawl",
+      "stars": 196559,
+      "forks": 10375,
+      "created": "2024-04-15T21:02:29Z",
+      "pushed": "2026-10-29T09:07:29Z",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "archived": false,
+      "open_issues": 698,
+      "commits": [
+        {
+          "date": "2026-10-28T20:44:22Z",
+          "message": "fix(agent): report a ZDR run's own retention in expiresAt (#5444)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/33f295dc1f09133c02fc1e096d6685abda3464a7"
+        },
+        {
+          "date": "2026-10-28T19:08:37Z",
+          "message": "feat(agent): forward the team's agent ZDR retention tier (#5442)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/b63f4941c5299dc7df88917c6d8b7df8236ba834"
+        },
+        {
+          "date": "2026-10-28T18:38:10Z",
+          "message": "fix(api): patch body-parser and multer denial-of-service releases (#5350)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/0e449145a95b2999e5f47f2fa4249a5e81511a08"
+        },
+        {
+          "date": "2026-10-28T08:23:19Z",
+          "message": "fix(security): upgrade resend to v6 to drop deepmerge (GHSA-gcqx-w48m-w2h4) (#5439)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/90fe962ea2033aae3751b33010d93331848c0bcd"
+        },
+        {
+          "date": "2026-10-28T07:48:04Z",
+          "message": "fix(api): pass trainingCapture in fire-pdf background refresh (#5438)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/25c13f47e58e2fc8a0f942a04954ab409d1dc402"
+        },
+        {
+          "date": "2026-10-28T05:14:21Z",
+          "message": "feat(api): submit a background fire-pdf refresh when the cache tier grants one (FIRE_PDF_CACHE_BACKGROUND_REFRESH, default off) (#5294)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/3fdaeb5b016f6195e5aba7ab389cb45cb5e8ee0d"
+        },
+        {
+          "date": "2026-10-27T21:44:13Z",
+          "message": "fix(branding): better logo picks, page background, link and accent colors (#5425)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/67c6c2f38ca4d6c83ba07c2f54a5a2012ec51a8e"
+        },
+        {
+          "date": "2026-10-27T19:53:55Z",
+          "message": "fix(security): bump qs override to >=6.16.1 for GHSA-6pq8-jhm2-2vcw (#5427)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/d803057d3602f84bcd12a68d7f379fb035799041"
+        },
+        {
+          "date": "2026-10-27T08:43:00Z",
+          "message": "feat(search): per-team overrides for the Government Index daily limit (#5417)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/2b68c4c56efc54ab10229cd2f992d1f1e71961f9"
+        },
+        {
+          "date": "2026-10-27T02:59:31Z",
+          "message": "fix(auth): accept REST-audience grant keys on OAuth tokens (#5325)",
+          "url": "https://github.com/firecrawl/firecrawl/commit/6e14d58cb64354598e442ee62a2919165941bc56"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v2.11.0",
+          "date": "2026-06-19T15:09:30Z",
+          "url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0"
+        },
+        {
+          "tag": "v2.10",
+          "date": "2026-05-15T17:34:45Z",
+          "url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.10"
+        },
+        {
+          "tag": "v2.9.0",
+          "date": "2026-04-10T16:36:16Z",
+          "url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.9.0"
+        }
+      ],
+      "activity": {
+        "repo": "mendableai/firecrawl",
+        "commits_since_09_29": 100,
+        "capped": true,
+        "latest_substantive": [
+          {
+            "date": "2026-10-28T20:44:22Z",
+            "message": "fix(agent): report a ZDR run's own retention in expiresAt (#5444)",
+            "url": "https://github.com/firecrawl/firecrawl/commit/33f295dc1f09133c02fc1e096d6685abda3464a7"
+          },
+          {
+            "date": "2026-10-28T19:08:37Z",
+            "message": "feat(agent): forward the team's agent ZDR retention tier (#5442)",
+            "url": "https://github.com/firecrawl/firecrawl/commit/b63f4941c5299dc7df88917c6d8b7df8236ba834"
+          },
+          {
+            "date": "2026-10-28T18:38:10Z",
+            "message": "fix(api): patch body-parser and multer denial-of-service releases (#5350)",
+            "url": "https://github.com/firecrawl/firecrawl/commit/0e449145a95b2999e5f47f2fa4249a5e81511a08"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "unclecode/crawl4ai",
+      "stars": 86502,
+      "forks": 9001,
+      "created": "2024-05-09T09:48:50Z",
+      "pushed": "2026-10-29T10:27:14Z",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "archived": false,
+      "open_issues": 291,
+      "commits": [
+        {
+          "date": "2026-10-26T08:41:46Z",
+          "message": "docs: fix the remaining broken links in release notes and table docs",
+          "url": "https://github.com/unclecode/crawl4ai/commit/888299fb5f0b82181897dc0e61bfb4b036f0aea5"
+        },
+        {
+          "date": "2026-10-26T08:24:46Z",
+          "message": "docs: fix 33 broken links across the docs site",
+          "url": "https://github.com/unclecode/crawl4ai/commit/5fae7a4092b977ee357410bf015423bfdeee2bbc"
+        },
+        {
+          "date": "2026-10-20T02:36:16Z",
+          "message": "Merge develop into main: Cloud offer text, docs Cloud boxes, setup fix, LinkedIn fix",
+          "url": "https://github.com/unclecode/crawl4ai/commit/30165f1ee1fb61f6cce1477feed2acc5e2181e25"
+        },
+        {
+          "date": "2026-10-20T02:34:34Z",
+          "message": "docs: the Cloud offer is 1,000 free credits every month",
+          "url": "https://github.com/unclecode/crawl4ai/commit/187a0918bf6eb4695d08354a304becad27a21861"
+        },
+        {
+          "date": "2026-10-20T02:31:45Z",
+          "message": "fix(setup): give the real fix when the browser install fails, not a cloud link",
+          "url": "https://github.com/unclecode/crawl4ai/commit/129a950ca6cc39107676daae666f54ac4ebba698"
+        },
+        {
+          "date": "2026-10-19T04:42:10Z",
+          "message": "docs: changelog thanks Summone for the Cloud proxy isp report",
+          "url": "https://github.com/unclecode/crawl4ai/commit/c1a9c8deeb546834b9d20d0e85a2b1933d28abe4"
+        },
+        {
+          "date": "2026-10-15T10:12:27Z",
+          "message": "fix: escape the followers count in the LinkedIn graph view",
+          "url": "https://github.com/unclecode/crawl4ai/commit/2efcccc5d1838da1f7718813e9be5177ce579b49"
+        },
+        {
+          "date": "2026-10-15T02:21:15Z",
+          "message": "Cloud: the free offer is 1,000 credits every month, plans from $10 a month",
+          "url": "https://github.com/unclecode/crawl4ai/commit/94b67888ca8b335ff2121423a50e06dd27661922"
+        },
+        {
+          "date": "2026-10-14T10:31:49Z",
+          "message": "Merge pull request #2368 from unclecode/release/v0.9.5",
+          "url": "https://github.com/unclecode/crawl4ai/commit/6192d5e5b59cb21f9ca418fd6b798de47c0741d3"
+        },
+        {
+          "date": "2026-10-14T10:23:58Z",
+          "message": "Merge main into develop: cloud launch wording",
+          "url": "https://github.com/unclecode/crawl4ai/commit/838869bdda93f25e6d50b3f50ae9577d9b19a586"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v0.9.5",
+          "date": "2026-10-14T10:25:39Z",
+          "url": "https://github.com/unclecode/crawl4ai/releases/tag/v0.9.5"
+        },
+        {
+          "tag": "v0.9.4",
+          "date": "2026-09-23T12:14:55Z",
+          "url": "https://github.com/unclecode/crawl4ai/releases/tag/v0.9.4"
+        },
+        {
+          "tag": "v0.9.3",
+          "date": "2026-08-31T11:34:14Z",
+          "url": "https://github.com/unclecode/crawl4ai/releases/tag/v0.9.3"
+        }
+      ],
+      "activity": {
+        "repo": "unclecode/crawl4ai",
+        "commits_since_09_29": 75,
+        "capped": false,
+        "latest_substantive": [
+          {
+            "date": "2026-10-20T02:31:45Z",
+            "message": "fix(setup): give the real fix when the browser install fails, not a cloud link",
+            "url": "https://github.com/unclecode/crawl4ai/commit/129a950ca6cc39107676daae666f54ac4ebba698"
+          },
+          {
+            "date": "2026-10-15T10:12:27Z",
+            "message": "fix: escape the followers count in the LinkedIn graph view",
+            "url": "https://github.com/unclecode/crawl4ai/commit/2efcccc5d1838da1f7718813e9be5177ce579b49"
+          },
+          {
+            "date": "2026-10-15T02:21:15Z",
+            "message": "Cloud: the free offer is 1,000 credits every month, plans from $10 a month",
+            "url": "https://github.com/unclecode/crawl4ai/commit/94b67888ca8b335ff2121423a50e06dd27661922"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "stars": 26580,
+      "forks": 2607,
+      "created": "2023-04-28T15:48:49Z",
+      "pushed": "2026-10-29T10:37:23Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "open_issues": 899,
+      "commits": [
+        {
+          "date": "2026-10-28T23:46:34Z",
+          "message": "fix(deps): update anthropic packages (#11991)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/204cf8f2fa5cd92661b041a32a39276e7a83a7d3"
+        },
+        {
+          "date": "2026-10-28T17:41:16Z",
+          "message": "fix(deps): update google-auth-library to v11.3.1 (#11990)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/bfe97095b6d9eabd424021f004b13038068881d3"
+        },
+        {
+          "date": "2026-10-28T17:13:03Z",
+          "message": "docs(site): clarify security reporting boundaries (#12010)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/f56c46df4885d37b7fd94e09b7b9b1253b696f15"
+        },
+        {
+          "date": "2026-10-28T16:38:15Z",
+          "message": "fix(deps): update gcp-metadata to v9.2.1 (#11985)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/111a7829be4cd8ca2437db654d1804a68c6566da"
+        },
+        {
+          "date": "2026-10-26T19:26:31Z",
+          "message": "chore(deps): update dependency webpack to v5.112.0 (#11993)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/e48ed85e08ff8a1ca74fa7d0e41daf47cf155efb"
+        },
+        {
+          "date": "2026-10-26T18:56:50Z",
+          "message": "fix(deps): update dependency js-yaml to v5.5.0 (#11994)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/9a212e71207ab25ddfab1c4dafead8dfd71b458c"
+        },
+        {
+          "date": "2026-10-26T18:29:44Z",
+          "message": "chore(deps): update dependency @types/node to v24.19.2 (#11984)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/fb1750d2f8167c5174f48748629fbba32ae320af"
+        },
+        {
+          "date": "2026-10-26T17:59:54Z",
+          "message": "chore(deps): update vitest to v5.0.5 (#11981)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/be26621c2a4358a2fb32185c89a292d57a38a1d3"
+        },
+        {
+          "date": "2026-10-25T11:32:41Z",
+          "message": "fix(deps): update direct MSAL dependency to 7.1.0 (#11970)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/b4c2404a0dee93dcd4d53a323d6f32f87ee27558"
+        },
+        {
+          "date": "2026-10-25T09:29:52Z",
+          "message": "ci: isolate Windows Python worker lifecycle tests (#11976)",
+          "url": "https://github.com/promptfoo/promptfoo/commit/673288e9fd2e24aa310a80e1d98a6df6d62df45b"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "0.125.1",
+          "date": "2026-10-25T01:53:11Z",
+          "url": "https://github.com/promptfoo/promptfoo/releases/tag/0.125.1"
+        },
+        {
+          "tag": "0.125.0",
+          "date": "2026-10-23T15:32:01Z",
+          "url": "https://github.com/promptfoo/promptfoo/releases/tag/0.125.0"
+        },
+        {
+          "tag": "0.124.1",
+          "date": "2026-10-08T14:23:27Z",
+          "url": "https://github.com/promptfoo/promptfoo/releases/tag/0.124.1"
+        }
+      ],
+      "activity": {
+        "repo": "promptfoo/promptfoo",
+        "commits_since_09_29": 100,
+        "capped": true,
+        "latest_substantive": [
+          {
+            "date": "2026-10-28T23:46:34Z",
+            "message": "fix(deps): update anthropic packages (#11991)",
+            "url": "https://github.com/promptfoo/promptfoo/commit/204cf8f2fa5cd92661b041a32a39276e7a83a7d3"
+          },
+          {
+            "date": "2026-10-28T17:41:16Z",
+            "message": "fix(deps): update google-auth-library to v11.3.1 (#11990)",
+            "url": "https://github.com/promptfoo/promptfoo/commit/bfe97095b6d9eabd424021f004b13038068881d3"
+          },
+          {
+            "date": "2026-10-28T16:38:15Z",
+            "message": "fix(deps): update gcp-metadata to v9.2.1 (#11985)",
+            "url": "https://github.com/promptfoo/promptfoo/commit/111a7829be4cd8ca2437db654d1804a68c6566da"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "danishashko/geo-aeo-tracker",
+      "stars": 311,
+      "pushed": "2026-10-19T07:33:25Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "commits": [
+        {
+          "date": "2026-10-19T07:33:22Z",
+          "message": "docs: drop Profound and Otterly from README comparison",
+          "url": "https://github.com/danishashko/geo-aeo-tracker/commit/4858dece72116189be563ae90371aefb8763fbee"
+        },
+        {
+          "date": "2026-10-19T05:41:46Z",
+          "message": "docs(llms): AEO Audit line matches README",
+          "url": "https://github.com/danishashko/geo-aeo-tracker/commit/4f685bc59a3fb42cfd53994370c1c1d51781de32"
+        },
+        {
+          "date": "2026-10-19T05:41:37Z",
+          "message": "Merge remote-tracking branch 'origin/main' into release/1.5.1",
+          "url": "https://github.com/danishashko/geo-aeo-tracker/commit/652e2a7be75ef9de24c02dac560575679a9b1251"
+        },
+        {
+          "date": "2026-10-19T05:39:59Z",
+          "message": "release: v1.6.0 (Rank Signal, agent readiness, security and QA fixes)",
+          "url": "https://github.com/danishashko/geo-aeo-tracker/commit/79e588d34c54ca610b606aa3e2c61ac6239b4ca1"
+        }
+      ],
+      "activity": {
+        "repo": "danishashko/geo-aeo-tracker",
+        "commits_since_09_29": 13,
+        "capped": false,
+        "latest_substantive": [
+          {
+            "date": "2026-10-18T20:13:24Z",
+            "message": "fix: verifier follow-ups (SSRF guard in scrapePage, comparative sentiment, doc facts)",
+            "url": "https://github.com/danishashko/geo-aeo-tracker/commit/08768820a0233f74de01560ac9b448890f0bb4ee"
+          },
+          {
+            "date": "2026-10-18T20:03:34Z",
+            "message": "fix: QA pass for v1.5.1 (security, data loss, demo billing, mobile)",
+            "url": "https://github.com/danishashko/geo-aeo-tracker/commit/595b596878098eb7f0ce2504fbcfdc9e62d452d5"
+          },
+          {
+            "date": "2026-10-18T19:29:04Z",
+            "message": "feat: agent readiness layer for coding agents and AI crawlers",
+            "url": "https://github.com/danishashko/geo-aeo-tracker/commit/b9a2d08ae0098f0941f05ab762a8c77218f88336"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "webappski/aeo-platform",
+      "stars": 13,
+      "pushed": "2026-10-28T14:10:19Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "archived": false,
+      "commits": [
+        {
+          "date": "2026-10-28T13:55:16Z",
+          "message": "chore(release): 1.17.1",
+          "url": "https://github.com/webappski/aeo-platform/commit/c73df7b144c5219b301c008327d52bd96dd6e596"
+        },
+        {
+          "date": "2026-10-28T12:17:29Z",
+          "message": "fix(docs): CONTRIBUTING stops advising a bypass the hooks do not have, README pointers say where things are, the report test header stops claiming \"no network\" (closes CR-1, CR-2, CR-3 and CR-4 of the 1.17.1 code-review verdict)",
+          "url": "https://github.com/webappski/aeo-platform/commit/56d44939ec2eb959d2c407347df09fc750a3a4b9"
+        },
+        {
+          "date": "2026-10-28T09:53:24Z",
+          "message": "test(report): pin `report --for-date <older date>` against deleting the reports of newer dates, and make the README \"Why\" count pin fail when its section is renamed (closes T-1 and T-3 of the 1.17.1 test-design verdict)",
+          "url": "https://github.com/webappski/aeo-platform/commit/2653566fb0e9e4df0b6698f2e31c5a7ba7319a29"
+        },
+        {
+          "date": "2026-10-28T08:19:47Z",
+          "message": "fix(report): report keeps the reports of earlier runs - it no longer deletes report.md and report.html from older date folders",
+          "url": "https://github.com/webappski/aeo-platform/commit/ac27d70313eabde65c78d62a5344ffb4ff1372bb"
+        }
+      ],
+      "activity": {
+        "repo": "webappski/aeo-platform",
+        "commits_since_09_29": 28,
+        "capped": false,
+        "latest_substantive": [
+          {
+            "date": "2026-10-28T12:17:29Z",
+            "message": "fix(docs): CONTRIBUTING stops advising a bypass the hooks do not have, README pointers say where things are, the report test header stops claiming \"no network\" (closes CR-1, CR-2, CR-3 and CR-4 of the 1.17.1 code-review verdict)",
+            "url": "https://github.com/webappski/aeo-platform/commit/56d44939ec2eb959d2c407347df09fc750a3a4b9"
+          },
+          {
+            "date": "2026-10-28T08:19:47Z",
+            "message": "fix(report): report keeps the reports of earlier runs - it no longer deletes report.md and report.html from older date folders",
+            "url": "https://github.com/webappski/aeo-platform/commit/ac27d70313eabde65c78d62a5344ffb4ff1372bb"
+          },
+          {
+            "date": "2026-10-28T06:36:53Z",
+            "message": "feat(package): description, keywords and homepage for the npm page, and the README links to the product page (AEO24-AP-4)",
+            "url": "https://github.com/webappski/aeo-platform/commit/7457c931118622a77ff11d5f72eb831b02d309cd"
+          }
+        ]
+      }
+    }
+  ]
+}

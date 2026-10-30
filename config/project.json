@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "name": "AM SEO",
+  "slug": "am-seo",
+  "brand": {
+    "name": "Angry Miao",
+    "aliases": ["怒喵", "怒喵科技", "angrymiao"]
+  },
+  "markets": [
+    {"locale": "zh-CN", "market": "CN", "status": "in_scope"},
+    {"locale": "en-US", "market": "US", "status": "initial_market_assumption"}
+  ],
+  "public_domains": [
+    "www.angrymiao.com",
+    "store.angrymiao.com",
+    "mall.angrymiao.com",
+    "m.angrymiao.com",
+    "cdn-www.angrymiao.com"
+  ],
+  "tasks": "outputs/agent-kit/tasks.json",
+  "facts": "outputs/agent-kit/product-facts.json",
+  "questions": "outputs/agent-kit/query-seeds.json",
+  "upstream_lock": "config/upstreams.lock.json",
+  "default_execution": "existing_agent_with_local_tools",
+  "optional_agent_executor": "vendor/openhands-sdk",
+  "optional_repository_workflow": "vendor/gh-aw",
+  "live_provider_calls_configured": false,
+  "production_site_connected": false,
+  "recurring_service_configured": false,
+  "note": "Public research and local execution scope. These values do not grant account access, production publishing or external-message authority."
+}

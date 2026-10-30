@@ -1,0 +1,86 @@
+{
+  "client_research_date": "2026-10-30",
+  "method": "Read-only GitHub repository API; pushed_at is not proof of default-branch substantive code activity. Previous 2026-10-29 commit snapshots retained separately.",
+  "repositories": [
+    {
+      "repo": "github/gh-aw",
+      "url": "https://github.com/github/gh-aw",
+      "stars": 5519,
+      "pushed_at": "2026-10-29T17:37:06Z",
+      "license": "MIT",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:35.901106+00:00"
+    },
+    {
+      "repo": "OpenHands/software-agent-sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "stars": 1319,
+      "pushed_at": "2026-10-29T17:21:59Z",
+      "license": "MIT",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:36.651249+00:00"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "stars": 44106,
+      "pushed_at": "2026-10-29T16:27:44Z",
+      "license": "MIT",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:37.314452+00:00"
+    },
+    {
+      "repo": "googleanalytics/google-analytics-mcp",
+      "url": "https://github.com/googleanalytics/google-analytics-mcp",
+      "stars": 3590,
+      "pushed_at": "2026-10-29T17:14:55Z",
+      "license": "Apache-2.0",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:37.989874+00:00"
+    },
+    {
+      "repo": "houtini-ai/seo-audit",
+      "url": "https://github.com/houtini-ai/seo-audit",
+      "stars": 86,
+      "pushed_at": "2026-10-26T07:15:53Z",
+      "license": "Apache-2.0",
+      "default_branch": "master",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:38.743405+00:00"
+    },
+    {
+      "repo": "saurabhsharma2u/search-console-mcp",
+      "url": "https://github.com/saurabhsharma2u/search-console-mcp",
+      "stars": 315,
+      "pushed_at": "2026-10-21T13:58:07Z",
+      "license": "MIT",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:39.462643+00:00"
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "stars": 119475,
+      "pushed_at": "2026-10-27T00:02:24Z",
+      "license": "MIT",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:40.541617+00:00"
+    },
+    {
+      "repo": "microsoft/playwright",
+      "url": "https://github.com/microsoft/playwright",
+      "stars": 98813,
+      "pushed_at": "2026-10-29T17:32:25Z",
+      "license": "Apache-2.0",
+      "default_branch": "main",
+      "archived": false,
+      "checked_at_utc": "2026-10-29T17:43:41.179294+00:00"
+    }
+  ]
+}

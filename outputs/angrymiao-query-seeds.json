@@ -1,0 +1,654 @@
+{
+  "metadata": {
+    "title": "Angry Miao SEO / GEO 未运行评测种子题库",
+    "created_date": "2026-10-29",
+    "status": "not_run",
+    "total_prompts": 48,
+    "language_counts": {
+      "en-US": 24,
+      "zh-CN": 24
+    },
+    "per_language_category_counts": {
+      "mouse": 12,
+      "keyboard": 8,
+      "purchase_support": 4
+    },
+    "per_language_branding_counts": {
+      "non_branded": 18,
+      "branded": 6
+    },
+    "id_category_mapping": {
+      "M": "mouse",
+      "K": "keyboard",
+      "S": "purchase_support"
+    },
+    "market_assumption": "英文按美国暂定，待业务确认；中文按中国大陆。不同市场与语言分别报告，不合成已有表现。",
+    "measurement_note": "这是自然表达的候选题，不包含任何实际采样、得分或模拟结果。非品牌题不得在运行时加上Angry Miao提示；answer_checks是事实与回答质量检查，不要求模型推荐品牌。content_asset为拟建设或拟升级资产，不表示页面已上线。"
+  },
+  "queries": [
+    {
+      "id": "EN-M-01",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "What should I look for in a premium wireless gaming mouse for competitive FPS games?",
+      "content_asset": "鼠标选购与产品证据索引",
+      "answer_checks": [
+        "区分形状、重量、无线稳定性、实际延迟与报告率",
+        "推荐需有可追溯来源，不能仅凭价格判定性能"
+      ]
+    },
+    {
+      "id": "EN-M-02",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "Which lightweight gaming mice have replaceable batteries, and what are the trade-offs?",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "区分可更换电池与单电池续航",
+        "检查产品推荐与换电方式是否有官方来源"
+      ]
+    },
+    {
+      "id": "EN-M-03",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "Is a magnesium gaming mouse worth paying more for than a plastic one?",
+      "content_asset": "镁合金结构与实际体验证据页",
+      "answer_checks": [
+        "比较材料、重量、表面与耐用性边界",
+        "不把金属材质自动等同于更低延迟或更高胜率"
+      ]
+    },
+    {
+      "id": "EN-M-04",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "fit",
+      "branded": false,
+      "prompt": "I have small hands and use a claw grip. How should I compare wireless FPS mice?",
+      "content_asset": "手型握姿与尺寸选择页",
+      "answer_checks": [
+        "参考手长、手宽、尺寸和握姿",
+        "没有实握证据时不保证某型号一定适合"
+      ]
+    },
+    {
+      "id": "EN-M-05",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "fit",
+      "branded": false,
+      "prompt": "What mouse shapes work well for fingertip grip without the back hitting my palm?",
+      "content_asset": "握姿与 Hatchback 适配页",
+      "answer_checks": [
+        "解释长度、后背高度和手掌接触点",
+        "把握姿适配建议与已验证尺寸区分"
+      ]
+    },
+    {
+      "id": "EN-M-06",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "Does 8,000 Hz polling make a noticeable difference on a gaming mouse?",
+      "content_asset": "1K/4K/8K 测试与设置页",
+      "answer_checks": [
+        "区分0.125ms报告间隔与端到端延迟",
+        "说明显示器、CPU、游戏与测法影响"
+      ]
+    },
+    {
+      "id": "EN-M-07",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "support",
+      "branded": false,
+      "prompt": "My mouse stutters at 8K polling. What should I test before replacing it?",
+      "content_asset": "8K 卡顿排查与固件指南",
+      "answer_checks": [
+        "给可逆排查顺序并记录系统和固件条件",
+        "不保证调低报告率能解决所有故障"
+      ]
+    },
+    {
+      "id": "EN-M-08",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "How can I tell whether a wireless gaming mouse really delivers an 8K polling rate?",
+      "content_asset": "真实报告率测量方法与原始数据页",
+      "answer_checks": [
+        "说明测试设备、方法、持续性与误差",
+        "不将网页粗略测试或传感器采样率等同真实USB报告率"
+      ]
+    },
+    {
+      "id": "EN-M-09",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "How do hot-swappable mouse batteries work, and does swapping interrupt gameplay?",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "区分换电时间、断连时间和电池充电时间",
+        "具体数字需要对应型号及测法"
+      ]
+    },
+    {
+      "id": "EN-M-10",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "What is the difference between the AM Infinity Mouse and the AM Infinity .97?",
+      "content_asset": "AM Infinity 与 .97 版本选择页",
+      "answer_checks": [
+        "不混用两个型号的尺寸、重量与续航",
+        "指出有线重量来源冲突，避免编造统一值"
+      ]
+    },
+    {
+      "id": "EN-M-11",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "fit",
+      "branded": true,
+      "prompt": "Is the AM Infinity .97 a good fit for claw or fingertip grip, and what does the Hatchback change?",
+      "content_asset": "握姿与 Hatchback 适配页",
+      "answer_checks": [
+        "使用.97官方定位及可选Hatchback信息",
+        "区分品牌适配建议与独立实握结论"
+      ]
+    },
+    {
+      "id": "EN-M-12",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": true,
+      "prompt": "Does the Angry Miao Infinity Mouse charge in 1.2 seconds, or does it swap batteries?",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "明确1.2秒指换电或重连宣称而非电池充满",
+        "不能声称无限单电池续航"
+      ]
+    },
+    {
+      "id": "EN-K-01",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "Should I choose a premium mechanical keyboard or a Hall Effect keyboard for gaming and typing?",
+      "content_asset": "机械客制化与 HE 选型页",
+      "answer_checks": [
+        "区分机械触点、磁轴、可调触发与手感需求",
+        "避免把高价机械键盘全部归为磁轴电竞产品"
+      ]
+    },
+    {
+      "id": "EN-K-02",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "What does Rapid Trigger actually change in an FPS game?",
+      "content_asset": "Rapid Trigger 原理与设置指南",
+      "answer_checks": [
+        "区分释放重置行为和USB报告率",
+        "不承诺提高胜率或对所有游戏同等有效"
+      ]
+    },
+    {
+      "id": "EN-K-03",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "How should I choose between a 65%, 75%, and TKL keyboard for a gaming desk?",
+      "content_asset": "配列与使用场景选择页",
+      "answer_checks": [
+        "解释按键保留、桌面空间、层操作的取舍",
+        "不把配列直接等同于性能等级"
+      ]
+    },
+    {
+      "id": "EN-K-04",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "Which custom keyboards combine adjustable typing feel with distinctive lighting?",
+      "content_asset": "客制化结构与灯效证据索引",
+      "answer_checks": [
+        "推荐建立在准确型号及结构资料上",
+        "不把灯效或弹片结构视为延迟证据"
+      ]
+    },
+    {
+      "id": "EN-K-05",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "How should I compare 8K keyboard polling, scan rate, and measured input latency?",
+      "content_asset": "键盘报告率与延迟测法页",
+      "answer_checks": [
+        "区分报告率、矩阵扫描和端到端输入延迟",
+        "每项性能宣称附条件或来源"
+      ]
+    },
+    {
+      "id": "EN-K-06",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "What should I check before buying an expensive custom keyboard kit instead of a prebuilt?",
+      "content_asset": "套件与成品购买检查页",
+      "answer_checks": [
+        "说明键帽、轴体、卫星轴和装配是否包含",
+        "不假定所有版本附件或售后相同"
+      ]
+    },
+    {
+      "id": "EN-K-07",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "Is the Angry Miao AM RGB 65 a Hall Effect keyboard or a mechanical keyboard?",
+      "content_asset": "机械客制化与 HE 选型页",
+      "answer_checks": [
+        "正确识别AM RGB 65机械方向",
+        "不从同店HE产品推断其支持Rapid Trigger"
+      ]
+    },
+    {
+      "id": "EN-K-08",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "How do Angry Miao custom keyboards and Dry Studio Hall Effect keyboards serve different needs?",
+      "content_asset": "品牌与产品线实体说明页",
+      "answer_checks": [
+        "区分具体型号、vendor和技术路线",
+        "未经品牌确认不编造母子品牌法律关系"
+      ]
+    },
+    {
+      "id": "EN-S-01",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "purchase",
+      "branded": false,
+      "prompt": "How can I check whether a limited-edition keyboard is in stock, on preorder, or permanently discontinued?",
+      "content_asset": "发售补货停售生命周期页",
+      "answer_checks": [
+        "核对具体SKU、市场和最新带年份日期",
+        "不将历史预售页面或模板按钮作为当前库存证明"
+      ]
+    },
+    {
+      "id": "EN-S-02",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "purchase",
+      "branded": false,
+      "prompt": "What should a US buyer check about shipping, returns, and warranty before ordering a premium keyboard from overseas?",
+      "content_asset": "美国购买配送退换与保修事实页",
+      "answer_checks": [
+        "区分运费、税费、处理与运输时间",
+        "政策按市场、商品和购买日期核实，不编造费用"
+      ]
+    },
+    {
+      "id": "EN-S-03",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "support",
+      "branded": false,
+      "prompt": "Where should I get firmware and configuration software for a gaming mouse, and how do I check compatibility?",
+      "content_asset": "按型号划分的软件固件与说明书入口",
+      "answer_checks": [
+        "优先官方入口并核对型号、系统、版本",
+        "不引导关闭安全保护或使用非官方固件"
+      ]
+    },
+    {
+      "id": "EN-S-04",
+      "language": "en-US",
+      "market": "US（默认假设，待业务确认）",
+      "intent": "support",
+      "branded": true,
+      "prompt": "Where can I find the official Angry Miao mouse web driver and the manual for my Infinity model?",
+      "content_asset": "AM Master 与鼠标网页驱动稳定入口",
+      "answer_checks": [
+        "使用已核实的官方软件或说明书索引",
+        "区分标准版与.97及适配要求，不编造固件版本"
+      ]
+    },
+    {
+      "id": "ZH-M-01",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "想买一只高端无线鼠标打 FPS，除了传感器和 DPI，还应该重点看什么？",
+      "content_asset": "鼠标选购与产品证据索引",
+      "answer_checks": [
+        "覆盖握姿形状、重量、稳定性与真实延迟",
+        "不把高DPI或高价格直接等同实战优势"
+      ]
+    },
+    {
+      "id": "ZH-M-02",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "有哪些支持换电池的轻量化游戏鼠标？比插线充电方便在哪，又有什么代价？",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "核实具体产品和换电方式",
+        "分清单次续航、换电和充电速度"
+      ]
+    },
+    {
+      "id": "ZH-M-03",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "镁合金镂空鼠标贵在哪里？和普通塑料鼠标比，哪些差别真的影响体验？",
+      "content_asset": "镁合金结构与实际体验证据页",
+      "answer_checks": [
+        "分清材质、握感、重量与性能",
+        "不过度承诺耐摔、防汗或更低延迟"
+      ]
+    },
+    {
+      "id": "ZH-M-04",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "fit",
+      "branded": false,
+      "prompt": "手比较小，平时抓握打瓦，挑无线鼠标怎么判断尺寸合不合适？",
+      "content_asset": "手型握姿与尺寸选择页",
+      "answer_checks": [
+        "说明手长手宽、握姿和鼠标尺寸的关系",
+        "不把适配描述当成人人适用的保证"
+      ]
+    },
+    {
+      "id": "ZH-M-05",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "fit",
+      "branded": false,
+      "prompt": "指握鼠标往下拉枪时后背总顶手心，换什么形状更合适？",
+      "content_asset": "握姿与 Hatchback 适配页",
+      "answer_checks": [
+        "解释后背、长度和掌心接触位置",
+        "有具体推荐时核对尺寸与适配依据"
+      ]
+    },
+    {
+      "id": "ZH-M-06",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "8K 回报率鼠标有必要开满吗？普通电脑打游戏能感受到区别吗？",
+      "content_asset": "1K/4K/8K 测试与设置页",
+      "answer_checks": [
+        "区分USB回报间隔与端到端延迟",
+        "结合CPU、显示器、游戏和续航取舍"
+      ]
+    },
+    {
+      "id": "ZH-M-07",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "support",
+      "branded": false,
+      "prompt": "鼠标一开 8000Hz 游戏就掉帧或卡顿，应该按什么顺序排查？",
+      "content_asset": "8K 卡顿排查与固件指南",
+      "answer_checks": [
+        "提供可逆排查并记录环境",
+        "不把全部卡顿都归咎某个鼠标或固件"
+      ]
+    },
+    {
+      "id": "ZH-M-08",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "怎么看鼠标是真 8K 还是只在参数表上写了 8K？自己能测吗？",
+      "content_asset": "真实报告率测量方法与原始数据页",
+      "answer_checks": [
+        "区分USB报告率与传感器采样率",
+        "说明网页测试局限、测试条件及误差"
+      ]
+    },
+    {
+      "id": "ZH-M-09",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "游戏鼠标说的“无限续航”通常是什么意思？换电时会不会断连？",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "解释备电轮换不等于无限单电池续航",
+        "断连或换电数字需具体型号和条件"
+      ]
+    },
+    {
+      "id": "ZH-M-10",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "怒喵 AM Infinity 和 .97 该怎么选？手型、握姿和使用场景有什么区别？",
+      "content_asset": "AM Infinity 与 .97 版本选择页",
+      "answer_checks": [
+        "分别核对标准版与.97事实",
+        "有线37g与39g冲突未解决时明确不确定性"
+      ]
+    },
+    {
+      "id": "ZH-M-11",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "fit",
+      "branded": true,
+      "prompt": "AM Infinity .97 的 Hatchback 后盖适合什么握法？加上以后尺寸有什么变化？",
+      "content_asset": "握姿与 Hatchback 适配页",
+      "answer_checks": [
+        "核对是否选配及带不带后盖的尺寸条件",
+        "适配建议不冒充独立实握结果"
+      ]
+    },
+    {
+      "id": "ZH-M-12",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": true,
+      "prompt": "怒喵鼠标的“1.2 秒满电”真的是快速充电，还是把备用电池换上？",
+      "content_asset": "换电机制与续航证据页",
+      "answer_checks": [
+        "明确解释换电与充电不是同一过程",
+        "品牌宣称与已测证据清楚区分"
+      ]
+    },
+    {
+      "id": "ZH-K-01",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "预算比较高，日常码字也打 FPS，客制化机械键盘和磁轴键盘该怎么选？",
+      "content_asset": "机械客制化与 HE 选型页",
+      "answer_checks": [
+        "按手感声音、输入功能和游戏需求取舍",
+        "不把客制化与磁轴混为同一种技术"
+      ]
+    },
+    {
+      "id": "ZH-K-02",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "磁轴键盘的 RT 到底解决什么问题？和把触发行程调短有什么区别？",
+      "content_asset": "Rapid Trigger 原理与设置指南",
+      "answer_checks": [
+        "分清动态重置和可调触发点",
+        "不保证游戏成绩提升或所有游戏规则允许同类功能"
+      ]
+    },
+    {
+      "id": "ZH-K-03",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": false,
+      "prompt": "想给鼠标多留一点空间，又不想总按组合键，65、75 和 TKL 配列怎么选？",
+      "content_asset": "配列与使用场景选择页",
+      "answer_checks": [
+        "解释方向键、F区和层操作取舍",
+        "选择依据是使用习惯而非未经验证的竞技排名"
+      ]
+    },
+    {
+      "id": "ZH-K-04",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "discovery",
+      "branded": false,
+      "prompt": "有没有结构、灯效和外观都比较特别，而且能调手感的高端客制化键盘？",
+      "content_asset": "客制化结构与灯效证据索引",
+      "answer_checks": [
+        "推荐对应具体型号和真实可调结构",
+        "不把设计特色冒充性能测试结论"
+      ]
+    },
+    {
+      "id": "ZH-K-05",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "technical",
+      "branded": false,
+      "prompt": "键盘宣传 8K 回报率、扫描率和 0.1ms 延迟，这几个参数能直接拿来比较吗？",
+      "content_asset": "键盘报告率与延迟测法页",
+      "answer_checks": [
+        "区分扫描率、报告率、测量延迟及条件",
+        "不把报告周期直接当端到端延迟"
+      ]
+    },
+    {
+      "id": "ZH-K-06",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "purchase",
+      "branded": false,
+      "prompt": "第一次买高价客制化键盘，套件和成品差在哪？哪些配件容易漏买？",
+      "content_asset": "套件与成品购买检查页",
+      "answer_checks": [
+        "核对PCB、轴、键帽、卫星轴和装配",
+        "不同版本装箱清单不混用"
+      ]
+    },
+    {
+      "id": "ZH-K-07",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "怒喵 AM RGB 65 是机械轴还是磁轴？和支持 RT 的键盘适合的人一样吗？",
+      "content_asset": "机械客制化与 HE 选型页",
+      "answer_checks": [
+        "正确区分AM RGB 65与HE产品路线",
+        "不凭商店分类推断其有RT功能"
+      ]
+    },
+    {
+      "id": "ZH-K-08",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "comparison",
+      "branded": true,
+      "prompt": "想了解怒喵和 DRY STUDIO 的键盘，怎么分清客制化机械款和磁轴电竞款？",
+      "content_asset": "品牌与产品线实体说明页",
+      "answer_checks": [
+        "按具体型号与vendor识别技术路线",
+        "品牌关系只采正式来源，不自行归并实体"
+      ]
+    },
+    {
+      "id": "ZH-S-01",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "purchase",
+      "branded": false,
+      "prompt": "限量键盘页面写着售罄、预售和预计发货，怎么确认现在到底能不能买？",
+      "content_asset": "发售补货停售生命周期页",
+      "answer_checks": [
+        "核对当前SKU及带年份日期",
+        "历史发售信息、模板按钮和真实库存分开"
+      ]
+    },
+    {
+      "id": "ZH-S-02",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "purchase",
+      "branded": false,
+      "prompt": "在国内买高端键盘，怎么核对官方渠道、发票、保修和售后入口？",
+      "content_asset": "中国大陆购买授权渠道与售后事实页",
+      "answer_checks": [
+        "不编造天猫京东或其他渠道的授权状态",
+        "保修按具体产品、渠道及有效政策核实"
+      ]
+    },
+    {
+      "id": "ZH-S-03",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "support",
+      "branded": false,
+      "prompt": "鼠标驱动和固件在哪下才靠谱？刷之前需要确认哪些型号和系统信息？",
+      "content_asset": "按型号划分的软件固件与说明书入口",
+      "answer_checks": [
+        "优先官方可验证入口并核对适配",
+        "不推荐关闭安全保护或刷来源不明的固件"
+      ]
+    },
+    {
+      "id": "ZH-S-04",
+      "language": "zh-CN",
+      "market": "中国大陆",
+      "intent": "support",
+      "branded": true,
+      "prompt": "怒喵 AM Infinity 和 .97 的官方网页驱动、中文说明书和售后入口分别在哪？",
+      "content_asset": "AM Master 中文支持与按型号说明书入口",
+      "answer_checks": [
+        "分清两个型号、软件入口与国内售后市场",
+        "仅列核实过的官方地址，不猜联系人或固件版本"
+      ]
+    }
+  ]
+}

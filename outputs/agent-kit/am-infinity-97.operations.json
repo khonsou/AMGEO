@@ -1,0 +1,367 @@
+{
+  "delivery_status": "prepared",
+  "publication_status": "not_published",
+  "product": "AM INFINITY MOUSE .97",
+  "prepared_date": "2026-10-29",
+  "source_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+  "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+  "source_snapshot_sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062",
+  "source_retrieval_date": "2026-10-29",
+  "exact_snapshot_retrieval_time": "not_recorded",
+  "evidence_scope": "Previously captured public initial HTML. Source claims are not independently measured performance. No new requests, storefront writes or live publication.",
+  "mode": "offline_patch_only",
+  "target_representation": "Previously captured initial HTML; not Shopify theme source or a live DOM. Publishing requires an appropriate authenticated editing adapter.",
+  "span_indexing": "0-based Unicode code-point offsets; ends exclusive; Python str indexing. Apply spans in descending source offset order.",
+  "precondition": {
+    "source_snapshot_sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062",
+    "operation_count": 13
+  },
+  "operations": [
+    {
+      "id": "O-HERO-SWAP-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace",
+      "target": {
+        "source_start_char_0_based": 466984,
+        "source_end_char_exclusive": 467030,
+        "source_line_1_based": 2047,
+        "old_value_sha256": "9f39d1ea8f0cbc5fe20f3bdb09fb9f7bd7281fd179ec53902d4dc4cee82e4515"
+      },
+      "replacement": "Hot-Swappable Magnetic Battery System",
+      "evidence_ids": [
+        "F-SWAP-MECHANISM",
+        "F-SWAP-TIME"
+      ],
+      "rationale": "Remove unverified timing while preserving the supported mechanism.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 466984,
+        "source_end_char_exclusive": 467030
+      }
+    },
+    {
+      "id": "O-CHARGE-HEADING-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace",
+      "target": {
+        "source_start_char_0_based": 646090,
+        "source_end_char_exclusive": 646109,
+        "source_line_1_based": 4213,
+        "old_value_sha256": "974481121fc3505e7581b2896ff915a1cee55ca4b55683235f0d1cb4e405bf25"
+      },
+      "replacement": "Swap in a charged battery",
+      "evidence_ids": [
+        "F-SWAP-TIME"
+      ],
+      "rationale": "Replace the ambiguous fast-charge heading with the actual battery-swap mechanism.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 646090,
+        "source_end_char_exclusive": 646109
+      }
+    },
+    {
+      "id": "O-WIRED-MARKETING-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_conflicting_value",
+      "target": {
+        "source_start_char_0_based": 622334,
+        "source_end_char_exclusive": 622381,
+        "source_line_1_based": 4107,
+        "old_value_sha256": "3fa2a85f96b4845d633d92ee9058fce963edd4b24195a765e42e0f40e93b2c30"
+      },
+      "replacement": "*47g wireless with magnetic battery.",
+      "evidence_ids": [
+        "F-WIRED-WEIGHT",
+        "F-WIRELESS-WEIGHT"
+      ],
+      "rationale": "Withhold conflicting wired weight in both responsive presentations; keep the internally consistent wireless source claim.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 622334,
+        "source_end_char_exclusive": 622381
+      }
+    },
+    {
+      "id": "O-WIRED-MARKETING-02",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_conflicting_value",
+      "target": {
+        "source_start_char_0_based": 638124,
+        "source_end_char_exclusive": 638171,
+        "source_line_1_based": 4159,
+        "old_value_sha256": "3fa2a85f96b4845d633d92ee9058fce963edd4b24195a765e42e0f40e93b2c30"
+      },
+      "replacement": "*47g wireless with magnetic battery.",
+      "evidence_ids": [
+        "F-WIRED-WEIGHT",
+        "F-WIRELESS-WEIGHT"
+      ],
+      "rationale": "Withhold conflicting wired weight in both responsive presentations; keep the internally consistent wireless source claim.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 638124,
+        "source_end_char_exclusive": 638171
+      }
+    },
+    {
+      "id": "O-WIRED-SPEC-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_conflicting_value",
+      "target": {
+        "source_start_char_0_based": 677502,
+        "source_end_char_exclusive": 677541,
+        "source_line_1_based": 4662,
+        "old_value_sha256": "8c966c7b9699e1d1d7605a249ad7e41154413f168dfe00e35ae0e093753a1630"
+      },
+      "replacement": "Wireless 47g",
+      "evidence_ids": [
+        "F-WIRED-WEIGHT",
+        "F-WIRELESS-WEIGHT"
+      ],
+      "rationale": "Do not choose between 37g and 39g; withhold the wired value.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 677502,
+        "source_end_char_exclusive": 677541
+      }
+    },
+    {
+      "id": "O-MECHANISM-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace",
+      "target": {
+        "source_start_char_0_based": 643397,
+        "source_end_char_exclusive": 643562,
+        "source_line_1_based": 4193,
+        "old_value_sha256": "f5f64a2ae7a3bbdd29fa6f73c47b2dfe75c61b092009ba5cbc6aefc6f633620f"
+      },
+      "replacement": "Use one battery in the mouse while the spare charges on the 2.4G receiver. When needed, swap in the charged spare. Each battery still needs recharging.",
+      "evidence_ids": [
+        "F-SWAP-MECHANISM",
+        "F-RUNTIME"
+      ],
+      "rationale": "Explain battery rotation without promising infinite single-battery runtime.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 643397,
+        "source_end_char_exclusive": 643562
+      }
+    },
+    {
+      "id": "O-RUNTIME-BLOCK-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_unverified_performance",
+      "target": {
+        "source_start_char_0_based": 644877,
+        "source_end_char_exclusive": 645032,
+        "source_line_1_based": 4195,
+        "old_value_sha256": "93297dd395bf865eb95f964bfc664bd8f56c9b02b3e46c6a7208f688c449f296"
+      },
+      "replacement": "Keep the spare battery charged on the receiver so it is ready when you need to swap. Battery life depends on settings and use.",
+      "evidence_ids": [
+        "F-RUNTIME",
+        "F-SWAP-MECHANISM"
+      ],
+      "rationale": "Withhold runtime and power-reduction figures without a captured test protocol.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 644877,
+        "source_end_char_exclusive": 645032
+      }
+    },
+    {
+      "id": "O-CHARGING-SPEC-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_unverified_performance",
+      "target": {
+        "source_start_char_0_based": 678622,
+        "source_end_char_exclusive": 678735,
+        "source_line_1_based": 4686,
+        "old_value_sha256": "c08f73d6239713e5707622e06fcabcc2f0797e3c6b5cd772aa5e4d91501634f3"
+      },
+      "replacement": "Hot-swappable magnetic battery; spare battery charges on the receiver",
+      "evidence_ids": [
+        "F-SWAP-MECHANISM",
+        "F-RUNTIME"
+      ],
+      "rationale": "Keep the mechanism and remove runtime figures from the prepared revision.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 678622,
+        "source_end_char_exclusive": 678735
+      }
+    },
+    {
+      "id": "O-PRESALE-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "withhold_currentness_unverified",
+      "target": {
+        "source_start_char_0_based": 522980,
+        "source_end_char_exclusive": 523125,
+        "source_line_1_based": 2580,
+        "old_value_sha256": "338ae8608013602f0c84619c5ed52daae934e93c7e45d121c9c5d3955e43ed34"
+      },
+      "replacement": "<p>See the <a href=\"https://store.angrymiao.com/policies/shipping-policy\">shipping policy</a> for shipping information.</p>",
+      "evidence_ids": [
+        "F-PRESALE-SCHEDULE",
+        "F-SUPPORT-LINKS"
+      ],
+      "rationale": "Remove the undated historical schedule without inventing current stock or dispatch promises.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 522980,
+        "source_end_char_exclusive": 523125
+      }
+    },
+    {
+      "id": "O-HELP-01",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace_theme_placeholder",
+      "target": {
+        "source_start_char_0_based": 551411,
+        "source_end_char_exclusive": 551494,
+        "source_line_1_based": 2749,
+        "old_value_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+      },
+      "replacement": "<a href=\"https://store.angrymiao.com/policies/shipping-policy\">Read the shipping policy.</a>",
+      "evidence_ids": [
+        "F-HELP-PLACEHOLDERS",
+        "F-SUPPORT-LINKS"
+      ],
+      "rationale": "Replace the existing theme placeholder using a support destination already present in the page.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 551411,
+        "source_end_char_exclusive": 551494
+      }
+    },
+    {
+      "id": "O-HELP-02",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace_theme_placeholder",
+      "target": {
+        "source_start_char_0_based": 554038,
+        "source_end_char_exclusive": 554121,
+        "source_line_1_based": 2759,
+        "old_value_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+      },
+      "replacement": "For product and order questions, email <a href=\"mailto:support@angrymiao.com\">support@angrymiao.com</a>.",
+      "evidence_ids": [
+        "F-HELP-PLACEHOLDERS",
+        "F-SUPPORT-LINKS"
+      ],
+      "rationale": "Replace the existing theme placeholder using a support destination already present in the page.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 554038,
+        "source_end_char_exclusive": 554121
+      }
+    },
+    {
+      "id": "O-HELP-03",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace_theme_placeholder",
+      "target": {
+        "source_start_char_0_based": 555933,
+        "source_end_char_exclusive": 556016,
+        "source_line_1_based": 2766,
+        "old_value_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+      },
+      "replacement": "<a href=\"https://store.angrymiao.com/pages/user-manual\">Find the official manual for your model.</a>",
+      "evidence_ids": [
+        "F-HELP-PLACEHOLDERS",
+        "F-SUPPORT-LINKS"
+      ],
+      "rationale": "Replace the existing theme placeholder using a support destination already present in the page.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 555933,
+        "source_end_char_exclusive": 556016
+      }
+    },
+    {
+      "id": "O-HELP-04",
+      "operation": "replace_initial_html_span",
+      "delivery_status": "prepared",
+      "publication_status": "not_published",
+      "action_purpose": "replace_theme_placeholder",
+      "target": {
+        "source_start_char_0_based": 558724,
+        "source_end_char_exclusive": 558807,
+        "source_line_1_based": 2773,
+        "old_value_sha256": "847fcc96d4e2cd5ec6e8e48d4ef12ab3dced84806fc865316c75fd3a9f40a563"
+      },
+      "replacement": "<a href=\"mailto:support@angrymiao.com\">Contact storefront support.</a>",
+      "evidence_ids": [
+        "F-HELP-PLACEHOLDERS",
+        "F-SUPPORT-LINKS"
+      ],
+      "rationale": "Replace the existing theme placeholder using a support destination already present in the page.",
+      "rollback": {
+        "method": "restore_original_span_from_immutable_source_snapshot",
+        "source_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+        "source_start_char_0_based": 558724,
+        "source_end_char_exclusive": 558807
+      }
+    }
+  ],
+  "rollback": {
+    "method": "restore_original_snapshot_or_inverse_spans",
+    "original_snapshot_path": "evidence/am-infinity-97.source.html.txt",
+    "original_snapshot_sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062"
+  },
+  "prepared_html_sha256": "d1f8de954b2f78c6d7a9a9f800af7755148f3411b73bb63f03b805d339b767b0",
+  "limitations": [
+    "Only the selected battery, conflicting wired-weight, undated schedule and help-card blocks are patched. Other performance claims and source data on the page remain outside this patch.",
+    "Conflicting wired weight remains unresolved in product-facts.json.",
+    "The patch withholds unverified numerical claims rather than selecting an unsupported value.",
+    "No website, Shopify data, stock status, price, firmware or structured data was changed."
+  ],
+  "validation": {
+    "source_hash_checked": true,
+    "all_targets_found": true,
+    "non_overlapping_spans": true,
+    "offline_forward_apply_passed": true,
+    "offline_rollback_round_trip_passed": true,
+    "remaining_target_placeholders": 0,
+    "drafts_exclude_unverified_weight_timing_runtime_numbers": true
+  },
+  "packaged_date": "2026-10-30"
+}

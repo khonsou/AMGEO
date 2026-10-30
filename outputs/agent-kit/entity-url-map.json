@@ -1,0 +1,64 @@
+{
+  "status": "prepared",
+  "date": "2026-10-30",
+  "source_basis": "2026-10-29 public research",
+  "entities": [
+    {
+      "name": "Angry Miao",
+      "aliases": [
+        "怒喵",
+        "怒喵科技",
+        "angrymiao"
+      ],
+      "scope": "brand"
+    },
+    {
+      "name": "AM INFINITY MOUSE",
+      "scope": "model"
+    },
+    {
+      "name": "AM Infinity .97",
+      "scope": "separate_model",
+      "not_color_variant_of": "AM INFINITY MOUSE"
+    },
+    {
+      "name": "Dry Studio",
+      "scope": "observed_vendor",
+      "parent_brand_relationship": "not_verified"
+    }
+  ],
+  "urls": [
+    {
+      "url": "https://www.angrymiao.com/",
+      "language": "needs_render_check",
+      "observed_role": "brand_site"
+    },
+    {
+      "url": "https://www.angrymiao.com/en/",
+      "language": "en_route_needs_render_check",
+      "observed_role": "brand_site"
+    },
+    {
+      "url": "https://store.angrymiao.com/products/am-infinity-mouse",
+      "language": "en",
+      "observed_role": "store_product"
+    },
+    {
+      "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+      "language": "en",
+      "observed_role": "store_product"
+    },
+    {
+      "url": "https://mall.angrymiao.com/products/1313",
+      "language": "zh",
+      "observed_role": "historical_product_page_current_commerce_role_unverified"
+    },
+    {
+      "url": "https://m.angrymiao.com/products/1536",
+      "language": "zh",
+      "observed_role": "mobile_product_page_current_commerce_role_unverified"
+    }
+  ],
+  "automatic_redirects_created": 0,
+  "canonical_hreflang_changes_applied": 0
+}

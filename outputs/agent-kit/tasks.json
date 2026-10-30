@@ -1,0 +1,319 @@
+{
+  "version": "2.0",
+  "updated_date": "2026-10-30",
+  "execution_policy": "Agent executes, verifies and writes artifacts; only missing capabilities/data block dependent actions. No routine human executor assigned.",
+  "runtime_status": "This session executed local artifact tasks; no gh-aw/OpenHands service installed, no recurring job activated, no production site changed.",
+  "retry_policy": {
+    "max_attempts_per_transient_failure": 3,
+    "after_failure": "Save evidence and continue independent tasks"
+  },
+  "tasks": [
+    {
+      "id": "A00",
+      "agent": "orchestrator-agent",
+      "action": "Record available task capabilities",
+      "status": "completed",
+      "depends_on": [],
+      "inputs": [
+        "Current tool and workspace context"
+      ],
+      "outputs": [
+        "capabilities.json"
+      ],
+      "acceptance": [
+        "No secrets in output",
+        "Absent connection not equated with absent business account"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A01",
+      "agent": "technical-audit-agent",
+      "action": "Replay evidence and produce route repair finding",
+      "status": "completed",
+      "depends_on": [
+        "A00"
+      ],
+      "inputs": [
+        "evidence/http-observations-2026-10-29.json"
+      ],
+      "outputs": [
+        "routing-audit.json"
+      ],
+      "acceptance": [
+        "Source date explicit",
+        "Observed response and implementation status separate"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A02",
+      "agent": "facts-agent",
+      "action": "Extract claims and quarantine conflicting fields",
+      "status": "completed",
+      "depends_on": [
+        "A00"
+      ],
+      "inputs": [
+        "evidence/am-infinity-97.source.html.txt"
+      ],
+      "outputs": [
+        "product-facts.json"
+      ],
+      "acceptance": [
+        "Every evidence span and hash match",
+        "Conflict not resolved by guessing"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A03",
+      "agent": "entity-agent",
+      "action": "Map brand/model/language/URL evidence",
+      "status": "completed",
+      "depends_on": [
+        "A00"
+      ],
+      "inputs": [
+        "Public brand research"
+      ],
+      "outputs": [
+        "entity-url-map.json"
+      ],
+      "acceptance": [
+        "Dry Studio relationship not inferred from store vendor",
+        "No unsupported redirect"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A04",
+      "agent": "content-agent",
+      "action": "Write EN and ZH battery mechanism revisions",
+      "status": "completed",
+      "depends_on": [
+        "A02"
+      ],
+      "inputs": [
+        "product-facts.json"
+      ],
+      "outputs": [
+        "battery-mechanism.en.md",
+        "battery-mechanism.zh-CN.md",
+        "battery-copy-drafts.json"
+      ],
+      "acceptance": [
+        "Exclude unresolved weight/timing/runtime claims",
+        "Source links present",
+        "Chinese policy not copied from US"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A05",
+      "agent": "patch-agent",
+      "action": "Prepare exact reversible snapshot edits",
+      "status": "completed",
+      "depends_on": [
+        "A02",
+        "A04"
+      ],
+      "inputs": [
+        "product-facts.json",
+        "evidence/am-infinity-97.source.html.txt"
+      ],
+      "outputs": [
+        "am-infinity-97.operations.json"
+      ],
+      "acceptance": [
+        "13 nonoverlapping spans",
+        "Original text hashes matched",
+        "Never call this a Shopify source patch"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A06",
+      "agent": "qa-agent",
+      "action": "Verify evidence, replay edits and inverse rollback",
+      "status": "completed",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ],
+      "inputs": [
+        "validate_batch.py"
+      ],
+      "outputs": [
+        "qa-results.json"
+      ],
+      "acceptance": [
+        "All checks pass",
+        "Restored bytes equal captured source",
+        "Live writes remain zero"
+      ],
+      "completion_scope": "artifact_only"
+    },
+    {
+      "id": "A07",
+      "agent": "engineering-agent",
+      "action": "Apply route fix in actual site repository and run regression",
+      "status": "waiting_access",
+      "depends_on": [
+        "A01"
+      ],
+      "inputs": [
+        "Site repository and serving config"
+      ],
+      "outputs": [
+        "routing-fix.patch",
+        "route-regression.json",
+        "build-results.json"
+      ],
+      "acceptance": [
+        "Actual patch/build/route results required before completed"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "site_source_repository"
+      ],
+      "prepared_artifacts": [
+        "route-repair-task.json"
+      ]
+    },
+    {
+      "id": "A08",
+      "agent": "data-agent",
+      "action": "Read authorized GSC/GA4/Bing/Baidu baselines",
+      "status": "waiting_access",
+      "depends_on": [
+        "A00"
+      ],
+      "inputs": [
+        "Approved data connections and properties"
+      ],
+      "outputs": [
+        "search-baseline/"
+      ],
+      "acceptance": [
+        "Real API or browser export",
+        "GSC historical index vs UI live test separate"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "search_console_analytics"
+      ]
+    },
+    {
+      "id": "A09",
+      "agent": "browser-evaluation-agent",
+      "action": "Run fixed UI panel and separate API panel",
+      "status": "waiting_access",
+      "depends_on": [
+        "A00",
+        "A02"
+      ],
+      "inputs": [
+        "query-seeds.json",
+        "geo-run-plan.json",
+        "Approved sessions or provider budget"
+      ],
+      "outputs": [
+        "observations.jsonl",
+        "geo-metrics.json"
+      ],
+      "acceptance": [
+        "Actual answers and source URLs preserved",
+        "UI/API/retrieval never merged"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "consumer_ai_sessions_or_search_provider"
+      ]
+    },
+    {
+      "id": "A10",
+      "agent": "publishing-agent",
+      "action": "Map prepared edits to actual CMS source then apply authorized fields",
+      "status": "waiting_access",
+      "depends_on": [
+        "A05",
+        "A06"
+      ],
+      "inputs": [
+        "Actual CMS object mapping",
+        "Explicit write scope",
+        "Fresh pre-write version"
+      ],
+      "outputs": [
+        "cms-write-result.json",
+        "post-publish-checks.json",
+        "release-manifest.json"
+      ],
+      "acceptance": [
+        "Read-back and rendered checks pass",
+        "Rollback prepared",
+        "Existing product not drafted to stage a change"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "commerce_write_or_site_deploy_capability"
+      ],
+      "prepared_artifacts": [
+        "release-manifest.json"
+      ]
+    },
+    {
+      "id": "A11",
+      "agent": "analysis-agent",
+      "action": "Measure outcomes and generate next batch from real observations",
+      "status": "waiting_data",
+      "depends_on": [
+        "A08",
+        "A09",
+        "A10"
+      ],
+      "inputs": [
+        "Measured search/order/AI results and release log"
+      ],
+      "outputs": [
+        "weekly-report.html",
+        "next-batch.json"
+      ],
+      "acceptance": [
+        "No synthetic results",
+        "Stock/promotion/release effects recorded"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "post_change_real_observations"
+      ]
+    },
+    {
+      "id": "A12",
+      "agent": "facts-agent",
+      "action": "Resolve only blocked numerical claims from authoritative source or real instrument data",
+      "status": "blocked_claim",
+      "depends_on": [
+        "A02"
+      ],
+      "inputs": [
+        "Matching model/version authority or real measurement logs"
+      ],
+      "outputs": [
+        "claim-resolution.json"
+      ],
+      "acceptance": [
+        "37g/39g not decided by model confidence",
+        "No invented weight/runtime/timing"
+      ],
+      "completion_scope": "not_executed",
+      "missing_capability_or_data": [
+        "authoritative_source_or_physical_measurement"
+      ]
+    }
+  ]
+}

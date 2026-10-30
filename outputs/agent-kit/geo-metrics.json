@@ -1,0 +1,6 @@
+{
+  "status": "not_run",
+  "observation_count": 0,
+  "reason": "No consumer session or funded search provider was provisioned for this run. No invented baseline.",
+  "groups": []
+}

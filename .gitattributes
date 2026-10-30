@@ -1,0 +1,4 @@
+* text=auto eol=lf
+outputs/agent-kit/evidence/*.txt -text -diff
+*.zip -text -diff
+*.png -text -diff

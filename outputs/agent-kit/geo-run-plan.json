@@ -1,0 +1,50 @@
+{
+  "status": "not_run",
+  "queries_file": "query-seeds.json",
+  "consumer_en": [
+    "Google AI Mode",
+    "ChatGPT Search",
+    "Perplexity"
+  ],
+  "consumer_zh": [
+    "豆包",
+    "DeepSeek",
+    "Kimi"
+  ],
+  "weekly_sentinel_plan": {
+    "questions_per_language": 8,
+    "languages": 2,
+    "platforms_per_language": 3,
+    "repetitions": 2,
+    "planned_attempts": 96
+  },
+  "execution": "Browser agent uses existing authorized sessions; provider API runs separately; no CAPTCHA or access-control bypass.",
+  "required_observation_fields": [
+    "run_id",
+    "query_id",
+    "surface",
+    "platform",
+    "locale",
+    "mode",
+    "status",
+    "captured_at",
+    "answer_text",
+    "citations",
+    "brand_mentioned",
+    "suitable_recommendation"
+  ],
+  "surface_values": [
+    "consumer",
+    "api_answer",
+    "search_retrieval"
+  ],
+  "status_values": [
+    "completed",
+    "no_ai_answer",
+    "error"
+  ],
+  "no_ai_answer_rule": "Counts as zero in successful end-to-end test denominator; errors excluded and reported.",
+  "source_rule": "Citations are URLs actually cited by the final answer, not every search candidate. Keep raw response and tool calls separately.",
+  "current_attempts": 0,
+  "current_live_results": 0
+}

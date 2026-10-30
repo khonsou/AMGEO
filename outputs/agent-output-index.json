@@ -1,0 +1,112 @@
+{
+  "packaged_date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "status": "verified_local_artifacts_not_deployed",
+  "files": [
+    {
+      "path": "RUN-AGENT.md",
+      "bytes": 3344,
+      "sha256": "71f4ad1415356948818046ec89534a2efe07795cb6f671b22711ee22577da342"
+    },
+    {
+      "path": "am-infinity-97.operations.json",
+      "bytes": 15830,
+      "sha256": "9a23e1b55fdfb6ebf5409646b7211155ddc1c19319b1343b8f7ff5e603b93dda"
+    },
+    {
+      "path": "battery-copy-drafts.json",
+      "bytes": 4311,
+      "sha256": "7b41159f028c25b090a30c88a11beaeb80ddfcb6dfe0ecb4675420312cf11dfd"
+    },
+    {
+      "path": "battery-mechanism.en.md",
+      "bytes": 1544,
+      "sha256": "33d7bbfa87399be60524aad4bacf28e991d335d39431ce19a52f0b8a54aa60a1"
+    },
+    {
+      "path": "battery-mechanism.zh-CN.md",
+      "bytes": 1514,
+      "sha256": "21579afe96bb5d5621d57608b28c57e51100b8b9f4af2df47668645b1515f1de"
+    },
+    {
+      "path": "capabilities.json",
+      "bytes": 630,
+      "sha256": "7ede1474bfd70d329702377b123a47ce42c38f00f81db484f3e499ff13f6b5af"
+    },
+    {
+      "path": "entity-url-map.json",
+      "bytes": 1627,
+      "sha256": "cb2607917fbf020bb2eecdb041a3a27bc90d280f3c883c4b1c92b37be730d2d3"
+    },
+    {
+      "path": "evidence/am-infinity-97.source.html.txt",
+      "bytes": 877086,
+      "sha256": "795d6dc1be89cb185f581c7f710d9f1bbe1ed1cd19558589ca76752c7e136062"
+    },
+    {
+      "path": "evidence/http-observations-2026-10-29.json",
+      "bytes": 4706,
+      "sha256": "c0c9a0cb038ee759bed386e36ed977cc9f55572d8e7af2b8ed8f81a04526722f"
+    },
+    {
+      "path": "geo-metrics.json",
+      "bytes": 181,
+      "sha256": "a0a74e001b8bde37787b68f9451167e82ae31daab00aced84df3adeea68354bf"
+    },
+    {
+      "path": "geo-run-plan.json",
+      "bytes": 1240,
+      "sha256": "06d71a8735bbda51df3a7881f6a9cd6e6d5f19a87b417c1b4b4799b0a08fad9a"
+    },
+    {
+      "path": "open-source-snapshot.json",
+      "bytes": 2823,
+      "sha256": "849bb72dcd7578447a6552cdbfa1a57503c8468dc97263e7da43fd42f052750b"
+    },
+    {
+      "path": "product-facts.json",
+      "bytes": 16706,
+      "sha256": "7c4f7a3585d60f8d128e93e45116d57f15fba9fa3caeeac479cadc8c4a9f84e6"
+    },
+    {
+      "path": "qa-results.json",
+      "bytes": 9111,
+      "sha256": "c62307242f0f54ea20e4e319018416642754a4cfdf05d34d5d1e168610ccf879"
+    },
+    {
+      "path": "query-seeds.json",
+      "bytes": 24021,
+      "sha256": "978ef6a8d5a442bf030fab205ca38dea058c480549765e37dc192b77b16105f5"
+    },
+    {
+      "path": "release-manifest.json",
+      "bytes": 725,
+      "sha256": "9ab893757eb0ba82792ed9e318586109995300d2202e95b110e9caad14a4b080"
+    },
+    {
+      "path": "route-repair-task.json",
+      "bytes": 754,
+      "sha256": "9fbc14f3da2c86d238c903cd98934251295994f7b07ab95a73082cae4f3e6ca4"
+    },
+    {
+      "path": "routing-audit.json",
+      "bytes": 5171,
+      "sha256": "f3b12db45ed5a9be2aff0a2ec798b6ad5b5e06637eca81c07acb9938620131d4"
+    },
+    {
+      "path": "score_observations.py",
+      "bytes": 4585,
+      "sha256": "8298944ad430909d3c53c9842ae335a7541f15227761205ce870c3a02df3ca8d"
+    },
+    {
+      "path": "tasks.json",
+      "bytes": 8477,
+      "sha256": "65311a4c20b53d9ef871cf437434638bc916884f3ecf9481bede9c7584ae4d92"
+    },
+    {
+      "path": "validate_batch.py",
+      "bytes": 5793,
+      "sha256": "366c50d99a055c36757774ab9a40adbca25f3a3de302cfb20368aac86fbc581f"
+    }
+  ]
+}

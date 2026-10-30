@@ -1,0 +1,10 @@
+---
+description: AM SEO project scope, agent execution and evidence rules
+alwaysApply: true
+---
+
+Follow the repository-root AGENTS.md for all work in this project.
+Execute available tasks and verify actual outputs; do not substitute routine human assignments.
+Read outputs/agent-kit/tasks.json for current dependencies and completed artifacts.
+Keep unsupported product claims local to their conflict; continue independent tasks.
+Use config/upstreams.lock.json to verify upstream source versions.

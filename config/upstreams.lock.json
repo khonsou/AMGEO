@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "project": "AM SEO",
+  "fetched_at_utc": "2026-10-29T17:55:43Z",
+  "upstreams": [
+    {
+      "name": "openhands-sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk.git",
+      "path": "vendor/openhands-sdk",
+      "commit": "641e161178cb934f38afcbe603125950611d1668",
+      "default_branch": "main",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "coding-agent-executor"
+    },
+    {
+      "name": "gh-aw",
+      "url": "https://github.com/github/gh-aw.git",
+      "path": "vendor/gh-aw",
+      "commit": "e6afe3424d9c253eb4b7a26ffc595647e66eac9f",
+      "default_branch": "main",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "github-agentic-orchestration"
+    },
+    {
+      "name": "crawl4ai",
+      "url": "https://github.com/unclecode/crawl4ai.git",
+      "path": "vendor/crawl4ai",
+      "commit": "888299fb5f0b82181897dc0e61bfb4b036f0aea5",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "site-crawl-and-extraction"
+    },
+    {
+      "name": "marketingskills",
+      "url": "https://github.com/coreyhaines31/marketingskills.git",
+      "path": "vendor/marketingskills",
+      "commit": "820ad2c1c0ac4cc350158bd7912c753681a7d173",
+      "default_branch": "main",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "seo-geo-marketing-skills"
+    },
+    {
+      "name": "promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo.git",
+      "path": "vendor/promptfoo",
+      "commit": "1b4dff170a589a31bbd57d4878e1abc59ef80655",
+      "default_branch": "main",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "repeatable-ai-answer-evaluation"
+    },
+    {
+      "name": "browser-use",
+      "url": "https://github.com/browser-use/browser-use.git",
+      "path": "vendor/browser-use",
+      "commit": "2cc71890e65056b67fdb29d98bb407749c15bb08",
+      "default_branch": "main",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "browser-agent-executor"
+    },
+    {
+      "name": "playwright",
+      "url": "https://github.com/microsoft/playwright.git",
+      "path": "vendor/playwright",
+      "commit": "38fb53bf4c181abb91f1ca2a2ab741983c5d177c",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE",
+      "fetched_at_utc": "2026-10-29T17:55:43Z",
+      "role": "deterministic-browser-verification"
+    }
+  ]
+}
