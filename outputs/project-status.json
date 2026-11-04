@@ -1,12 +1,12 @@
 {
   "project": "Angry Miao SEO/GEO",
-  "generated_at_utc": "2026-10-30T07:35:54.705091+00:00",
+  "generated_at_utc": "2026-11-04T10:05:55.217437+00:00",
   "execution_mode": "offline",
   "status": "passed",
   "validation_exit_code": 0,
   "validation": {
     "status": "passed",
-    "validated_at_utc": "2026-10-30T07:35:54.697909+00:00",
+    "validated_at_utc": "2026-11-04T10:05:55.205733+00:00",
     "checks_total": 87,
     "fact_records": 11,
     "operations": 13,

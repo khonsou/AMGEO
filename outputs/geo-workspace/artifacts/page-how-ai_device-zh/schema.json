@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "怎样把语音输入和设备控制接入日常工作流？",
+  "url": "https://store.angrymiao.com/zh/tools/voice-workflow-checklist/",
+  "inLanguage": "zh-CN",
+  "description": "选一个真实任务，明确语音输入、目标应用和设备控制接口；先用已有软件完成基线，再核对权限、数据去向与失败时的人工接管方式。",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "语音工作流规划器",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "选一个真实任务，明确语音输入、目标应用和设备控制接口；先用已有软件完成基线，再核对权限、数据去向与失败时的人工接管方式。"
+  }
+}

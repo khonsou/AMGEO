@@ -4,11 +4,29 @@
   "slug": "am-seo",
   "brand": {
     "name": "Angry Miao",
-    "aliases": ["怒喵", "怒喵科技", "angrymiao"]
+    "aliases": [
+      "怒喵",
+      "怒喵科技",
+      "angrymiao"
+    ],
+    "product_categories": [
+      "电竞鼠标（AM Infinity Mouse）",
+      "AI device（如 CYBERBOARD R6）"
+    ],
+    "scope_source": "Latest user-defined direction, 2026-11-01 current chat, overrides keyboard-core positioning in older references; specific product functions require matching evidence.",
+    "positioning": "Future Art Community / 未来艺术社区"
   },
   "markets": [
-    {"locale": "zh-CN", "market": "CN", "status": "in_scope"},
-    {"locale": "en-US", "market": "US", "status": "initial_market_assumption"}
+    {
+      "locale": "zh-CN",
+      "market": "CN",
+      "status": "in_scope"
+    },
+    {
+      "locale": "en-US",
+      "market": "US",
+      "status": "initial_market_assumption"
+    }
   ],
   "public_domains": [
     "www.angrymiao.com",
@@ -27,5 +45,6 @@
   "live_provider_calls_configured": false,
   "production_site_connected": false,
   "recurring_service_configured": false,
-  "note": "Public research and local execution scope. These values do not grant account access, production publishing or external-message authority."
+  "note": "Public research and local execution scope. These values do not grant account access, production publishing or external-message authority.",
+  "brand_context": "config/brand-context.json"
 }

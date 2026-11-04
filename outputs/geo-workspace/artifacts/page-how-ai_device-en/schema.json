@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How do I add voice input and device control to my workflow?",
+  "url": "https://store.angrymiao.com/en/tools/voice-workflow-checklist/",
+  "inLanguage": "en-US",
+  "description": "Choose one real task and identify voice input, the target app and the device-control integration. Establish a baseline with existing software, then verify permissions, data handling and manual recovery.",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "Voice workflow planner",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "Choose one real task and identify voice input, the target app and the device-control integration. Establish a baseline with existing software, then verify permissions, data handling and manual recovery."
+  }
+}

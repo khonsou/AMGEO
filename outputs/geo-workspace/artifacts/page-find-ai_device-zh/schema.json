@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "什么桌面 AI 工具适合语音输入和设备控制？",
+  "url": "https://store.angrymiao.com/zh/tools/ai-workflow-fit/",
+  "inLanguage": "zh-CN",
+  "description": "把语音转文字、应用控制和设备控制分开评估。先确认软件集成、系统兼容和失败时的手动退路，再决定是否需要独立硬件。",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "AI 工作流适配器",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "把语音转文字、应用控制和设备控制分开评估。先确认软件集成、系统兼容和失败时的手动退路，再决定是否需要独立硬件。"
+  }
+}

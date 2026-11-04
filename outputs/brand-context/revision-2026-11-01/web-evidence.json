@@ -1,0 +1,97 @@
+{
+  "source_date_not_observation_time": true,
+  "scope": "public search retrieval and public page text only; no consumer AI answer measurements or hardware interaction",
+  "records": [
+    {
+      "url": "https://www.angrymiao.com/en/",
+      "tool_ref": "turn85view2",
+      "method": "direct_text_open",
+      "source_published_at": null,
+      "observed": "Brand Future Art Community visible; body extraction returned only shell",
+      "supports": "brand positioning phrase",
+      "does_not_support": "missing page content, indexing failure or traffic",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    },
+    {
+      "url": "https://www.angrymiao.com/en/the-novel-project/",
+      "tool_refs": [
+        "turn83search10",
+        "turn84view0"
+      ],
+      "methods": [
+        "search_result_full_text",
+        "direct_text_open"
+      ],
+      "source_published_at": null,
+      "observed": "Search retrieval describes community-origin design story; direct body extraction returned shell",
+      "supports": "historical community story lead for source verification",
+      "does_not_support": "current open recruitment, current eligibility or ongoing activity",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    },
+    {
+      "url": "https://ammaster.angrymiao.com/",
+      "tool_refs": [
+        "turn84search2",
+        "turn85view1"
+      ],
+      "methods": [
+        "search_result_full_text",
+        "direct_text_open"
+      ],
+      "source_published_at": null,
+      "observed": "Search retrieval index lists mechanical keyboard models including cb-r6; direct body returned shell",
+      "supports": "model-specific official entry lead",
+      "does_not_support": "device operation, software compatibility or successful configuration",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    },
+    {
+      "url": "https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon",
+      "tool_refs": [
+        "turn84search0",
+        "turn85view0"
+      ],
+      "methods": [
+        "search_result_full_text",
+        "direct_text_open"
+      ],
+      "source_published_at": null,
+      "observed": "Search text and later direct opening differ in hero/offer. Direct page describes CYBERBOARD AI while alt text uses R6; shipping month placeholder and preproduction-adjustment disclaimer present. No commercial or performance figures adopted.",
+      "supports": "naming/edition audit and release-term verification priority",
+      "does_not_support": "AI and R6 fully equivalent editions, confirmed delivery, production hardware performance, current payment terms elsewhere",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    },
+    {
+      "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+      "tool_ref": "turn86view1",
+      "method": "direct_text_open",
+      "source_published_at": null,
+      "observed": "Model-specific .97 body readable; conflicting wired weights and swap/charge wording remain. Cart/sold-out and yearless presale notices coexist. No figures adopted.",
+      "supports": "scope separation and claim quarantine",
+      "does_not_support": "current stock, original-model specifications, independent performance or resolved weight",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    },
+    {
+      "url": "https://store.angrymiao.com/products/am-infinity-mouse",
+      "method": "root_agent_public_page_read_shared_with_research_agent",
+      "observed": "Root reports original model heading and software/configuration entry; no numeric or commercial assertions adopted",
+      "source_published_at": null,
+      "supports": "separate original-model source URL",
+      "does_not_support": "same specifications as .97, current stock or hardware validation",
+      "observed_date": "2026-11-01",
+      "observed_at_exact": null
+    }
+  ],
+  "user_direction": {
+    "at": "2026-11-01",
+    "authority": "current explicit user correction",
+    "adopted": "esports mouse AM Infinity Mouse + AI device e.g.CYBERBOARD R6",
+    "supersedes": "legacy references keyboard-core product priority"
+  },
+  "research_started_at": "2026-11-01T10:30:39+00:00",
+  "time_note": "Research start is not a single timestamp shared by all page reads. Exact per-record read times are not available; source publication dates remain unknown."
+}

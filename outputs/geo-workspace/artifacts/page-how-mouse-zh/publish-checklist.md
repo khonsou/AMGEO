@@ -1,0 +1,11 @@
+目标：https://store.angrymiao.com/zh/tools/battery-rotation-planner/
+问题：怎样安排鼠标备用电池轮换，减少插线使用？
+
+- [ ] 在本地预览实际操作工具并核对输出
+- [ ] 按型号/市场复核事实、来源和 FAQ
+- [ ] 映射真实站点模板；配置可访问的工具脚本与样式
+- [ ] 发布前移除草稿 noindex 与草稿提示，设置实际 canonical
+- [ ] 加入站内链接和 sitemap，验证 robots/CDN
+- [ ] 在工作台检查线上，再使用原固定 GEO 题组复测
+
+这是本地内容包；不是已应用的网站源码补丁。

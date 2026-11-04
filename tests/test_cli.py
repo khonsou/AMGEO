@@ -58,6 +58,22 @@ class ProjectCliTests(unittest.TestCase):
         self.assertTrue(upstreams)
         self.assertTrue(all(repo['status'] == 'pending' for repo in upstreams))
 
+    def test_status_reads_live_workflow_without_interrupting_it(self):
+        path = self.fixture / 'outputs/runtime/console/workflow/state.json'
+        path.parent.mkdir(parents=True)
+        workflow = {'strategy': {'version': 2}, 'cycles': [{'id': 'C-fixture', 'number': 1,
+                    'status': 'executing', 'phase': 'execute', 'strategy_version': 1,
+                    'tasks': [{'status': 'running'}, {'status': 'ready'}]}]}
+        path.write_text(json.dumps(workflow), encoding='utf-8')
+        before = path.read_bytes()
+        completed = self.invoke('status', '--json')
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        result = json.loads(completed.stdout)['workflow']
+        self.assertEqual(result['strategy_version'], 2)
+        self.assertEqual(result['latest_cycle']['status'], 'executing')
+        self.assertEqual(result['latest_task_counts'], {'running': 1, 'ready': 1})
+        self.assertEqual(path.read_bytes(), before)
+
     def test_offline_run_validates_only_the_temporary_copy_and_records_scope(self):
         metrics_path = self.fixture / 'outputs' / 'agent-kit' / 'geo-metrics.json'
         metrics_before = metrics_path.read_bytes()

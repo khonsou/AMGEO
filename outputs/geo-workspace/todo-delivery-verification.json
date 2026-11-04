@@ -1,0 +1,67 @@
+{
+  "verified_at": "2026-11-04T10:04:59+00:00",
+  "entry": "http://127.0.0.1:8787/#todo",
+  "unit_tests": {
+    "passed": 134,
+    "failed": 0
+  },
+  "offline_checks": {
+    "passed": 87,
+    "failed": 0
+  },
+  "javascript_syntax": "passed",
+  "diff_whitespace": "passed",
+  "provider": "deepseek",
+  "model": "deepseek-flash",
+  "measurement_scope": "API/no-search; literal brand or product presence; discovery and branded groups separate",
+  "run_id": "R-5d42d1669b26",
+  "run_status": "completed",
+  "groups": [
+    {
+      "locale": "zh-CN",
+      "test_group": "discovery",
+      "planned": 2,
+      "successful_tests": 2,
+      "hits": 0,
+      "errors": 0,
+      "not_run": 0,
+      "no_ai_answers": 0,
+      "score": 0.0
+    },
+    {
+      "locale": "zh-CN",
+      "test_group": "branded",
+      "planned": 2,
+      "successful_tests": 2,
+      "hits": 2,
+      "errors": 0,
+      "not_run": 0,
+      "no_ai_answers": 0,
+      "score": 100.0
+    },
+    {
+      "locale": "en-US",
+      "test_group": "discovery",
+      "planned": 2,
+      "successful_tests": 2,
+      "hits": 0,
+      "errors": 0,
+      "not_run": 0,
+      "no_ai_answers": 0,
+      "score": 0.0
+    },
+    {
+      "locale": "en-US",
+      "test_group": "branded",
+      "planned": 2,
+      "successful_tests": 2,
+      "hits": 1,
+      "errors": 0,
+      "not_run": 0,
+      "no_ai_answers": 0,
+      "score": 50.0
+    }
+  ],
+  "live_storefront_writes": 0,
+  "new_miss_content": "5 evidence-linked Todo; drafts not prepared or published"
+}

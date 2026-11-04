@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "created_date": "2026-11-04",
+  "description": "基于用户确认的品牌双主线与四类需求反推；候选问题不是搜索量或真实用户记录。工具/指南每个具体问题对应一个页面；中英文分别服务本地语言。",
+  "intents": {
+    "find": {
+      "label": "找工具 / 选产品",
+      "pattern": "best XX tool",
+      "page": "工具页 / 对比页"
+    },
+    "alternatives": {
+      "label": "找替代",
+      "pattern": "XX alternatives",
+      "page": "替代方案页"
+    },
+    "how": {
+      "label": "怎么做",
+      "pattern": "how to XX",
+      "page": "操作指南 + 工具"
+    },
+    "facts": {
+      "label": "查事实",
+      "pattern": "价格 / 尺寸 / 参数",
+      "page": "直接答案 + FAQ"
+    }
+  },
+  "questions": [
+    {
+      "id": "find-mouse-zh",
+      "intent": "find",
+      "product_line": "mouse",
+      "locale": "zh-CN",
+      "prompt": "可换电池的电竞鼠标怎么选？",
+      "page_title": "鼠标选择器",
+      "path": "/zh/tools/swap-mouse-selector/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "find-mouse-en",
+      "intent": "find",
+      "product_line": "mouse",
+      "locale": "en-US",
+      "prompt": "Which gaming mouse with a swappable battery fits me?",
+      "page_title": "Mouse selector",
+      "path": "/en/tools/swap-mouse-selector/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "find-ai_device-zh",
+      "intent": "find",
+      "product_line": "ai_device",
+      "locale": "zh-CN",
+      "prompt": "什么桌面 AI 工具适合语音输入和设备控制？",
+      "page_title": "AI 工作流适配器",
+      "path": "/zh/tools/ai-workflow-fit/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "find-ai_device-en",
+      "intent": "find",
+      "product_line": "ai_device",
+      "locale": "en-US",
+      "prompt": "Which desktop AI tools fit voice input and device control?",
+      "page_title": "AI workflow fit checker",
+      "path": "/en/tools/ai-workflow-fit/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "how-mouse-zh",
+      "intent": "how",
+      "product_line": "mouse",
+      "locale": "zh-CN",
+      "prompt": "怎样安排鼠标备用电池轮换，减少插线使用？",
+      "page_title": "电池轮换规划器",
+      "path": "/zh/tools/battery-rotation-planner/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "how-mouse-en",
+      "intent": "how",
+      "product_line": "mouse",
+      "locale": "en-US",
+      "prompt": "How do I plan a gaming mouse battery rotation?",
+      "page_title": "Battery rotation planner",
+      "path": "/en/tools/battery-rotation-planner/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "how-ai_device-zh",
+      "intent": "how",
+      "product_line": "ai_device",
+      "locale": "zh-CN",
+      "prompt": "怎样把语音输入和设备控制接入日常工作流？",
+      "page_title": "语音工作流规划器",
+      "path": "/zh/tools/voice-workflow-checklist/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "how-ai_device-en",
+      "intent": "how",
+      "product_line": "ai_device",
+      "locale": "en-US",
+      "prompt": "How do I add voice input and device control to my workflow?",
+      "page_title": "Voice workflow planner",
+      "path": "/en/tools/voice-workflow-checklist/",
+      "selected": true,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "alternatives-mouse-zh",
+      "intent": "alternatives",
+      "product_line": "mouse",
+      "locale": "zh-CN",
+      "prompt": "AM Infinity Mouse 有哪些替代方案？",
+      "page_title": "替代方案对比页",
+      "path": "/zh/guides/swappable-mouse-alternatives/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "alternatives-mouse-en",
+      "intent": "alternatives",
+      "product_line": "mouse",
+      "locale": "en-US",
+      "prompt": "What are the alternatives to AM Infinity Mouse?",
+      "page_title": "Alternatives comparison",
+      "path": "/en/guides/swappable-mouse-alternatives/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "alternatives-ai_device-zh",
+      "intent": "alternatives",
+      "product_line": "ai_device",
+      "locale": "zh-CN",
+      "prompt": "CYBERBOARD R6 之外，有哪些桌面 AI 方案？",
+      "page_title": "替代方案对比页",
+      "path": "/zh/guides/desktop-ai-alternatives/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "alternatives-ai_device-en",
+      "intent": "alternatives",
+      "product_line": "ai_device",
+      "locale": "en-US",
+      "prompt": "What desktop AI alternatives to CYBERBOARD R6 should I compare?",
+      "page_title": "Alternatives comparison",
+      "path": "/en/guides/desktop-ai-alternatives/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "facts-mouse-zh",
+      "intent": "facts",
+      "product_line": "mouse",
+      "locale": "zh-CN",
+      "prompt": "AM Infinity Mouse .97 的重量、尺寸和价格是多少？",
+      "page_title": "直接答案与 FAQ",
+      "path": "/zh/guides/infinity-97-facts/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "facts-mouse-en",
+      "intent": "facts",
+      "product_line": "mouse",
+      "locale": "en-US",
+      "prompt": "What are the weight, dimensions and price of AM Infinity Mouse .97?",
+      "page_title": "Direct answers and FAQ",
+      "path": "/en/guides/infinity-97-facts/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "facts-ai_device-zh",
+      "intent": "facts",
+      "product_line": "ai_device",
+      "locale": "zh-CN",
+      "prompt": "CYBERBOARD R6 支持哪些 AI 功能，哪些需要外部软件？",
+      "page_title": "能力边界与 FAQ",
+      "path": "/zh/guides/cyberboard-r6-facts/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    },
+    {
+      "id": "facts-ai_device-en",
+      "intent": "facts",
+      "product_line": "ai_device",
+      "locale": "en-US",
+      "prompt": "Which CYBERBOARD R6 AI features require external software?",
+      "page_title": "Capability answers and FAQ",
+      "path": "/en/guides/cyberboard-r6-facts/",
+      "selected": false,
+      "basis": "brand_intent_inference",
+      "validation_status": "candidate_not_search_volume",
+      "source_ids": [
+        "brand-direction",
+        "brand-context",
+        "product-facts"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "brand-direction",
+      "title": "用户确认的品牌核心方向",
+      "date": "2026-11-01",
+      "scope": "AM Infinity Mouse 电竞鼠标 + AI device（如 CYBERBOARD R6）"
+    },
+    {
+      "id": "brand-context",
+      "path": "config/brand-context.json",
+      "scope": "策划输入；不代表已验证的人群分布"
+    },
+    {
+      "id": "product-facts",
+      "path": "outputs/agent-kit/product-facts.json",
+      "scope": "型号与来源限定；冲突重量不采用"
+    }
+  ],
+  "guidance_sources": [
+    {
+      "title": "OpenAI 搜索爬虫规则",
+      "url": "https://developers.openai.com/api/docs/bots",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "title": "Perplexity 爬虫规则",
+      "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "title": "Google AI 搜索与结构化数据",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "title": "Product 结构化数据",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/product",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "title": "GA4 AI Assistant 默认渠道",
+      "url": "https://support.google.com/analytics/answer/9756891?hl=en",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "title": "DeepSeek Chat Completions 与推理参数",
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "checked_date": "2026-11-04"
+    }
+  ]
+}

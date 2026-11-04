@@ -1,0 +1,162 @@
+[
+  {
+    "task_index": 0,
+    "result": {
+      "summary": "电竞鼠标：完成TA发现意图与体验判断稿：本地产物完成，未发布、未实测消费者AI或硬件。",
+      "deliverables": [
+        {
+          "title": "06-mouse-discovery-draft.md",
+          "content": "# AM Infinity Mouse：电竞发现与体验判断稿\n\n状态：2026-11-01 本地中英审阅稿，未发布、未进行硬件测试。用户当前将 AM Infinity Mouse 电竞鼠标列为品牌核心主线。家族定位不能用于合并原版、.97或其他变体事实。\n\n## 发现阶段 · A 技术/性能使用者\n\nZH 标题：一只电竞鼠标，先从你的手和游戏开始。\n\n选电竞鼠标时，把握姿、手型和常玩的游戏放在参数前面。比较轮廓、接触点、按键与移动时的控制感，再核对连接、配置和供电方式。AM Infinity Mouse 是本轮重点研究的产品线；具体哪一款适合你，需要准确型号与真实体验，不能由品牌或高报告率直接保证。\n\nEN headline: Start with your hand and your game.\n\nCompare a gaming mouse through grip, hand fit and the games you play. Look at its shape, contact points, buttons and control in motion, then check connectivity, settings and power design. AM Infinity Mouse is a priority product line in this round; choosing a specific version still requires accurate model information and real experience.\n\n渠道：非品牌搜索、AI发现问题、FPS/鼠标独立评测。候选问题：怎样判断一只轻量化电竞鼠标适合自己的握姿？/ How can I tell whether a lightweight gaming mouse suits my grip? 这是探索意图，不代表搜索量或推荐结果。\n\n## 理解阶段 · B 审美与设计使用者\n\nZH：看镂空和金属外观，也看手掌实际触点、表面和维护限制。设计图解释意图，实物和使用条件解释体验。材质不等同于更低延迟，也不保证所有人的舒适度。\n\nEN: Consider the open-frame design and material, alongside the real contact points, finish and care limits. A render explains an intention; real objects and stated conditions help explain an experience. Material alone does not establish lower latency or universal comfort.\n\n渠道：设计检索、桌搭/实物开箱、评测。对应证据槽：准确变体、实物照片权利、手型/握姿、拍摄与使用条件、已知局限。\n\n## 入门/购买前阶段 · C 尝鲜使用者\n\nZH：先分清版本，再理解换电与充电。换上备电池不等于电池瞬间充满；一次使用时间也不同于有备电池时的持续使用安排。购买前分别核实当前库存、发货和所在市场政策。\n\nEN: Identify the version first, then distinguish swapping from charging. Fitting a spare battery does not mean the battery has instantly recharged. A single-battery runtime is also different from a usage routine with a spare. Check stock, shipping and market-specific terms separately.\n\n渠道：社区入门、搜索FAQ、官方产品/帮助承接。没有确定换电时长、续航、库存或交付数字。\n\n## 体验证据卡与本轮边界\n\n每张体验卡记录：型号/版本/市场、固件与软件、连接与设置、手长/手宽/握姿、游戏/桌面环境、作者与借测/赞助披露、观察与限制、源日期和核读时间。手型与体验不采集真实个人信息，本轮只制定公开评测记录字段。\n\n品牌规格与独立硬件性能分开；报告率、采样率与端到端延迟分开；不把形状或重量推导为胜率。37g/39g冲突继续隔离，不按模型信心选择；不把.97数据覆盖原版。\n\n本轮直接核读的 [.97官方产品页](https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse)仍可见版本与措辞冲突，且购买状态展示和无年份预售文字并存。记录这些缺口不等于确认当前库存。本稿省略全部性能/重量/续航/价格数字，不能作为原版或其他变体的事实认证。\n\n验收：有中英实际内容，A/B/C各对应需要与阶段；电竞性能与实握适配不虚构；家族和型号分开；具备站外渠道与证据字段；无生产或硬件动作。\n\n\n原版独立入口：[AM INFINITY MOUSE](https://store.angrymiao.com/products/am-infinity-mouse)，由主Agent本轮公开核读并提供来源。与.97入口分开；这里只采用型号/入口，不采用原版数值或商业状态。\n"
+        },
+        {
+          "title": "02-intent-matrix.md",
+          "content": "# 电竞鼠标 / AI device：中英 TA 意图矩阵\n\n状态：探索准备完成，未运行。12组双语意图、24题；A/B/C各4组，鼠标与AI device各6组，品牌与非品牌各6组。用户2026-11-01双主线定位优先于旧refs键盘核心。无搜索量、竞争度、回答或分数。固定48题不变；机器可读JSON保存原哈希和去重规则。\n\n## BC1-A01 · TA A · mouse · non_branded · 比较\n\n需要：电竞实握适配；渠道：search, ai\n\nZH：怎样判断一只轻量化电竞鼠标适合自己的握姿和游戏习惯？\n\nEN：How can I tell whether a lightweight gaming mouse suits my grip and the games I play?\n\n去重与范围：既有M04/M05适配主题相邻，不能改写后扩大计分分母\n\n## BC1-A02 · TA A · mouse · branded · 比较\n\n需要：性能宣传与实测分开；渠道：reviews, search\n\nZH：比较 AM Infinity Mouse 的不同版本时，哪些参数和体验必须按型号单独核对？\n\nEN：When comparing AM Infinity Mouse versions, which specifications and experiences need model-specific checks?\n\n去重与范围：既有M10高度重合，复用原题测量；此为内容拆解\n\n## BC1-A03 · TA A · ai_device · non_branded · 发现\n\n需要：AI硬件工作流价值；渠道：search, ai\n\nZH：带语音与硬件控制的桌面 AI 设备，怎样判断它是否真的适合我的工作流？\n\nEN：How can I judge whether a desktop AI device with voice and hardware control actually fits my workflow?\n\n去重与范围：新增探索意图；不暗示必须选AM\n\n## BC1-A04 · TA A · ai_device · branded · 理解\n\n需要：R6能力与名称边界；渠道：search, owned\n\nZH：CYBERBOARD R6 和 CYBERBOARD AI 的名称、软件版本与受支持动作应该怎样核实？\n\nEN：How should I verify the CYBERBOARD R6 and CYBERBOARD AI names, software version and supported actions?\n\n去重与范围：新增命名核对，不预设所有版本等同\n\n## BC1-B01 · TA B · mouse · non_branded · 理解\n\n需要：材质与体验取舍；渠道：reviews, search\n\nZH：金属镂空电竞鼠标应该怎样看真实触点、表面与日常使用限制？\n\nEN：How should I assess the contact points, finish and everyday limits of an open-frame metal gaming mouse?\n\n去重与范围：既有M03材料主题相邻，增加实物证据角度，非新基线\n\n## BC1-B02 · TA B · mouse · branded · 理解\n\n需要：原创设计与实物；渠道：reviews, owned\n\nZH：AM Infinity Mouse 的设计故事，哪些可以用对应版本的实物证据核对？\n\nEN：Which parts of the AM Infinity Mouse design story can be checked against real objects from the specific version?\n\n去重与范围：新增设计事实探针，无工艺数值\n\n## BC1-B03 · TA B · ai_device · non_branded · 发现\n\n需要：AI硬件存在理由；渠道：reviews, ai\n\nZH：桌面 AI 设备相对纯软件助手有什么设计取舍，评测应展示哪些实物体验？\n\nEN：What design trade-offs distinguish a desktop AI device from a software-only assistant, and what should a review demonstrate?\n\n去重与范围：新增探索意图；不预设硬件更优\n\n## BC1-B04 · TA B · ai_device · branded · 理解\n\n需要：品牌叙事与当前方向；渠道：community, owned\n\nZH：Angry Miao 的 Future Art Community 与 CYBERBOARD R6 的 AI device 方向怎样连接？\n\nEN：How does Angry Miao’s Future Art Community relate to the CYBERBOARD R6 AI-device direction?\n\n去重与范围：品牌定位问题，不作为AI能力验证\n\n## BC1-C01 · TA C · mouse · non_branded · 入门\n\n需要：换电机制理解；渠道：community, search\n\nZH：换电池的电竞鼠标和插线充电有什么区别，买之前要确认哪些配件？\n\nEN：How does a swappable-battery gaming mouse differ from plugging in to charge, and which accessories should I check?\n\n去重与范围：既有M02/M09高度重合；不重复追加计分\n\n## BC1-C02 · TA C · mouse · branded · 比较\n\n需要：版本入口清楚；渠道：search, owned\n\nZH：AM Infinity Mouse 原版与 .97 是同一款吗，如何找到各自的准确资料？\n\nEN：Are the original AM Infinity Mouse and the .97 the same model, and where can I find accurate information for each?\n\n去重与范围：既有M10高度重合；复用原题测量\n\n## BC1-C03 · TA C · ai_device · non_branded · 上手\n\n需要：AI边界与权限；渠道：community, ai\n\nZH：第一次使用带硬件控制的 AI 设备，怎样核实兼容性、权限和不能做的事？\n\nEN：Before using an AI device with hardware control, how can I check compatibility, permissions and limits?\n\n去重与范围：新增探索意图，未知不等于无此功能\n\n## BC1-C04 · TA C · ai_device · branded · 购买前核实\n\n需要：预热与交付事实；渠道：owned, search\n\nZH：CYBERBOARD AI 页面中的预热、定金和发货说明，哪些需要下单前重新确认？\n\nEN：Which CYBERBOARD AI teaser, reservation and shipping details should I reconfirm before placing an order?\n\n去重与范围：不代支付或承诺交付；别把占位符当日期\n\n验收：没有精确重复；语义重合逐条记录，高度重合未来复用旧题；新题仅探索，原48题和固定协议不改，消费者AI实测仍未执行。\n"
+        }
+      ],
+      "evidence_urls": [
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+        "https://store.angrymiao.com/products/am-infinity-mouse",
+        "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+        "https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon",
+        "https://www.angrymiao.com/en/the-novel-project/",
+        "https://ammaster.angrymiao.com/"
+      ],
+      "acceptance_checks": [
+        {
+          "criterion": "AM Infinity Mouse家族与原版/.97分开，提供实握、游戏及配置证据字段",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "交付中英电竞鼠标实际内容和三类TA探索问题，明确需要、阶段与渠道",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "不选择37g/39g，不编造性能/搜索量/分数，固定48题及面板不改",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        }
+      ]
+    }
+  },
+  {
+    "task_index": 1,
+    "result": {
+      "summary": "AI device：完成R6命名与能力边界卡：本地产物完成，未发布、未实测消费者AI或硬件。",
+      "deliverables": [
+        {
+          "title": "05-ai-device-clarity.md",
+          "content": "# CYBERBOARD R6 / AI device：发现、命名与能力边界卡\n\n2026-11-01 本地研究稿，未发布。用户当前将 CYBERBOARD R6 作为 AI device 方向代表；这项产品定位不自动验证具体 AI 功能。\n\n## 本轮一手观察\n\n[官方预热页](https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon)的正文名称为 CYBERBOARD AI，图片替代说明使用 R6。页面把语音输入、声音采集、硬件控制和桌面输入整合在一起，并描述软件内的配置及自动化。上述均为品牌在预热阶段的说明，非本项目独立验证。\n\n页面还有预量产调整声明、发货月份占位符、定金和权益信息；搜索检索与后续正文读取的首屏商业文案也不同。因此，价格、权益、发布日期、发货承诺及最终兼容性不进入本轮事实卡。我们没有登录、预订、支付或订阅。\n\n**命名结论**：可以记录 AI 与 R6 在同页出现，不能据此把任意 R6 文件、旧款 CYBERBOARD 手册和该预热产品视为完全相同的版本。不要采用旧 product.md 的 R4“最新量产”作为当前新产品说明。\n\n## 面向 TA 的具体问答候选\n\n**A · 电竞/AI 工作流**\n\nZH：它的“AI”具体指什么？官方预热资料介绍语音转写与针对受支持设备的硬件控制。使用范围、软件版本、权限和实际成功率仍需要按最终产品核实，不能由 AI 名称推断。\n\nEN: What does “AI” mean here? The brand’s teaser describes voice transcription and hardware control for supported devices. The final scope, software version, permissions and actual reliability still need to be checked for the released product.\n\n阶段：理解/比较；渠道：搜索、AI答案校对、专业评测。证据需求：版本、系统、受支持动作、失败/确认/撤销行为；验证状态 `not_tested`。\n\n**B · 原创硬件与桌面设计**\n\nZH：为什么它仍需要一件桌面硬件？这是本轮应解释的设计问题，不预设硬件一定比软件更好。对照实物、输入方式、声音与控制路径，展示整合带来的取舍。\n\nEN: Why make this a desktop device? Treat that as a design question, rather than assuming hardware is better than software. Examine the physical object and the trade-offs in input, audio and control.\n\n阶段：发现/理解；渠道：设计媒体、真实桌搭、创作者演示。证据需求：同版本实物和操作，AI氛围图不能替代。\n\n**C · 尝鲜与上手**\n\nZH：它能不能自动控制所有电脑和设备？现有资料只描述受支持范围，不能推广到全部设备、全部应用或无限制自动操作。下单与安装前应分别核实兼容性、依赖和购买条款。\n\nEN: Can it control every computer and device? The available information describes a supported scope, not universal control of all devices or apps. Check compatibility, dependencies and purchase terms separately before ordering or installing.\n\n阶段：入门/购买前核实；渠道：社区入门卡、搜索FAQ、官方承接。证据需求：最终兼容表、安装文档、当期地区/批次条款。\n\n## 明确未知\n\n未验证：离线能力、模型/云服务、隐私与数据保存、语音语言范围、执行权限与确认机制、误操作/撤销、延迟/准确率、各系统/应用实际兼容性、硬件量产状态。未知不等于没有；本稿不补造答案。\n\n任务验收：有公开出处；名称与版本不合并；品牌声明与测试分开；给出A/B/C问答与阶段渠道；不将预热、占位符或AI命名当作效果/交付证明。\n"
+        }
+      ],
+      "evidence_urls": [
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+        "https://store.angrymiao.com/products/am-infinity-mouse",
+        "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+        "https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon",
+        "https://www.angrymiao.com/en/the-novel-project/",
+        "https://ammaster.angrymiao.com/"
+      ],
+      "acceptance_checks": [
+        {
+          "criterion": "基于官方预热资料记录CYBERBOARD AI/R6同页命名线索，不认定所有版本等同",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "提供A/B/C中英问答、需要、阶段与渠道，品牌功能声明与独立验证分开",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "隔离预量产规格、发货占位符与未知AI范围，不推断离线/隐私/准确率",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        }
+      ]
+    }
+  },
+  {
+    "task_index": 2,
+    "result": {
+      "summary": "双主线：更新AM品牌与三类TA的中英表达：本地产物完成，未发布、未实测消费者AI或硬件。",
+      "deliverables": [
+        {
+          "title": "01-brand-gap.md",
+          "content": "# 本轮定位修订：电竞鼠标与 AI device\n\n状态：本地策略修订，2026-11-01。未发布、未运行消费者 AI 采样。以用户本轮明确的新定位为最高优先级：**AM Infinity Mouse 电竞鼠标 + 以 CYBERBOARD R6 为例的 AI device**。旧 references 的“机械键盘为核心”已降为历史背景，不作为当前产品优先级。\n\n## 资料继承与冲突处理\n\n用户指定的五份 references 固定提交为 `4396097272fe7d7455baf85404e594f98d22efb9`，源提交 2026-10-13；抓取时间记录在 source-manifest.json。保留 Future Art Community、原创设计、亚文化、真实体验、社区共创及坦诚表达的方法。它们是规划输入，不是消费者人口统计或产品实测。\n\n1. brand.md 的键盘核心与本轮用户新定位冲突：采用用户的电竞鼠标/AI device 双主线。\n2. product.md 的 R4 最新量产叙事已经不足以覆盖 R6/AI device：保留原文出处，新增命名与版本待核验，不能把 R4 规格挪给 R6。\n3. audience.md 的 A 编程极客不再被狭义理解为只买键盘：按技术/性能判断与工作流需要，分别覆盖电竞鼠标实际适配及 AI device 的交互边界。B 设计收藏、C 潮流尝鲜仍是规划假设，不假定所有客户属于这三类。\n4. visual.md 的冷峻负面清单与品牌治愈方向存在冲突：记录，不自动产生视觉或未经核实的产品图。\n\n## 双主线策略\n\n**电竞鼠标 / AM Infinity Mouse**：发现时回答握姿、手型、游戏、材料与换电取舍；比较时区分系列/版本、品牌性能宣传与独立实测；使用时提供准确软件与配置入口。电竞结果需要设备、固件、测试条件；不以高报告率或金属外壳推导胜率。A 重视实际控制与稳定性，B 重视形态材质与实物，C 需要容易理解的系列入口。\n\n**AI device / CYBERBOARD R6**：先解释它解决什么交互问题，以及语音、软件、Agent、硬件控制的具体边界。官方公开预热正文使用 CYBERBOARD AI，图片说明使用 R6；本轮只记录同页命名线索，不证明二者所有版本完全等同。AI 名称不证明智能水平、离线能力、隐私、延迟、全系统兼容或自动化安全。A 关注可验证工作流，B 关注硬件形态与设计理由，C 关注上手和生态边界。\n\n## 从营销框架转为可验收任务\n\n每任务记录 TA→需要→阶段→渠道→证据→实际产物→验收。采用需求与独有知识、价值与摩擦、差异化、事实化表达、分发与测量的检查步骤，不输出虚构关键词搜索量、竞争度或主观 SEO/GEO 分。\n\n站点承接型号、版本、限制与说明；搜索和 AI 发现问题；评测与创作者提供独立体验；社区提供真实反馈和参与。不能把所有优化缩成官网改字，也不能代造 UGC、发帖或用户引语。\n\n## 当前公开观察\n\n- .97 商店正文可读，仍同时存在冲突有线重量与换电/充电措辞。冲突继续隔离；不选择37g/39g，不采用当前数字作为实测或修正历史记录。[来源](https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse)\n- CYBERBOARD AI 预热页可读，包含 R6 图像说明、预量产调整声明和发货月份占位符。它支持命名/能力/交付信息核对任务，不支持实际交付日期或硬件效果结论。[来源](https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon)\n- The Novel Project 与 AM Master 的搜索检索可读，但直接正文仅取得品牌壳。它们是公开线索，不能据此断言页面缺失、现行征稿或设备操作成功。\n\n隔离：历史流量/财务/团队规模、历史价格、48h发货、售罄速度、全球首款、永不复刻范围、竞品负面概括和二手升值。来源时间与本轮执行时间分开。没有生产变更或新增授权。\n"
+        },
+        {
+          "title": "03-brand-message-draft.md",
+          "content": "# 电竞鼠标与 AI device：中英本地表达审阅稿\n\n状态：本地草稿，未发布、未发给任何媒体或社区。当前产品重点来自用户2026-11-01明确定位：AM Infinity Mouse 电竞鼠标 + AI device（如CYBERBOARD R6）。旧 references 的键盘核心仅作历史背景。\n\n## 品牌核心\n\nZH 标题：让你的操作与桌面，都有自己的态度。\n\nAngry Miao 以 Future Art Community 为品牌方向。本轮关注电竞鼠标与 AI device 两条主线：认真理解操作体验，也为原创硬件设计和社区参与留下位置。看懂设计理由、使用边界与真实体验，再决定什么适合你。\n\nEN headline: Make your setup feel like your own.\n\nAngry Miao’s Future Art Community connects original hardware design, experience and participation. This planning round focuses on AM Infinity Mouse gaming mice and AI devices such as CYBERBOARD R6. Explore the design choices, practical limits and real experience before deciding what belongs in your setup.\n\n这段为品牌表达，不承诺任何型号已有特定AI能力或电竞优势。\n\n## A 技术/性能判断与工作流\n\nZH：电竞鼠标先看握姿、手型与自己的游戏场景；AI device 先看输入、语音与硬件控制的具体边界。参数和功能名是起点，可核实的体验条件才是判断依据。\n\nEN: With a gaming mouse, start with grip, hand fit and the games you play. With an AI device, start with the boundaries of input, voice and hardware control. Specifications and feature names are a starting point; verifiable conditions help you make the decision.\n\n阶段：发现/比较/使用；渠道：搜索与AI问答、独立评测、官方帮助。标题候选：「先看适不适合，再看参数」/ “Start with fit, then check the claims.”\n\n## B 审美收藏与原创硬件\n\nZH：别只看远处的渲染图。近看鼠标的形态与触点，也看 AI device 如何进入真实桌面。设计理由值得解释，工艺与体验仍须对应实物、型号和版本。\n\nEN: Look beyond the distant render. Examine a mouse’s shape and contact points, and how an AI device sits in a real setup. Explain the design choices, while keeping materials and experience tied to an actual model and edition.\n\n阶段：发现/理解/信任；渠道：设计媒体、桌搭内容、实物开箱。标题候选：「让设计理由经得起近看」/ “Get closer to the reasons behind the design.” 不承诺收藏增值，不把AI图当实物证据。\n\n## C 潮流尝鲜与参与\n\nZH：第一次认识 AM，可以从产品想解决的问题开始。分清鼠标系列与 AI device，了解实际配置与参与入口。任何预购、现货或活动条件，都以对应市场和批次的当期说明为准。\n\nEN: New to AM? Start with the problem a product is meant to solve. Understand the mouse range and the AI-device direction, then check the setup and participation paths. Confirm preorder, stock and event terms for the relevant market and release.\n\n阶段：发现/上手/参与/购买前核实；渠道：创作者入门内容、社区说明卡、搜索问答。标题候选：「从看见，到看懂，再决定」/ “Discover it. Understand it. Then decide.” 不制造限时稀缺，不把历史活动写成当前开放。\n\n## 每条主线必须附的证据槽\n\n鼠标：具体版本、握姿/手型/游戏与设置条件、独立体验来源、软件入口、局限；不写未验证性能或37g/39g冲突数。\n\nAI device：具体名称/版本/阶段、官方功能声明与实际验证分开、系统与应用范围、联网/隐私/权限的已知和未知、可逆体验步骤；不从AI命名推断能力。\n\n参考：[用户指定品牌与TA资料](https://github.com/khonsou/CyberboardR6MarketingPlan/tree/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references)、[鼠标公开页面](https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse)、[AI device预热页面](https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon)。这些链接不是发布授权、硬件测试或消费者AI引用表现。未来实施前另存实际字段原值与版本；本稿未替换生产文案。\n"
+        }
+      ],
+      "evidence_urls": [
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+        "https://store.angrymiao.com/products/am-infinity-mouse",
+        "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+        "https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon",
+        "https://www.angrymiao.com/en/the-novel-project/",
+        "https://ammaster.angrymiao.com/"
+      ],
+      "acceptance_checks": [
+        {
+          "criterion": "用户电竞鼠标+AI device定位覆盖旧refs键盘核心，并明确继承与冲突",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "交付品牌核心与A/B/C三类TA的中英具体稿，兼顾双主线",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "品牌定位不作为人口统计或性能证明，不包含无依据价格/发货/稀缺/联名承诺",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        }
+      ]
+    }
+  },
+  {
+    "task_index": 3,
+    "result": {
+      "summary": "双主线：完成社区/创作者证据与参与brief：本地产物完成，未发布、未实测消费者AI或硬件。",
+      "deliverables": [
+        {
+          "title": "04-community-evidence-map.md",
+          "content": "# 社区与创作者证据地图：中英市场\n\n状态：本地研究与执行准备，2026-11-01。没有向任何社区、媒体、用户发消息，没有抓取私域，没有下载或复用 UGC 素材。\n\n## 当前可用证据\n\n1. **品牌层**：用户指定 brand.md 与 audience.md 说明社区共创、桌面身份表达和真实 UGC 的策略角色；它们支持规划方向，不证明每个平台的当期活跃度。\n2. **The Novel Project**：[官方页面](https://www.angrymiao.com/en/the-novel-project/)检索结果呈现来自社区设计的项目故事，本轮直接正文只有品牌壳。标记 `search-readable/direct-body-shell`；不能写“征稿正在开放”或自动邀请投稿。\n3. **型号配置导航**：[AM Master](https://ammaster.angrymiao.com/)检索结果列出键盘分类与 R6 项，直接正文同样只有品牌壳。标记 `search-readable/direct-body-shell`。这只是入口/命名线索，不证明浏览器或设备操作已成功。\n4. **新系列官方预热**：[CYBERBOARD AI](https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon)正文可读，并有 AI/R6 混用及发货月份占位符。标记 `body-readable/brand-claim/preproduction`；不采用价格、日期、性能承诺，不进行定金/订阅动作。\n\n## 中英渠道分工与可执行产物\n\n**中文 · ZFrontier / B站**：A/B 以鼠标握姿/手型/游戏条件、AI device交互边界、同版本真实外观证据为研究主题；C 以入门系列、活动状态为主题。当前只记录为 refs 指定的渠道；尚未确认官方账号 URL、当期作者或许可。可先形成创作者证据卡和问题清单，不代造帖子、用户评价或台词。\n\n**中文 · 微信群**：仅记录品牌资料中的渠道角色；无群入口/已授权会话，不加入、不读取、不发送。此依赖只阻塞私域素材验证，不阻塞本轮公开材料整理。\n\n**英文 · Discord / Reddit / X / 视频评测**：A 看电竞鼠标控制条件及AI device工作流；B 看双主线设计实物细节；C 看系列/参与/预购解释。当前没有核实具体官方邀请或作者授权；不声称已覆盖、已联络、已被引用。可先准备统一 brief 与事实槽，未来有授权时再实施。\n\n**官方承接**：官网负责电竞鼠标/AI device型号、设计理由、能力限制、帮助、活动状态等可核对信息，社区/评测负责独立体验与参与对话。二者互相链接的建议必须保留“拟议”，不能制造第三方认可。\n\n## 中英创作者 brief 模板（本轮已完成）\n\nZH：你面向哪类读者（A 电竞/AI工作流 / B 设计收藏 / C 初识 AM）？展示具体型号与版本、真实使用场景和你自己的判断。请区分品牌提供的信息、你实际体验的内容及未知项。展示鼠标操控、语音/硬件Agent或工艺时记录拍摄/配置条件；请保留局限，披露借测/赠品/赞助关系。若介绍参与方式或购买条件，请提供当期原链接。\n\nEN: Who is this for: A, gaming and AI-workflow users; B, design collectors; or C, people discovering AM? Identify the exact model and edition, show a real use context and keep your own judgment. Separate brand-provided information from what you actually experienced and what remains unknown. Record the conditions behind mouse-control, voice/agent or material demonstrations, retain limitations and disclose loans, gifts or sponsorship. Link to current participation or purchase terms when discussing them.\n\n## 证据卡验收规则\n\n每张卡记录：平台/URL、作者身份与披露、源发布时间、抓取时间、型号/版本/市场、使用条件、可支持主张、不能支持主张、素材权利状态。未获许可仅保存 URL 与必要的短摘录，不转载素材；搜索摘要不是完整体验或消费者 AI 引用。没有素材可明确留空，不生成“真实用户”。\n\n完成范围是地图与模板。任何对外 brief、素材复用、账号更改或发布必须有相关连接与明确范围；这不是把整理工作交回人类，而是限制依赖动作，Agent 可持续公开资料研究与本地产物制作。\n\n\n本轮定位优先级：用户2026-11-01的电竞鼠标+AI device方向覆盖旧refs的键盘核心。三类TA跨双主线应用，不按旧键盘品类分配预算或任务比例。\n"
+        }
+      ],
+      "evidence_urls": [
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+        "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+        "https://store.angrymiao.com/products/am-infinity-mouse",
+        "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+        "https://store.angrymiao.com/pages/cyberboard-ai-kickstarter-coming-soon",
+        "https://www.angrymiao.com/en/the-novel-project/",
+        "https://ammaster.angrymiao.com/"
+      ],
+      "acceptance_checks": [
+        {
+          "criterion": "中英站外渠道和实际核读范围分开，检索可读与正文壳分别标注",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "提供双主线中英创作者brief及证据卡验收规则，不伪造UGC或认可",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        },
+        {
+          "criterion": "不连接私域/发送消息/复用未授权素材，当前参与和购买条件保持待核实",
+          "passed": true,
+          "detail": "逐项核对配套实际内容，保留来源、未知项和未测状态。"
+        }
+      ]
+    }
+  }
+]

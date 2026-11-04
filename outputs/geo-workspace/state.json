@@ -1,0 +1,1502 @@
+{
+  "tasks": [
+    {
+      "id": "ai-crawlers",
+      "kind": "robots",
+      "title": "确认 AI 搜索爬虫能访问公开页面",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "crawl-policy.json",
+          "path": "outputs/geo-workspace/artifacts/ai-crawlers/crawl-policy.json",
+          "sha256": "75c46713690e2f90bfae7273349368378ca14fd40eb550c62e0dee088b55d4ed"
+        },
+        {
+          "filename": "check.md",
+          "path": "outputs/geo-workspace/artifacts/ai-crawlers/check.md",
+          "sha256": "97e08958f84b1fa3bacf4c6f2dab1419e68649360b83910e99b1de8ecf9cd1b1"
+        }
+      ],
+      "checks": [
+        {
+          "title": "www.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "取得 robots 规则文本",
+          "passed": false,
+          "detail": "https://www.angrymiao.com/robots.txt"
+        },
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "取得 robots 规则文本",
+          "passed": true,
+          "detail": "https://store.angrymiao.com/robots.txt"
+        },
+        {
+          "title": "store.angrymiao.com · OAI-SearchBot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        },
+        {
+          "title": "store.angrymiao.com · PerplexityBot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        },
+        {
+          "title": "store.angrymiao.com · bingbot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        }
+      ],
+      "steps": [
+        "检查官网与商城 robots.txt 的 OAI-SearchBot、PerplexityBot、bingbot 规则。",
+        "只放行需公开的产品与工具页；保留后台、购物车等限制。",
+        "用真实爬虫日志确认 CDN 放行；搜索放行与训练授权分别决定。"
+      ],
+      "acceptance": [
+        "两站点公开路径未被 robots 规则阻止",
+        "CDN / WAF 的真实爬虫访问证据"
+      ],
+      "prepared_at": "2026-11-04T05:34:47+00:00",
+      "completion_scope": "local_artifact_not_published",
+      "verification": {
+        "checked_at": "2026-11-04T05:34:55+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://www.angrymiao.com/robots.txt",
+            "final_url": "https://www.angrymiao.com/robots.txt",
+            "status": 200,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T05:34:54+00:00",
+            "sha256": "2bd7f592c891431db10bef783cd1e7bfcc1ea5a2bd81133173adb57158fb01db",
+            "path": "outputs/geo-workspace/checks/ai-crawlers/20261104T053455755485Z/0.txt",
+            "saved_text_sha256": "2bd7f592c891431db10bef783cd1e7bfcc1ea5a2bd81133173adb57158fb01db"
+          },
+          {
+            "url": "https://store.angrymiao.com/robots.txt",
+            "final_url": "https://store.angrymiao.com/robots.txt",
+            "status": 200,
+            "content_type": "text/plain",
+            "captured_at": "2026-11-04T05:34:55+00:00",
+            "sha256": "9905710ad04dcf5e344c769ee45560ff80c23b08d3bc47a32c24edcfc34b0d6e",
+            "path": "outputs/geo-workspace/checks/ai-crawlers/20261104T053455755485Z/1.txt",
+            "saved_text_sha256": "9905710ad04dcf5e344c769ee45560ff80c23b08d3bc47a32c24edcfc34b0d6e"
+          }
+        ]
+      },
+      "check_status": "needs_work",
+      "next_action": "先修复返回 HTML 的 robots.txt 路由：https://www.angrymiao.com/robots.txt",
+      "execution_done": false,
+      "execution_updated_at": "2026-11-04T10:02:19+00:00",
+      "completion_source": "ui_checkbox"
+    },
+    {
+      "id": "answer-schema",
+      "kind": "schema",
+      "title": "核对现有 Product 数据、直接答案与 FAQ",
+      "target_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "product-jsonld.json",
+          "path": "outputs/geo-workspace/artifacts/answer-schema/product-jsonld.json",
+          "sha256": "7e5051aa351ed3795ead306e72c91334ae28ddd32a2e841f2c520b21acac3c49"
+        },
+        {
+          "filename": "apply.md",
+          "path": "outputs/geo-workspace/artifacts/answer-schema/apply.md",
+          "sha256": "8d8aecfe9aeda2f6548af508c88849a5c18edf33809944661e19ffe9573e3072"
+        }
+      ],
+      "checks": [
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "页面 JSON-LD 均可解析",
+          "passed": true,
+          "detail": "2 / 2 块"
+        },
+        {
+          "title": "包含 Product 类型",
+          "passed": true,
+          "detail": "只检查类型与语法，不自动确认商品事实一致。"
+        }
+      ],
+      "steps": [
+        "在型号对应页直接回答价格、尺寸、重量、兼容性，字段须有来源。",
+        "添加与可见正文一致的 Product / WebPage 数据；价格库存取商城实时值。",
+        "校验 JSON 并与页面逐字段核对；冲突字段继续省略。"
+      ],
+      "acceptance": [
+        "JSON-LD 可解析且包含 Product",
+        "价格、型号与页面可见内容逐字段一致",
+        "不把 FAQ 标记当作 AI 推荐保证"
+      ],
+      "prepared_at": "2026-11-04T05:34:47+00:00",
+      "completion_scope": "local_artifact_not_published",
+      "verification": {
+        "checked_at": "2026-11-04T05:34:57+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "final_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "status": 200,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T05:34:57+00:00",
+            "sha256": "9a91546669829281172c29eb340dd113b5e1ab089e387dbda104dfe5d3cab375",
+            "path": "outputs/geo-workspace/checks/answer-schema/20261104T053457793493Z/0.txt",
+            "saved_text_sha256": "9a91546669829281172c29eb340dd113b5e1ab089e387dbda104dfe5d3cab375"
+          }
+        ]
+      },
+      "check_status": "passed",
+      "next_action": "页面已有 Product 标记，避免重复添加；下一步核对字段与可见正文一致。"
+    },
+    {
+      "id": "ai-traffic",
+      "kind": "traffic",
+      "title": "单独记录 AI 带来的访问与关键事件",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "tracking.md",
+          "path": "outputs/geo-workspace/artifacts/ai-traffic/tracking.md",
+          "sha256": "6ee57f252f9dc63bbf1f20715810e83bfbf5586cc0184025535dba850816fdb8"
+        },
+        {
+          "filename": "source-rules.json",
+          "path": "outputs/geo-workspace/artifacts/ai-traffic/source-rules.json",
+          "sha256": "b2b36e53cc1d97ddfd3c0d27b851cf2fb2c469bba6055f998fe48ad2136e95d2"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "GA4 流量获取选择会话维度，查看 AI Assistant 渠道。",
+        "按来源/媒介导出 Sessions、Key events 聚合报表和日期范围。",
+        "在 AI 访问页导入；核对 ChatGPT、Perplexity 等来源，保留未归因访问。"
+      ],
+      "acceptance": [
+        "已导入有站点与时间范围的真实聚合报表",
+        "会话与关键事件分开记录"
+      ],
+      "prepared_at": "2026-11-04T05:34:47+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-find-mouse-zh",
+      "kind": "page",
+      "title": "可换电池的电竞鼠标怎么选？",
+      "question": {
+        "id": "find-mouse-zh",
+        "intent": "find",
+        "product_line": "mouse",
+        "locale": "zh-CN",
+        "prompt": "可换电池的电竞鼠标怎么选？",
+        "page_title": "鼠标选择器",
+        "path": "/zh/tools/swap-mouse-selector/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/swap-mouse-selector/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-zh/index.html",
+          "sha256": "356a35182e9c1f19a8bf7d5a8f57610c03fe288c6f1f17697cf5a300389c5fe8"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-zh/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-zh/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-zh/schema.json",
+          "sha256": "abe9c295186fa55330841529b6c605579d1cdbf6f3edc6e3d66aa9cf350fb0e7"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-zh/publish-checklist.md",
+          "sha256": "26d09b241bfbc728baf7b9fd4a9091889e21276329d30ad5f91bfd24d36b8ab2"
+        }
+      ],
+      "checks": [
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": false,
+          "detail": "404"
+        }
+      ],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:36:26+00:00",
+      "completion_scope": "local_artifact_not_published",
+      "verification": {
+        "checked_at": "2026-11-04T10:37:35+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/zh/tools/swap-mouse-selector/",
+            "final_url": "https://store.angrymiao.com/zh/tools/swap-mouse-selector/",
+            "status": 404,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T10:37:35+00:00",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "path": "outputs/geo-workspace/checks/page-find-mouse-zh/20261104T103735932023Z/0.txt",
+            "saved_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        ]
+      },
+      "check_status": "needs_work"
+    },
+    {
+      "id": "page-find-mouse-en",
+      "kind": "page",
+      "title": "Which gaming mouse with a swappable battery fits me?",
+      "question": {
+        "id": "find-mouse-en",
+        "intent": "find",
+        "product_line": "mouse",
+        "locale": "en-US",
+        "prompt": "Which gaming mouse with a swappable battery fits me?",
+        "page_title": "Mouse selector",
+        "path": "/en/tools/swap-mouse-selector/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/swap-mouse-selector/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-en/index.html",
+          "sha256": "dd0866c14b2f7131106e296bbd716d9a16bf658da7e823d5b207293fd439c8dc"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-en/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-en/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-en/schema.json",
+          "sha256": "dc48f9d05084330d0c15c900e8d3d023fd5642ffd07dd063812bd303e9baa47b"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-find-mouse-en/publish-checklist.md",
+          "sha256": "903b94bbf8a2607771f395d6f5aff050f64684b3e339f3cd9ee3a625b546ee78"
+        }
+      ],
+      "checks": [
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": false,
+          "detail": "404"
+        }
+      ],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:36:26+00:00",
+      "completion_scope": "local_artifact_not_published",
+      "verification": {
+        "checked_at": "2026-11-04T10:37:41+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/en/tools/swap-mouse-selector/",
+            "final_url": "https://store.angrymiao.com/en/tools/swap-mouse-selector/",
+            "status": 404,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T10:37:41+00:00",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "path": "outputs/geo-workspace/checks/page-find-mouse-en/20261104T103741264508Z/0.txt",
+            "saved_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        ]
+      },
+      "check_status": "needs_work"
+    },
+    {
+      "id": "page-find-ai_device-zh",
+      "kind": "page",
+      "title": "什么桌面 AI 工具适合语音输入和设备控制？",
+      "question": {
+        "id": "find-ai_device-zh",
+        "intent": "find",
+        "product_line": "ai_device",
+        "locale": "zh-CN",
+        "prompt": "什么桌面 AI 工具适合语音输入和设备控制？",
+        "page_title": "AI 工作流适配器",
+        "path": "/zh/tools/ai-workflow-fit/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/ai-workflow-fit/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-zh/index.html",
+          "sha256": "371416d7c25b480461ffae97e7d996d85e603485950efb8a0c711c4e3587a76f"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-zh/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-zh/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-zh/schema.json",
+          "sha256": "dbaca720b3588957d636db2366cee9c4352be5d04dd7ec02f405aa5594b0b3f4"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-zh/publish-checklist.md",
+          "sha256": "c2097f2e3763a7d366da5aefcb653d2c3b46ff1b05aaa76c6a9cb71c8bb7fe07"
+        }
+      ],
+      "checks": [
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": false,
+          "detail": "404"
+        }
+      ],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:36:26+00:00",
+      "completion_scope": "local_artifact_not_published",
+      "verification": {
+        "checked_at": "2026-11-04T10:37:44+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/zh/tools/ai-workflow-fit/",
+            "final_url": "https://store.angrymiao.com/zh/tools/ai-workflow-fit/",
+            "status": 404,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T10:37:44+00:00",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "path": "outputs/geo-workspace/checks/page-find-ai_device-zh/20261104T103744572531Z/0.txt",
+            "saved_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        ]
+      },
+      "check_status": "needs_work"
+    },
+    {
+      "id": "page-find-ai_device-en",
+      "kind": "page",
+      "title": "Which desktop AI tools fit voice input and device control?",
+      "question": {
+        "id": "find-ai_device-en",
+        "intent": "find",
+        "product_line": "ai_device",
+        "locale": "en-US",
+        "prompt": "Which desktop AI tools fit voice input and device control?",
+        "page_title": "AI workflow fit checker",
+        "path": "/en/tools/ai-workflow-fit/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/ai-workflow-fit/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-en/index.html",
+          "sha256": "c0a1411d74aa4629cd85491be4750addd54ecf00bb678036cc1c67c153f8dc2b"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-en/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-en/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-en/schema.json",
+          "sha256": "1856d5ae1784e86217b678a07623cca7f541bbce5dcc5790bbe76e101dfa7839"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-find-ai_device-en/publish-checklist.md",
+          "sha256": "cdfc0bf55165cca841d581aade170cd846258b03ec0d4a14f8a6a304938ef3f1"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:36:26+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-how-mouse-zh",
+      "kind": "page",
+      "title": "怎样安排鼠标备用电池轮换，减少插线使用？",
+      "question": {
+        "id": "how-mouse-zh",
+        "intent": "how",
+        "product_line": "mouse",
+        "locale": "zh-CN",
+        "prompt": "怎样安排鼠标备用电池轮换，减少插线使用？",
+        "page_title": "电池轮换规划器",
+        "path": "/zh/tools/battery-rotation-planner/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/battery-rotation-planner/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-zh/index.html",
+          "sha256": "447d8c1a493488048411229c5f49d79137b652a2d5d9d83d01a76480c928c457"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-zh/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-zh/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-zh/schema.json",
+          "sha256": "d75e7442b4494dfbdb74d918aff5c0f8ec4df78a6abb6c86a81059ee6f87b849"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-zh/publish-checklist.md",
+          "sha256": "ad5d11741152b5076c5968332e2bc1b5e88e5d8f19eb62419285e9ba3ac91dea"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:42:21+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-how-mouse-en",
+      "kind": "page",
+      "title": "How do I plan a gaming mouse battery rotation?",
+      "question": {
+        "id": "how-mouse-en",
+        "intent": "how",
+        "product_line": "mouse",
+        "locale": "en-US",
+        "prompt": "How do I plan a gaming mouse battery rotation?",
+        "page_title": "Battery rotation planner",
+        "path": "/en/tools/battery-rotation-planner/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/battery-rotation-planner/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-en/index.html",
+          "sha256": "d1ed4ec86325289350a6ef3a20aef2edd5ee81b30a9311f6df1a17bfa1733779"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-en/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-en/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-en/schema.json",
+          "sha256": "276ea5c5cef14534ec759c75654a0ffbebc5e220e1770f2a3340145d9764a627"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-how-mouse-en/publish-checklist.md",
+          "sha256": "e27500f989134b94d3a04788ece3bfdd8447b9ee2d1e871136e02ff63b30d54a"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:42:21+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-how-ai_device-zh",
+      "kind": "page",
+      "title": "怎样把语音输入和设备控制接入日常工作流？",
+      "question": {
+        "id": "how-ai_device-zh",
+        "intent": "how",
+        "product_line": "ai_device",
+        "locale": "zh-CN",
+        "prompt": "怎样把语音输入和设备控制接入日常工作流？",
+        "page_title": "语音工作流规划器",
+        "path": "/zh/tools/voice-workflow-checklist/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/voice-workflow-checklist/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-zh/index.html",
+          "sha256": "35941f93973f01e2919312f2fe99c08fa5cff6813882e74ed7b3452b836c4962"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-zh/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-zh/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-zh/schema.json",
+          "sha256": "331dfe17e6cf095a431950c15bf7d03c328f957b48a2dacb5c4b450d3d50bd6d"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-zh/publish-checklist.md",
+          "sha256": "5bf47ae48f5b0199030652d00810a0aadcab295ad36d7cd52406ce5440ad1cd0"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:42:21+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-how-ai_device-en",
+      "kind": "page",
+      "title": "How do I add voice input and device control to my workflow?",
+      "question": {
+        "id": "how-ai_device-en",
+        "intent": "how",
+        "product_line": "ai_device",
+        "locale": "en-US",
+        "prompt": "How do I add voice input and device control to my workflow?",
+        "page_title": "Voice workflow planner",
+        "path": "/en/tools/voice-workflow-checklist/",
+        "selected": true,
+        "basis": "brand_intent_inference",
+        "validation_status": "candidate_not_search_volume",
+        "source_ids": [
+          "brand-direction",
+          "brand-context",
+          "product-facts"
+        ]
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/voice-workflow-checklist/",
+      "status": "prepared",
+      "artifacts": [
+        {
+          "filename": "index.html",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-en/index.html",
+          "sha256": "329336b2b302aab0bf87bb20c7b565471ed8f365c48993e566a4e9116ac8c80e"
+        },
+        {
+          "filename": "tool.js",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-en/tool.js",
+          "sha256": "d03638c12a30e24802243908edc6f52619771a92390850c366ec63d2c3982995"
+        },
+        {
+          "filename": "page.css",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-en/page.css",
+          "sha256": "ebbeccf956f2bd5939a2078d0dd8a1f6d778f162d116a1f78b5e9c0843dc9031"
+        },
+        {
+          "filename": "schema.json",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-en/schema.json",
+          "sha256": "de857e55318e202f5d0d4dafe8d654abe3ad9bda51b18cdb1e6214a442abf892"
+        },
+        {
+          "filename": "publish-checklist.md",
+          "path": "outputs/geo-workspace/artifacts/page-how-ai_device-en/publish-checklist.md",
+          "sha256": "0cdcf22767c9ee77e463296ddc65151537d045296d6d5e6eb5dc43ba4cd6907e"
+        }
+      ],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "prepared_at": "2026-11-04T05:42:21+00:00",
+      "completion_scope": "local_artifact_not_published"
+    },
+    {
+      "id": "page-P-220a605d159b-Q01",
+      "kind": "page",
+      "title": "想买一只适合 FPS 游戏、重量在 60 克以内的无线电竞鼠标，有哪些值得比较的选择？",
+      "question": {
+        "id": "P-220a605d159b-Q01",
+        "locale": "zh-CN",
+        "intent": "find",
+        "product_line": "mouse",
+        "prompt": "想买一只适合 FPS 游戏、重量在 60 克以内的无线电竞鼠标，有哪些值得比较的选择？",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/zh/tools/p-220a605d159b-q01/",
+        "page_title": "选择工具页",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/p-220a605d159b-q01/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-5d42d1669b26",
+        "panel_id": "P-220a605d159b",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-220a605d159b-Q03",
+      "kind": "page",
+      "title": "无线电竞鼠标的接收器延长线应该怎么摆，才能减少桌面遮挡和信号干扰？",
+      "question": {
+        "id": "P-220a605d159b-Q03",
+        "locale": "zh-CN",
+        "intent": "how",
+        "product_line": "mouse",
+        "prompt": "无线电竞鼠标的接收器延长线应该怎么摆，才能减少桌面遮挡和信号干扰？",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/zh/tools/p-220a605d159b-q03/",
+        "page_title": "操作指南工具",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/p-220a605d159b-q03/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-5d42d1669b26",
+        "panel_id": "P-220a605d159b",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-220a605d159b-Q05",
+      "kind": "page",
+      "title": "What AI desktop input devices with programmable controls and a small display are worth considering for a work-from-home setup?",
+      "question": {
+        "id": "P-220a605d159b-Q05",
+        "locale": "en-US",
+        "intent": "find",
+        "product_line": "ai_device",
+        "prompt": "What AI desktop input devices with programmable controls and a small display are worth considering for a work-from-home setup?",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/en/tools/p-220a605d159b-q05/",
+        "page_title": "选择工具页",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/p-220a605d159b-q05/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-5d42d1669b26",
+        "panel_id": "P-220a605d159b",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-220a605d159b-Q06",
+      "kind": "page",
+      "title": "What are some alternatives to the Angry Miao AM Infinity Mouse for a lightweight wireless gaming mouse under 60 g?",
+      "question": {
+        "id": "P-220a605d159b-Q06",
+        "locale": "en-US",
+        "intent": "alternatives",
+        "product_line": "mouse",
+        "prompt": "What are some alternatives to the Angry Miao AM Infinity Mouse for a lightweight wireless gaming mouse under 60 g?",
+        "brand_seeded": true,
+        "test_group": "branded",
+        "path": "/en/guides/p-220a605d159b-q06/",
+        "page_title": "替代方案页",
+        "selected": false,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/guides/p-220a605d159b-q06/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-5d42d1669b26",
+        "panel_id": "P-220a605d159b",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-220a605d159b-Q07",
+      "kind": "page",
+      "title": "How do I set up custom macros and lighting profiles on a desktop AI input device using its on-device controls?",
+      "question": {
+        "id": "P-220a605d159b-Q07",
+        "locale": "en-US",
+        "intent": "how",
+        "product_line": "ai_device",
+        "prompt": "How do I set up custom macros and lighting profiles on a desktop AI input device using its on-device controls?",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/en/tools/p-220a605d159b-q07/",
+        "page_title": "操作指南工具",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/p-220a605d159b-q07/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-5d42d1669b26",
+        "panel_id": "P-220a605d159b",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q01",
+      "kind": "page",
+      "title": "我想买一款轻量化的无线电竞鼠标，主要玩FPS游戏，预算一千元左右，有什么值得考虑的？",
+      "question": {
+        "id": "P-6eadd4b43100-Q01",
+        "locale": "zh-CN",
+        "intent": "find",
+        "product_line": "mouse",
+        "prompt": "我想买一款轻量化的无线电竞鼠标，主要玩FPS游戏，预算一千元左右，有什么值得考虑的？",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/zh/tools/p-6eadd4b43100-q01/",
+        "page_title": "选择工具页",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/p-6eadd4b43100-q01/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q02",
+      "kind": "page",
+      "title": "What are good alternatives to the Logitech G Pro X Superlight for competitive FPS gaming in a similar price range?",
+      "question": {
+        "id": "P-6eadd4b43100-Q02",
+        "locale": "en-US",
+        "intent": "alternatives",
+        "product_line": "mouse",
+        "prompt": "What are good alternatives to the Logitech G Pro X Superlight for competitive FPS gaming in a similar price range?",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/en/guides/p-6eadd4b43100-q02/",
+        "page_title": "替代方案页",
+        "selected": false,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/guides/p-6eadd4b43100-q02/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q03",
+      "kind": "page",
+      "title": "AI 键盘这类设备第一次使用要怎么配对连接电脑，并且设置自定义按键和灯效？",
+      "question": {
+        "id": "P-6eadd4b43100-Q03",
+        "locale": "zh-CN",
+        "intent": "how",
+        "product_line": "ai_device",
+        "prompt": "AI 键盘这类设备第一次使用要怎么配对连接电脑，并且设置自定义按键和灯效？",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/zh/tools/p-6eadd4b43100-q03/",
+        "page_title": "操作指南工具",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/zh/tools/p-6eadd4b43100-q03/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q05",
+      "kind": "page",
+      "title": "I want a lightweight wireless gaming mouse for FPS games with a reliable sensor and comfortable grip at around $150 — what should I look at?",
+      "question": {
+        "id": "P-6eadd4b43100-Q05",
+        "locale": "en-US",
+        "intent": "find",
+        "product_line": "mouse",
+        "prompt": "I want a lightweight wireless gaming mouse for FPS games with a reliable sensor and comfortable grip at around $150 — what should I look at?",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/en/tools/p-6eadd4b43100-q05/",
+        "page_title": "选择工具页",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/p-6eadd4b43100-q05/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q06",
+      "kind": "page",
+      "title": "除了罗技 G Pro X Superlight，还有哪些重量接近、适合 FPS 竞技的无线电竞鼠标可以选？",
+      "question": {
+        "id": "P-6eadd4b43100-Q06",
+        "locale": "zh-CN",
+        "intent": "alternatives",
+        "product_line": "mouse",
+        "prompt": "除了罗技 G Pro X Superlight，还有哪些重量接近、适合 FPS 竞技的无线电竞鼠标可以选？",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/zh/guides/p-6eadd4b43100-q06/",
+        "page_title": "替代方案页",
+        "selected": false,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/zh/guides/p-6eadd4b43100-q06/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    },
+    {
+      "id": "page-P-6eadd4b43100-Q07",
+      "kind": "page",
+      "title": "How do I connect an AI-enabled keyboard to my computer for the first time and customize its keys and backlighting?",
+      "question": {
+        "id": "P-6eadd4b43100-Q07",
+        "locale": "en-US",
+        "intent": "how",
+        "product_line": "ai_device",
+        "prompt": "How do I connect an AI-enabled keyboard to my computer for the first time and customize its keys and backlighting?",
+        "brand_seeded": false,
+        "test_group": "discovery",
+        "path": "/en/tools/p-6eadd4b43100-q07/",
+        "page_title": "操作指南工具",
+        "selected": true,
+        "basis": "skill_generated",
+        "validation_status": "candidate_not_search_volume"
+      },
+      "target_url": "https://store.angrymiao.com/en/tools/p-6eadd4b43100-q07/",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [],
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ],
+      "test_evidence": {
+        "run_id": "R-1782a3464b0a",
+        "panel_id": "P-6eadd4b43100",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "mode": "api-no-search",
+        "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
+      }
+    }
+  ],
+  "traffic": null,
+  "history": [
+    {
+      "task_id": "ai-crawlers",
+      "execution_done": false,
+      "changed_at": "2026-11-04T10:02:19+00:00"
+    },
+    {
+      "task_id": "ai-crawlers",
+      "execution_done": true,
+      "changed_at": "2026-11-04T10:02:19+00:00"
+    },
+    {
+      "question_panel_id": "P-220a605d159b",
+      "questions": [
+        {
+          "id": "P-220a605d159b-Q01",
+          "locale": "zh-CN",
+          "intent": "find",
+          "product_line": "mouse",
+          "prompt": "想买一只适合 FPS 游戏、重量在 60 克以内的无线电竞鼠标，有哪些值得比较的选择？",
+          "brand_seeded": false,
+          "test_group": "discovery",
+          "path": "/zh/tools/p-220a605d159b-q01/",
+          "page_title": "选择工具页",
+          "selected": true,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q02",
+          "locale": "zh-CN",
+          "intent": "alternatives",
+          "product_line": "ai_device",
+          "prompt": "除了怒喵 CYBERBOARD R6，还有哪些带可编程旋钮和客制化灯效的桌面 AI 输入设备值得考虑？",
+          "brand_seeded": true,
+          "test_group": "branded",
+          "path": "/zh/guides/p-220a605d159b-q02/",
+          "page_title": "替代方案页",
+          "selected": false,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q03",
+          "locale": "zh-CN",
+          "intent": "how",
+          "product_line": "mouse",
+          "prompt": "无线电竞鼠标的接收器延长线应该怎么摆，才能减少桌面遮挡和信号干扰？",
+          "brand_seeded": false,
+          "test_group": "discovery",
+          "path": "/zh/tools/p-220a605d159b-q03/",
+          "page_title": "操作指南工具",
+          "selected": true,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q04",
+          "locale": "zh-CN",
+          "intent": "facts",
+          "product_line": "ai_device",
+          "prompt": "CYBERBOARD R6 的屏幕、旋钮和按键分别支持哪些自定义功能？",
+          "brand_seeded": true,
+          "test_group": "branded",
+          "path": "/zh/guides/p-220a605d159b-q04/",
+          "page_title": "直接答案与 FAQ",
+          "selected": false,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q05",
+          "locale": "en-US",
+          "intent": "find",
+          "product_line": "ai_device",
+          "prompt": "What AI desktop input devices with programmable controls and a small display are worth considering for a work-from-home setup?",
+          "brand_seeded": false,
+          "test_group": "discovery",
+          "path": "/en/tools/p-220a605d159b-q05/",
+          "page_title": "选择工具页",
+          "selected": true,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q06",
+          "locale": "en-US",
+          "intent": "alternatives",
+          "product_line": "mouse",
+          "prompt": "What are some alternatives to the Angry Miao AM Infinity Mouse for a lightweight wireless gaming mouse under 60 g?",
+          "brand_seeded": true,
+          "test_group": "branded",
+          "path": "/en/guides/p-220a605d159b-q06/",
+          "page_title": "替代方案页",
+          "selected": false,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q07",
+          "locale": "en-US",
+          "intent": "how",
+          "product_line": "ai_device",
+          "prompt": "How do I set up custom macros and lighting profiles on a desktop AI input device using its on-device controls?",
+          "brand_seeded": false,
+          "test_group": "discovery",
+          "path": "/en/tools/p-220a605d159b-q07/",
+          "page_title": "操作指南工具",
+          "selected": true,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        },
+        {
+          "id": "P-220a605d159b-Q08",
+          "locale": "en-US",
+          "intent": "facts",
+          "product_line": "mouse",
+          "prompt": "What is the reported battery life and polling rate of the Angry Miao AM Infinity Mouse?",
+          "brand_seeded": true,
+          "test_group": "branded",
+          "path": "/en/guides/p-220a605d159b-q08/",
+          "page_title": "直接答案与 FAQ",
+          "selected": false,
+          "basis": "skill_generated",
+          "validation_status": "candidate_not_search_volume"
+        }
+      ]
+    }
+  ],
+  "selected_questions": [
+    "P-6eadd4b43100-Q01",
+    "P-6eadd4b43100-Q03",
+    "P-6eadd4b43100-Q05",
+    "P-6eadd4b43100-Q07",
+    "P-6eadd4b43100-Q02",
+    "P-6eadd4b43100-Q06"
+  ],
+  "updated_at": "2026-11-04T10:36:26+00:00",
+  "generated_questions": [
+    {
+      "id": "P-6eadd4b43100-Q01",
+      "locale": "zh-CN",
+      "intent": "find",
+      "product_line": "mouse",
+      "prompt": "我想买一款轻量化的无线电竞鼠标，主要玩FPS游戏，预算一千元左右，有什么值得考虑的？",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/zh/tools/p-6eadd4b43100-q01/",
+      "page_title": "选择工具页",
+      "selected": true,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q02",
+      "locale": "en-US",
+      "intent": "alternatives",
+      "product_line": "mouse",
+      "prompt": "What are good alternatives to the Logitech G Pro X Superlight for competitive FPS gaming in a similar price range?",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/en/guides/p-6eadd4b43100-q02/",
+      "page_title": "替代方案页",
+      "selected": false,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q03",
+      "locale": "zh-CN",
+      "intent": "how",
+      "product_line": "ai_device",
+      "prompt": "AI 键盘这类设备第一次使用要怎么配对连接电脑，并且设置自定义按键和灯效？",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/zh/tools/p-6eadd4b43100-q03/",
+      "page_title": "操作指南工具",
+      "selected": true,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q04",
+      "locale": "en-US",
+      "intent": "facts",
+      "product_line": "ai_device",
+      "prompt": "What are the key specifications of the CYBERBOARD R6, such as layout, connectivity, and whether it supports hot-swappable switches?",
+      "brand_seeded": true,
+      "test_group": "branded",
+      "path": "/en/guides/p-6eadd4b43100-q04/",
+      "page_title": "直接答案与 FAQ",
+      "selected": false,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q05",
+      "locale": "en-US",
+      "intent": "find",
+      "product_line": "mouse",
+      "prompt": "I want a lightweight wireless gaming mouse for FPS games with a reliable sensor and comfortable grip at around $150 — what should I look at?",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/en/tools/p-6eadd4b43100-q05/",
+      "page_title": "选择工具页",
+      "selected": true,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q06",
+      "locale": "zh-CN",
+      "intent": "alternatives",
+      "product_line": "mouse",
+      "prompt": "除了罗技 G Pro X Superlight，还有哪些重量接近、适合 FPS 竞技的无线电竞鼠标可以选？",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/zh/guides/p-6eadd4b43100-q06/",
+      "page_title": "替代方案页",
+      "selected": false,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q07",
+      "locale": "en-US",
+      "intent": "how",
+      "product_line": "ai_device",
+      "prompt": "How do I connect an AI-enabled keyboard to my computer for the first time and customize its keys and backlighting?",
+      "brand_seeded": false,
+      "test_group": "discovery",
+      "path": "/en/tools/p-6eadd4b43100-q07/",
+      "page_title": "操作指南工具",
+      "selected": true,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    },
+    {
+      "id": "P-6eadd4b43100-Q08",
+      "locale": "zh-CN",
+      "intent": "facts",
+      "product_line": "ai_device",
+      "prompt": "CYBERBOARD R6 的布局、连接方式和是否支持热插拔轴这些规格具体是怎样的？",
+      "brand_seeded": true,
+      "test_group": "branded",
+      "path": "/zh/guides/p-6eadd4b43100-q08/",
+      "page_title": "直接答案与 FAQ",
+      "selected": false,
+      "basis": "skill_generated",
+      "validation_status": "candidate_not_search_volume"
+    }
+  ],
+  "question_panel_id": "P-6eadd4b43100"
+}

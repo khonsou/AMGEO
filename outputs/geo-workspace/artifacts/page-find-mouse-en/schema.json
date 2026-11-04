@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Which gaming mouse with a swappable battery fits me?",
+  "url": "https://store.angrymiao.com/en/tools/swap-mouse-selector/",
+  "inLanguage": "en-US",
+  "description": "Compare grip fit, weight with the battery installed, charging workflow and spare-battery requirements. Replacing a battery does not mean charging it instantly.",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "Mouse selector",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "Compare grip fit, weight with the battery installed, charging workflow and spare-battery requirements. Replacing a battery does not mean charging it instantly."
+  }
+}

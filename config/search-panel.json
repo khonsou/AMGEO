@@ -1,0 +1,55 @@
+{
+  "id": "core-discovery-serp-v1",
+  "version": 1,
+  "engine": "bing",
+  "surface": "browser_serp",
+  "metric": "official_domain_presence_top10_rate_x100",
+  "created_date": "2026-11-01",
+  "scope": "Four fixed non-branded discovery queries for esports mouse and AI device; a small browser SERP diagnostic, not traffic, Google/Baidu performance or whole-market SEO.",
+  "locale_rule": "Query language and requested Bing language/region recorded; physical region, personalization and server experiment assignment are not independently verified.",
+  "sampling_rule": "First ten organic web results in displayed order; exclude ads, AI answers, shopping, video carousels and knowledge panels. Fewer than ten verifiable organic entries is a coverage error, never a zero score. Retain every attempted query and errors.",
+  "queries": [
+    {
+      "id": "SEO-EN-M01",
+      "locale": "en-US",
+      "product_line": "mouse",
+      "prompt": "lightweight gaming mouse swappable battery",
+      "requested_market": "en-US"
+    },
+    {
+      "id": "SEO-EN-A01",
+      "locale": "en-US",
+      "product_line": "ai_device",
+      "prompt": "desktop AI device voice input hardware control",
+      "requested_market": "en-US"
+    },
+    {
+      "id": "SEO-ZH-M01",
+      "locale": "zh-CN",
+      "product_line": "mouse",
+      "prompt": "可换电池 轻量化 电竞鼠标",
+      "requested_market": "zh-CN"
+    },
+    {
+      "id": "SEO-ZH-A01",
+      "locale": "zh-CN",
+      "product_line": "ai_device",
+      "prompt": "桌面 AI 设备 语音输入 硬件控制",
+      "requested_market": "zh-CN"
+    }
+  ],
+  "settings": {
+    "organic_window": 10,
+    "fresh_tab_per_query": true,
+    "signed_in_status": "not_verified",
+    "region_verification": "requested_market_only_not_independent_location",
+    "personalization": "not_controlled",
+    "exclude": [
+      "ads",
+      "ai_answers",
+      "shopping",
+      "video_carousels",
+      "knowledge_panels"
+    ]
+  }
+}

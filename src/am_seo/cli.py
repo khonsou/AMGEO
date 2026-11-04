@@ -93,9 +93,22 @@ def _task_summary() -> dict[str, Any]:
 def project_status() -> dict[str, Any]:
     release_path = AGENT_KIT / "release-manifest.json"
     release = _load_json(release_path) if release_path.exists() else {}
+    workflow_path = PROJECT_ROOT / "outputs/runtime/console/workflow/state.json"
+    workflow_summary = None
+    if workflow_path.exists():
+        workflow = _load_json(workflow_path)
+        cycles = workflow.get("cycles", [])
+        latest = cycles[-1] if cycles else None
+        workflow_summary = {
+            "cycle_count": len(cycles), "strategy_version": workflow.get("strategy", {}).get("version"),
+            "latest_cycle": {key: latest.get(key) for key in ("id", "number", "status", "phase", "strategy_version")} if latest else None,
+            "latest_task_counts": dict(Counter(task.get("status", "unknown") for task in latest.get("tasks", []))) if latest else {},
+            "scope": "Recorded browser workflow state; no provider call or completion inferred by this read.",
+        }
     return {
         "project": "Angry Miao SEO/GEO",
         "version": __version__,
+        "workflow": workflow_summary,
         "project_root": str(PROJECT_ROOT),
         **_task_summary(),
         "capabilities": _capabilities(),
@@ -119,7 +132,12 @@ def command_status(as_json: bool) -> int:
     else:
         print(f"Angry Miao SEO/GEO {__version__}")
         print(f"Project: {PROJECT_ROOT}")
-        print("Tasks: " + ", ".join(f"{count} {state}" for state, count in result["counts"].items()))
+        if result["workflow"]:
+            workflow = result["workflow"]
+            print(f"Browser workflow: {workflow['cycle_count']} cycles; strategy v{workflow['strategy_version']}")
+            print(f"Latest cycle: {workflow['latest_cycle']}")
+            print(f"Latest task counts: {workflow['latest_task_counts']}")
+        print("Initial artifact tasks: " + ", ".join(f"{count} {state}" for state, count in result["counts"].items()))
         for task in result["tasks"]:
             print(f"  {task['id']}  {task['status']}: {task.get('action', '')}")
         print(f"Release: {result['release'].get('status', 'not_recorded')}")
@@ -347,6 +365,9 @@ def build_parser() -> argparse.ArgumentParser:
     deps = commands.add_parser("deps", help="Manage local pinned-upstream verification.")
     deps_commands = deps.add_subparsers(dest="deps_command", required=True)
     deps_commands.add_parser("verify", help="Run scripts/sync_upstreams.py verify offline; return its exit code.")
+    serve = commands.add_parser("serve", help="Open the local AM SEO browser console for people.")
+    serve.add_argument("--host", choices=("127.0.0.1", "localhost"), default="127.0.0.1", help="Local loopback interface only.")
+    serve.add_argument("--port", type=int, default=8787, help="Local console port (default: 8787).")
     return parser
 
 
@@ -365,6 +386,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             return command_run_offline()
         if args.command == "deps" and args.deps_command == "verify":
             return _run_script(PROJECT_ROOT / "scripts" / "sync_upstreams.py", ["verify"])
+        if args.command == "serve":
+            if not 0 <= args.port <= 65535:
+                raise ValueError("Console port must be between 0 and 65535")
+            from .server import serve
+            serve(PROJECT_ROOT, host=args.host, port=args.port)
+            return 0
     except (OSError, ValueError) as error:
         print(f"am-seo: {error}", file=sys.stderr)
         return 2

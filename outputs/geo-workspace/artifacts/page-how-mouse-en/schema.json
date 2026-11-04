@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How do I plan a gaming mouse battery rotation?",
+  "url": "https://store.angrymiao.com/en/tools/battery-rotation-planner/",
+  "inLanguage": "en-US",
+  "description": "Confirm a charged spare and schedule the swap outside a match. Verify reconnection, then recharge the removed battery. If no spare is ready, use a model-supported cable or pause to recharge.",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "Battery rotation planner",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "Confirm a charged spare and schedule the swap outside a match. Verify reconnection, then recharge the removed battery. If no spare is ready, use a model-supported cable or pause to recharge."
+  }
+}

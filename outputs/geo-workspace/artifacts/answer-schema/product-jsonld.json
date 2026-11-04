@@ -1,0 +1,10 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "AM INFINITY MOUSE .97",
+  "brand": {
+    "@type": "Brand",
+    "name": "Angry Miao"
+  },
+  "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse"
+}

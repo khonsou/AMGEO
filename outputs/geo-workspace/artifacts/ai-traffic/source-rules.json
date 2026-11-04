@@ -1,0 +1,24 @@
+{
+  "native_medium": "ai-assistant",
+  "exact_source_hosts": {
+    "chatgpt.com": "ChatGPT",
+    "chat.openai.com": "ChatGPT",
+    "perplexity.ai": "Perplexity",
+    "www.perplexity.ai": "Perplexity",
+    "gemini.google.com": "Gemini",
+    "claude.ai": "Claude",
+    "copilot.microsoft.com": "Copilot",
+    "chat.deepseek.com": "DeepSeek",
+    "doubao.com": "豆包",
+    "www.doubao.com": "豆包",
+    "kimi.com": "Kimi",
+    "www.kimi.com": "Kimi",
+    "kimi.moonshot.cn": "Kimi"
+  },
+  "do_not_infer": [
+    "direct",
+    "google organic",
+    "bot requests"
+  ],
+  "documentation": "https://support.google.com/analytics/answer/9756891?hl=en"
+}

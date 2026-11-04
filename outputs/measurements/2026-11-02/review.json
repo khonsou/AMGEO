@@ -1,0 +1,220 @@
+{
+  "assessor": "independent_collaboration_agent",
+  "reviewed_at": "2026-11-02T03:15:50+00:00",
+  "accepted": true,
+  "scope": "Recorded-content, protocol, source/hash integrity and metric calculation audit only. No new network/browser/provider calls. Does not certify competitor product claims, real geographic settings, current live ranking, hardware performance or market-wide outcomes.",
+  "cycle_id": "C0003-2916ce38",
+  "payload_sha256": "e8eedae770cb60db3c0727e3c8ba8fcf48dacd2b3a9927dd332dda9a70f21a85",
+  "geo": {
+    "panel": "core-discovery-answer-v1",
+    "model": "gpt-6.1-sol",
+    "fixed_plan_sha256_matches": true,
+    "neutral_cwd_recorded": true,
+    "groups": [
+      {
+        "locale": "en-US",
+        "surface": "api_answer",
+        "platform": "codex-cli-search",
+        "mode": "web-search",
+        "score": 0.0,
+        "attempted": 2,
+        "successful_tests": 2,
+        "errors": 0,
+        "no_ai_answers": 0,
+        "brand_mention_rate": 0.0,
+        "official_citation_rate": 0.0
+      },
+      {
+        "locale": "zh-CN",
+        "surface": "api_answer",
+        "platform": "codex-cli-search",
+        "mode": "web-search",
+        "score": 0.0,
+        "attempted": 2,
+        "successful_tests": 2,
+        "errors": 0,
+        "no_ai_answers": 0,
+        "brand_mention_rate": 0.0,
+        "official_citation_rate": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "query_id": "CORE-EN-M01",
+        "status": "completed",
+        "captured_at_utc": "2026-11-02T02:58:59+00:00",
+        "finished_at_utc": "2026-11-02T02:59:54+00:00",
+        "brand_or_product_alias_matches": [],
+        "final_citations_count": 6,
+        "all_citation_urls_present_in_answer": true,
+        "official_final_citation": false,
+        "web_search_events": 6
+      },
+      {
+        "query_id": "CORE-EN-A01",
+        "status": "completed",
+        "captured_at_utc": "2026-11-02T02:58:59+00:00",
+        "finished_at_utc": "2026-11-02T03:00:09+00:00",
+        "brand_or_product_alias_matches": [],
+        "final_citations_count": 3,
+        "all_citation_urls_present_in_answer": true,
+        "official_final_citation": false,
+        "web_search_events": 4
+      },
+      {
+        "query_id": "CORE-ZH-M01",
+        "status": "completed",
+        "captured_at_utc": "2026-11-02T02:59:54+00:00",
+        "finished_at_utc": "2026-11-02T03:01:09+00:00",
+        "brand_or_product_alias_matches": [],
+        "final_citations_count": 4,
+        "all_citation_urls_present_in_answer": true,
+        "official_final_citation": false,
+        "web_search_events": 6
+      },
+      {
+        "query_id": "CORE-ZH-A01",
+        "status": "completed",
+        "captured_at_utc": "2026-11-02T03:00:09+00:00",
+        "finished_at_utc": "2026-11-02T03:01:14+00:00",
+        "brand_or_product_alias_matches": [],
+        "final_citations_count": 4,
+        "all_citation_urls_present_in_answer": true,
+        "official_final_citation": false,
+        "web_search_events": 4
+      }
+    ],
+    "conclusion": "Four completed neutral Agent/API answers; no brand/product aliases and no official citations. English 0/2 and Chinese 0/2 literal brand appearance, zero call errors. Not consumer-platform performance or recommendation-suitability scoring."
+  },
+  "seo": {
+    "panel": "core-discovery-serp-v1",
+    "groups": [
+      {
+        "locale": "en-US",
+        "platform": "bing",
+        "surface": "search_serp",
+        "mode": "organic-top10",
+        "score": 0.0,
+        "attempted": 2,
+        "completed": 1,
+        "successful_tests": 1,
+        "errors": 1,
+        "official_domain_presence_top10_rate": 0.0
+      },
+      {
+        "locale": "zh-CN",
+        "platform": "bing",
+        "surface": "search_serp",
+        "mode": "organic-top10",
+        "score": 0.0,
+        "attempted": 2,
+        "completed": 2,
+        "successful_tests": 2,
+        "errors": 0,
+        "official_domain_presence_top10_rate": 0.0
+      }
+    ],
+    "attempted": 4,
+    "completed": 3,
+    "errors": 1,
+    "comparable_protocol": false,
+    "checks": [
+      {
+        "query_id": "SEO-EN-M01",
+        "status": "completed",
+        "organic_result_count": 10,
+        "ordered_unique_result_urls": true,
+        "official_ranks": [],
+        "body_captured_at_utc": "2026-11-01T15:41:28.866Z",
+        "screenshot_captured_at_utc": "2026-11-02T02:57:09+00:00",
+        "initial_source_hash_preserved": true,
+        "title_annotations": [],
+        "capture_note": "cn.bing.com 实际页面；locale仅表示查询语言及请求设置，实际地域和个性化未验证，不能作为美国市场排名。原始正文采于11月1日，11月2日补存同页截图；相关性偏差很大，结果集中于lightweight词义，不外推品牌可发现性。"
+      },
+      {
+        "query_id": "SEO-EN-A01",
+        "status": "error",
+        "organic_result_count": 8,
+        "ordered_unique_result_urls": true,
+        "official_ranks": [],
+        "body_captured_at_utc": "2026-11-02T03:13:11.446Z",
+        "screenshot_captured_at_utc": "2026-11-02T03:05:54+00:00",
+        "initial_source_hash_preserved": true,
+        "title_annotations": [],
+        "capture_note": "cn.bing.com 实际页面；locale仅表示查询语言及请求设置，实际地域和个性化未验证，不能作为美国市场排名。"
+      },
+      {
+        "query_id": "SEO-ZH-M01",
+        "status": "completed",
+        "organic_result_count": 10,
+        "ordered_unique_result_urls": true,
+        "official_ranks": [],
+        "body_captured_at_utc": "2026-11-02T03:09:37.503Z",
+        "screenshot_captured_at_utc": "2026-11-02T03:10:07+00:00",
+        "initial_source_hash_preserved": true,
+        "title_annotations": [
+          {
+            "rank": 10,
+            "method": "Only observed heading prefix retained with explicit truncation; URL/order fully captured; complete title not asserted"
+          }
+        ],
+        "capture_note": "cn.bing.com 实际页面；locale仅表示查询语言及请求设置，实际地域和个性化未验证，不能作为美国市场排名。折叠区域标题与已观察DOM快照逐项对照；原始文件保留；第10条只取得标题前缀，明确标记未完整取得。"
+      },
+      {
+        "query_id": "SEO-ZH-A01",
+        "status": "completed",
+        "organic_result_count": 10,
+        "ordered_unique_result_urls": true,
+        "official_ranks": [],
+        "body_captured_at_utc": "2026-11-02T03:11:15.284Z",
+        "screenshot_captured_at_utc": "2026-11-02T03:11:45+00:00",
+        "initial_source_hash_preserved": true,
+        "title_annotations": [
+          {
+            "rank": 6,
+            "method": "title transcribed from the already-observed browser DOM accessibility snapshot; no new retrieval or source-title inference"
+          },
+          {
+            "rank": 7,
+            "method": "title transcribed from the already-observed browser DOM accessibility snapshot; no new retrieval or source-title inference"
+          },
+          {
+            "rank": 8,
+            "method": "title transcribed from the already-observed browser DOM accessibility snapshot; no new retrieval or source-title inference"
+          },
+          {
+            "rank": 9,
+            "method": "title transcribed from the already-observed browser DOM accessibility snapshot; no new retrieval or source-title inference"
+          },
+          {
+            "rank": 10,
+            "method": "title transcribed from the already-observed browser DOM accessibility snapshot; no new retrieval or source-title inference"
+          }
+        ],
+        "capture_note": "cn.bing.com 实际页面；locale仅表示查询语言及请求设置，实际地域和个性化未验证，不能作为美国市场排名。折叠区域标题与已观察DOM快照逐项对照；原始文件保留；补齐标题的来源与方法保存在title_annotations，不从目标网站猜标题。"
+      }
+    ],
+    "conclusion": "Three records meet the defined ordered ten-organic-URL window and show no allowlisted official-domain URL. English AI-device has only eight records and correctly remains a coverage error with null classification. Query-language grouping is not proof of US/CN geography."
+  },
+  "screenshots_visual_review": {
+    "reviewed": [
+      "SEO-ZH-M01.jpg",
+      "SEO-ZH-A01.jpg"
+    ],
+    "checks": [
+      "Visible query matches intended fixed query",
+      "SERP top entries and domain labels match saved records",
+      "News/AI/carousel modules are separate from organic result list"
+    ],
+    "limit": "Viewport screenshots do not independently show all ten positions; full ordered URLs come from retained DOM captures and parent-observed accessibility snapshots."
+  },
+  "material_issues": [],
+  "interpretation_limits": [
+    "EN mouse results are mostly dictionary results for lightweight. Retain the observation without selective deletion, but do not extrapolate this 0/1 to relevant English-market brand discoverability.",
+    "All observed pages are cn.bing.com. US request/language parameters do not establish US market or location; personalization and geography are unverified.",
+    "EN mouse body was read on 2026-11-01, screenshot supplemented 2026-11-02. Other body and screenshot times are retained individually. This is not one simultaneous fresh sample.",
+    "ZH mouse rank 10 has only an observed title prefix and is explicitly truncated. URL and order were captured; official-domain metric does not require guessing the remainder.",
+    "ZH AI titles 6–10 were transcribed from parent-observed accessibility snapshot preserved in inherited tool history, with explicit annotations and unmodified initial capture. This review did not independently revisit those sites.",
+    "No overall SEO/GEO score or causal improvement should be reported; account clicks/impressions/traffic and consumer AI platforms remain outside this measurement."
+  ]
+}

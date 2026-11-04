@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Which desktop AI tools fit voice input and device control?",
+  "url": "https://store.angrymiao.com/en/tools/ai-workflow-fit/",
+  "inLanguage": "en-US",
+  "description": "Evaluate voice transcription, app control and device control separately. Confirm integrations, operating-system compatibility and a manual fallback before choosing dedicated hardware.",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "AI workflow fit checker",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "Evaluate voice transcription, app control and device control separately. Confirm integrations, operating-system compatibility and a manual fallback before choosing dedicated hardware."
+  }
+}

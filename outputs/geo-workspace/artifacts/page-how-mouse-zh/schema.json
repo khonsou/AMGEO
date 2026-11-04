@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "怎样安排鼠标备用电池轮换，减少插线使用？",
+  "url": "https://store.angrymiao.com/zh/tools/battery-rotation-planner/",
+  "inLanguage": "zh-CN",
+  "description": "先确认备用电池已经充好，安排在非对局时更换；更换后检查连接，再为取下的电池补电。备用电池未就绪时，改用型号支持的插线方式或暂停补电。",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "电池轮换规划器",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "先确认备用电池已经充好，安排在非对局时更换；更换后检查连接，再为取下的电池补电。备用电池未就绪时，改用型号支持的插线方式或暂停补电。"
+  }
+}

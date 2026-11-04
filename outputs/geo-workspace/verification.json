@@ -1,0 +1,150 @@
+{
+  "record_created_at": "2026-11-04T05:49:13+00:00",
+  "scope": "Local GEO workspace integration, prepared content tools and public technical checks; no production writes or new GEO answer samples.",
+  "verification": {
+    "full_offline_suite": {
+      "passed": true,
+      "tests": 112,
+      "log": "outputs/geo-workspace/offline-tests.log"
+    },
+    "offline_evidence_checks": 87,
+    "artifact_hashes": "passed",
+    "generated_tool_javascript_syntax": "passed",
+    "unique_dom_ids": true,
+    "zip": {
+      "path": "outputs/geo-workspace/execution-kit.zip",
+      "files": 46,
+      "sha256": "7de843c212a133a6993df3807ee3a75cd8f85466c59abb67713fdf3a73ed62b1"
+    },
+    "browser": {
+      "core_navigation": "passed",
+      "question_filtering": "passed",
+      "question_to_task_generation": "passed",
+      "mouse_selector_input_branch": "passed",
+      "battery_rotation_unconfirmed_spare": "passed",
+      "english_ai_workflow_tool": "passed",
+      "settings_and_measurement_evidence": "passed",
+      "ai_traffic_unknown_without_data": "passed",
+      "console_errors": []
+    }
+  },
+  "prepared": {
+    "candidate_questions": 16,
+    "question_pages": 8,
+    "optimization_tasks": 11,
+    "published_pages": 0,
+    "traffic_data_imported": false
+  },
+  "public_checks": [
+    {
+      "id": "ai-crawlers",
+      "next_action": "先修复返回 HTML 的 robots.txt 路由：https://www.angrymiao.com/robots.txt",
+      "checks": [
+        {
+          "title": "www.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "取得 robots 规则文本",
+          "passed": false,
+          "detail": "https://www.angrymiao.com/robots.txt"
+        },
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "取得 robots 规则文本",
+          "passed": true,
+          "detail": "https://store.angrymiao.com/robots.txt"
+        },
+        {
+          "title": "store.angrymiao.com · OAI-SearchBot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        },
+        {
+          "title": "store.angrymiao.com · PerplexityBot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        },
+        {
+          "title": "store.angrymiao.com · bingbot 公开路径",
+          "passed": true,
+          "detail": "10 条目标路径未被规则阻止"
+        }
+      ],
+      "verification": {
+        "checked_at": "2026-11-04T05:34:55+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://www.angrymiao.com/robots.txt",
+            "final_url": "https://www.angrymiao.com/robots.txt",
+            "status": 200,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T05:34:54+00:00",
+            "sha256": "2bd7f592c891431db10bef783cd1e7bfcc1ea5a2bd81133173adb57158fb01db",
+            "path": "outputs/geo-workspace/checks/ai-crawlers/20261104T053455755485Z/0.txt",
+            "saved_text_sha256": "2bd7f592c891431db10bef783cd1e7bfcc1ea5a2bd81133173adb57158fb01db"
+          },
+          {
+            "url": "https://store.angrymiao.com/robots.txt",
+            "final_url": "https://store.angrymiao.com/robots.txt",
+            "status": 200,
+            "content_type": "text/plain",
+            "captured_at": "2026-11-04T05:34:55+00:00",
+            "sha256": "9905710ad04dcf5e344c769ee45560ff80c23b08d3bc47a32c24edcfc34b0d6e",
+            "path": "outputs/geo-workspace/checks/ai-crawlers/20261104T053455755485Z/1.txt",
+            "saved_text_sha256": "9905710ad04dcf5e344c769ee45560ff80c23b08d3bc47a32c24edcfc34b0d6e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "answer-schema",
+      "next_action": "页面已有 Product 标记，避免重复添加；下一步核对字段与可见正文一致。",
+      "checks": [
+        {
+          "title": "store.angrymiao.com · HTTP 成功",
+          "passed": true,
+          "detail": "200"
+        },
+        {
+          "title": "页面 JSON-LD 均可解析",
+          "passed": true,
+          "detail": "2 / 2 块"
+        },
+        {
+          "title": "包含 Product 类型",
+          "passed": true,
+          "detail": "只检查类型与语法，不自动确认商品事实一致。"
+        }
+      ],
+      "verification": {
+        "checked_at": "2026-11-04T05:34:57+00:00",
+        "scope": "public_rule_or_html_diagnostic_only",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "final_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "status": 200,
+            "content_type": "text/html",
+            "captured_at": "2026-11-04T05:34:57+00:00",
+            "sha256": "9a91546669829281172c29eb340dd113b5e1ab089e387dbda104dfe5d3cab375",
+            "path": "outputs/geo-workspace/checks/answer-schema/20261104T053457793493Z/0.txt",
+            "saved_text_sha256": "9a91546669829281172c29eb340dd113b5e1ab089e387dbda104dfe5d3cab375"
+          }
+        ]
+      }
+    }
+  ],
+  "screenshots": [
+    "outputs/runtime/console/geo-core-overview-2026-11-04.jpg",
+    "outputs/runtime/console/geo-core-questions-2026-11-04.jpg",
+    "outputs/runtime/console/geo-core-tasks-2026-11-04.jpg",
+    "outputs/runtime/console/mouse-tool-preview-2026-11-04.jpg"
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "version": "brand-context-v1-user-direction-2026-11-01",
+  "status": "prepared_not_run",
+  "created_at": "2026-11-01T10:33:28+00:00",
+  "planning_precedence": "User 2026-11-01: esports mouse AM Infinity Mouse and AI device e.g.CYBERBOARD R6 override legacy keyboard-core reference",
+  "planning_sources": [
+    "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+    "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+    "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/methodology.md"
+  ],
+  "counts": {
+    "intent_pairs": 12,
+    "questions": 24,
+    "by_locale": {
+      "zh-CN": 12,
+      "en-US": 12
+    },
+    "by_persona_pairs": {
+      "A": 4,
+      "B": 4,
+      "C": 4
+    },
+    "by_product_line_pairs": {
+      "mouse": 6,
+      "ai_device": 6
+    },
+    "by_branding_pairs": {
+      "branded": 6,
+      "non_branded": 6
+    }
+  },
+  "measurement_contract": {
+    "purpose": "探索选题，非测量；不得替换或并入既有48题基线",
+    "neutrality": "未来非品牌采样只发送题目原文；不注入TA定位或品牌资料",
+    "fixed_baseline_sha256": {
+      "outputs/agent-kit/query-seeds.json": "978ef6a8d5a442bf030fab205ca38dea058c480549765e37dc192b77b16105f5",
+      "outputs/agent-kit/geo-run-plan.json": "06d71a8735bbda51df3a7881f6a9cd6e6d5f19a87b417c1b4b4799b0a08fad9a"
+    },
+    "existing_prompt_count": 48,
+    "completed_tests": 0,
+    "errors": 0,
+    "score": null,
+    "normalization": "NFKC + casefold + remove non-word characters",
+    "exact_duplicate_count": 0,
+    "semantic_overlap": "逐条见dedup_note；重合意图未来复用原题，不增加计分分母"
+  },
+  "intents": [
+    {
+      "id": "BC1-A01",
+      "persona": "A",
+      "product_line": "mouse",
+      "branding": "non_branded",
+      "journey_stage": "比较",
+      "channels": [
+        "search",
+        "ai"
+      ],
+      "need": "电竞实握适配",
+      "zh-CN": "怎样判断一只轻量化电竞鼠标适合自己的握姿和游戏习惯？",
+      "en-US": "How can I tell whether a lightweight gaming mouse suits my grip and the games I play?",
+      "dedup_note": "既有M04/M05适配主题相邻，不能改写后扩大计分分母",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-A02",
+      "persona": "A",
+      "product_line": "mouse",
+      "branding": "branded",
+      "journey_stage": "比较",
+      "channels": [
+        "reviews",
+        "search"
+      ],
+      "need": "性能宣传与实测分开",
+      "zh-CN": "比较 AM Infinity Mouse 的不同版本时，哪些参数和体验必须按型号单独核对？",
+      "en-US": "When comparing AM Infinity Mouse versions, which specifications and experiences need model-specific checks?",
+      "dedup_note": "既有M10高度重合，复用原题测量；此为内容拆解",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-A03",
+      "persona": "A",
+      "product_line": "ai_device",
+      "branding": "non_branded",
+      "journey_stage": "发现",
+      "channels": [
+        "search",
+        "ai"
+      ],
+      "need": "AI硬件工作流价值",
+      "zh-CN": "带语音与硬件控制的桌面 AI 设备，怎样判断它是否真的适合我的工作流？",
+      "en-US": "How can I judge whether a desktop AI device with voice and hardware control actually fits my workflow?",
+      "dedup_note": "新增探索意图；不暗示必须选AM",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-A04",
+      "persona": "A",
+      "product_line": "ai_device",
+      "branding": "branded",
+      "journey_stage": "理解",
+      "channels": [
+        "search",
+        "owned"
+      ],
+      "need": "R6能力与名称边界",
+      "zh-CN": "CYBERBOARD R6 和 CYBERBOARD AI 的名称、软件版本与受支持动作应该怎样核实？",
+      "en-US": "How should I verify the CYBERBOARD R6 and CYBERBOARD AI names, software version and supported actions?",
+      "dedup_note": "新增命名核对，不预设所有版本等同",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-B01",
+      "persona": "B",
+      "product_line": "mouse",
+      "branding": "non_branded",
+      "journey_stage": "理解",
+      "channels": [
+        "reviews",
+        "search"
+      ],
+      "need": "材质与体验取舍",
+      "zh-CN": "金属镂空电竞鼠标应该怎样看真实触点、表面与日常使用限制？",
+      "en-US": "How should I assess the contact points, finish and everyday limits of an open-frame metal gaming mouse?",
+      "dedup_note": "既有M03材料主题相邻，增加实物证据角度，非新基线",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-B02",
+      "persona": "B",
+      "product_line": "mouse",
+      "branding": "branded",
+      "journey_stage": "理解",
+      "channels": [
+        "reviews",
+        "owned"
+      ],
+      "need": "原创设计与实物",
+      "zh-CN": "AM Infinity Mouse 的设计故事，哪些可以用对应版本的实物证据核对？",
+      "en-US": "Which parts of the AM Infinity Mouse design story can be checked against real objects from the specific version?",
+      "dedup_note": "新增设计事实探针，无工艺数值",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-B03",
+      "persona": "B",
+      "product_line": "ai_device",
+      "branding": "non_branded",
+      "journey_stage": "发现",
+      "channels": [
+        "reviews",
+        "ai"
+      ],
+      "need": "AI硬件存在理由",
+      "zh-CN": "桌面 AI 设备相对纯软件助手有什么设计取舍，评测应展示哪些实物体验？",
+      "en-US": "What design trade-offs distinguish a desktop AI device from a software-only assistant, and what should a review demonstrate?",
+      "dedup_note": "新增探索意图；不预设硬件更优",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-B04",
+      "persona": "B",
+      "product_line": "ai_device",
+      "branding": "branded",
+      "journey_stage": "理解",
+      "channels": [
+        "community",
+        "owned"
+      ],
+      "need": "品牌叙事与当前方向",
+      "zh-CN": "Angry Miao 的 Future Art Community 与 CYBERBOARD R6 的 AI device 方向怎样连接？",
+      "en-US": "How does Angry Miao’s Future Art Community relate to the CYBERBOARD R6 AI-device direction?",
+      "dedup_note": "品牌定位问题，不作为AI能力验证",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-C01",
+      "persona": "C",
+      "product_line": "mouse",
+      "branding": "non_branded",
+      "journey_stage": "入门",
+      "channels": [
+        "community",
+        "search"
+      ],
+      "need": "换电机制理解",
+      "zh-CN": "换电池的电竞鼠标和插线充电有什么区别，买之前要确认哪些配件？",
+      "en-US": "How does a swappable-battery gaming mouse differ from plugging in to charge, and which accessories should I check?",
+      "dedup_note": "既有M02/M09高度重合；不重复追加计分",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-C02",
+      "persona": "C",
+      "product_line": "mouse",
+      "branding": "branded",
+      "journey_stage": "比较",
+      "channels": [
+        "search",
+        "owned"
+      ],
+      "need": "版本入口清楚",
+      "zh-CN": "AM Infinity Mouse 原版与 .97 是同一款吗，如何找到各自的准确资料？",
+      "en-US": "Are the original AM Infinity Mouse and the .97 the same model, and where can I find accurate information for each?",
+      "dedup_note": "既有M10高度重合；复用原题测量",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-C03",
+      "persona": "C",
+      "product_line": "ai_device",
+      "branding": "non_branded",
+      "journey_stage": "上手",
+      "channels": [
+        "community",
+        "ai"
+      ],
+      "need": "AI边界与权限",
+      "zh-CN": "第一次使用带硬件控制的 AI 设备，怎样核实兼容性、权限和不能做的事？",
+      "en-US": "Before using an AI device with hardware control, how can I check compatibility, permissions and limits?",
+      "dedup_note": "新增探索意图，未知不等于无此功能",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    },
+    {
+      "id": "BC1-C04",
+      "persona": "C",
+      "product_line": "ai_device",
+      "branding": "branded",
+      "journey_stage": "购买前核实",
+      "channels": [
+        "owned",
+        "search"
+      ],
+      "need": "预热与交付事实",
+      "zh-CN": "CYBERBOARD AI 页面中的预热、定金和发货说明，哪些需要下单前重新确认？",
+      "en-US": "Which CYBERBOARD AI teaser, reservation and shipping details should I reconfirm before placing an order?",
+      "dedup_note": "不代支付或承诺交付；别把占位符当日期",
+      "status": "exploratory_not_run",
+      "evidence_needed": [
+        "对应型号/版本/市场/日期的官方来源",
+        "实际体验须作者身份、条件及披露；AI能力须支持范围，购买条款须当期原链接"
+      ],
+      "metrics": null
+    }
+  ]
+}

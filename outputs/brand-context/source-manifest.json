@@ -1,0 +1,44 @@
+{
+  "repository": "https://github.com/khonsou/CyberboardR6MarketingPlan",
+  "commit": "4396097272fe7d7455baf85404e594f98d22efb9",
+  "source_commit_at": "2026-10-13T06:00:49Z",
+  "retrieved_at": "2026-11-01T10:27:41+00:00",
+  "purpose": "User-designated brand and audience planning references; not product-performance certification",
+  "files": [
+    {
+      "path": "am-marketing-planner/references/audience.md",
+      "local_path": "outputs/brand-context/sources/audience.md",
+      "source_url": "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/audience.md",
+      "sha256": "58beee96d2cfb7fe0a36047ed7894ed597f4976150d41cf7d6fbcdbc0c014587",
+      "bytes": 7197
+    },
+    {
+      "path": "am-marketing-planner/references/brand.md",
+      "local_path": "outputs/brand-context/sources/brand.md",
+      "source_url": "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/brand.md",
+      "sha256": "03cfa776b83e867199a7c1d80fcca466b27f032c5bd5217fecdf4f8731a67bf1",
+      "bytes": 4743
+    },
+    {
+      "path": "am-marketing-planner/references/methodology.md",
+      "local_path": "outputs/brand-context/sources/methodology.md",
+      "source_url": "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/methodology.md",
+      "sha256": "15430986ba96c24edf555687c30053b872a585078a794cdba119361042eb8df7",
+      "bytes": 10188
+    },
+    {
+      "path": "am-marketing-planner/references/product.md",
+      "local_path": "outputs/brand-context/sources/product.md",
+      "source_url": "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/product.md",
+      "sha256": "8bdde0d205692a0ed0c75a9ab980658a149f7fc3ec54293b5e49c37c30247883",
+      "bytes": 5602
+    },
+    {
+      "path": "am-marketing-planner/references/visual.md",
+      "local_path": "outputs/brand-context/sources/visual.md",
+      "source_url": "https://github.com/khonsou/CyberboardR6MarketingPlan/blob/4396097272fe7d7455baf85404e594f98d22efb9/am-marketing-planner/references/visual.md",
+      "sha256": "f827026472ae0a9d597568ffeddeb95d2f02f672d43257278fdc90496df902ff",
+      "bytes": 4015
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "可换电池的电竞鼠标怎么选？",
+  "url": "https://store.angrymiao.com/zh/tools/swap-mouse-selector/",
+  "inLanguage": "zh-CN",
+  "description": "先比较握姿、带电池重量、补电方式与备用电池条件，再看与游戏和桌面习惯的匹配。可换电池并不等于电池能瞬间充满。",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "鼠标选择器",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "description": "先比较握姿、带电池重量、补电方式与备用电池条件，再看与游戏和桌面习惯的匹配。可换电池并不等于电池能瞬间充满。"
+  }
+}

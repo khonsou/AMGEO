@@ -1,0 +1,16 @@
+{
+  "id": "core-discovery-answer-v1",
+  "version": 1,
+  "model": "gpt-6.1-sol",
+  "surface": "api_answer",
+  "platform": "codex-cli-search",
+  "title": "电竞鼠标与 AI device · 中英发现试运行",
+  "scope": "Four neutral non-branded questions, two per language, one mouse and one AI-device intent in each language. Agent/API answers only; not consumer UI or market-wide measurement.",
+  "baseline_rule": "New topic panel. Historical bilingual-discovery-pilot-v1 and all observations remain archived; scores across changed topic panels are not comparable.",
+  "queries": [
+    {"id": "CORE-EN-M01", "locale": "en-US", "product_line": "mouse", "prompt": "Which lightweight gaming mice have replaceable batteries, and what are the trade-offs?"},
+    {"id": "CORE-EN-A01", "locale": "en-US", "product_line": "ai_device", "prompt": "How can I judge whether a desktop AI device with voice and hardware control actually fits my workflow? Give concrete product examples where useful, and explain the limitations."},
+    {"id": "CORE-ZH-M01", "locale": "zh-CN", "product_line": "mouse", "prompt": "有哪些支持换电池的轻量化游戏鼠标？比插线充电方便在哪，又有什么代价？"},
+    {"id": "CORE-ZH-A01", "locale": "zh-CN", "product_line": "ai_device", "prompt": "怎样判断带语音输入和硬件控制的桌面 AI 设备是否适合我的工作流？可以结合具体产品举例，并说明使用限制。"}
+  ]
+}

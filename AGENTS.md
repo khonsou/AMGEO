@@ -18,6 +18,8 @@ This entire repository is the Angry Miao SEO/GEO project. Continue the current c
 
 ## Execute
 - Read `outputs/agent-kit/RUN-AGENT.md` and `outputs/agent-kit/tasks.json` before continuing task execution.
+- The human-facing entry is the local browser console; keep its workflow usable without CLI or JSON editing.
+- Check recorded console requests and feedback under `outputs/runtime/console/` when continuing work; a recorded request is not an executed optimization or new access authority.
 - Start with `./am-seo status`, `./am-seo doctor`, and `./am-seo deps verify`.
 - Run `python3 -m unittest discover -s tests -v` and `./am-seo run --offline` after integration changes.
 - For actual source-site edits, inspect the connected site's real repository and serving configuration first.
