@@ -1,0 +1,25 @@
+{
+  "version": "agent-readability-2026-11-11",
+  "adopted_date": "2026-11-11",
+  "scope": "Agent readability hypotheses and diagnostics; not a universal GEO ranking formula",
+  "priorities": [
+    "P1: Expose model/version/market-specific facts, chart data equivalents and direct answers in readable HTML, with sources. Do not assert unresolved claims.",
+    "P1: Solve distinct find, alternatives, how-to and facts needs; deduplicate near-identical questions into useful pages rather than publishing one thin page per generated prompt.",
+    "P2: Seek genuine independent reviews and first-hand experience. Mention volume alone does not prove recommendation lift.",
+    "P3: Optionally generate Markdown and llms.txt from the same content source. Check actual responses and field consistency; missing optional files is not an SEO/GEO failure. Google Search does not use these files as a visibility boost."
+  ],
+  "measurement": [
+    "Keep public HTML/robots checks, bot fetch logs, AI-referred human visits, answer citations, recommendations and factual accuracy separate.",
+    "Evaluate website changes using fixed bilingual neutral/branded panels on authorized web-enabled surfaces; preserve actual answers, final citation URLs, model/version, settings, time and retrieval mode.",
+    "No-search DeepSeek API tests are a separate brand-presence baseline, not a website-change experiment. A mention, a crawl or a parser pass cannot certify a recommendation or factual accuracy.",
+    "Resend's high recommendation share is an observational developer-tool result, not a controlled before/after trial of Markdown. Physical device shoppers and coding agents are different populations."
+  ],
+  "sources": [
+    {"url": "https://x.com/RookieRicardoR/status/2120415469522018417", "role": "discovery lead, not proof of causal effects", "observed_date": "2026-11-11"},
+    {"url": "https://latent.space/p/resend/", "role": "primary interview and contextual case", "observed_date": "2026-11-11"},
+    {"url": "https://resend.com/pricing.md", "role": "verified public implementation; not proof of lift", "observed_date": "2026-11-11"},
+    {"url": "https://resend.com/llms.txt", "role": "verified public implementation", "observed_date": "2026-11-11"},
+    {"url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide", "role": "official Google scope and limits; do not generalize to all AI services", "observed_date": "2026-11-11"},
+    {"url": "https://amplifying.ai/research/claude-code-picks/report", "role": "observational February 2026 Claude Code study; no causal website experiment", "observed_date": "2026-11-11"}
+  ]
+}

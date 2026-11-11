@@ -86,7 +86,7 @@ function focusTaskCard(task){
   if(task.question?.basis==="skill_generated")details.append(node("p","此题使用现有 Agent 公开检索并生成对应内容，不套用固定换电模板；消耗该执行器的模型额度。","form-note"));
   const steps=node("ol",undefined,"simple-steps");task.steps.forEach(step=>steps.append(node("li",step)));details.append(steps,node("strong","完成条件","small-label"));
   const acceptance=node("ul",undefined,"simple-steps");task.acceptance.forEach(value=>acceptance.append(node("li",value)));details.append(acceptance);
-  if(task.checks?.length){task.checks.forEach(item=>details.append(node("p",`${item.passed?"✓":"✕"} ${item.title}${item.detail?` · ${item.detail}`:""}`,item.passed?"check-passed":"check-pending")));details.append(node("p",`验证于 ${date(task.verification?.checked_at)} · 公开规则 / HTML 基础检查，发布与内容事实另按完成条件核对。`,"form-note"));}
+  if(task.checks?.length){task.checks.forEach(item=>details.append(node("p",`${item.passed===true?"✓":item.passed===false?"✕":"·"} ${item.title}${item.required===false?"（建议／待复核）":""}${item.detail?` · ${item.detail}`:""}`,item.passed===true?"check-passed":"check-pending")));details.append(node("p",`验证于 ${date(task.verification?.checked_at)} · 公开规则 / HTML 基础检查，发布与内容事实另按完成条件核对。`,"form-note"));}
   else details.append(node("p","尚未验证。勾选不会改写验证结果。","form-note"));
   card.append(details);return card;
 }

@@ -80,9 +80,9 @@ class GeoWorkspaceTests(unittest.TestCase):
 
     def test_generate_idempotent_prepare_and_restart_preserve_real_artifacts(self):
         generated = self.generate()
-        self.assertEqual(len(generated['tasks']), 11)
+        self.assertEqual(len(generated['tasks']), 12)
         self.generate()
-        self.assertEqual(len(self.workspace.state()['tasks']), 11)
+        self.assertEqual(len(self.workspace.state()['tasks']), 12)
         task = self.workspace.prepare('page-' + self.playbook['questions'][0]['id'])
         self.assertEqual(task['status'], 'prepared')
         self.assertEqual(task['completion_scope'], 'local_artifact_not_published')

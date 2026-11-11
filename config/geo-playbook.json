@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "created_date": "2026-11-04",
-  "description": "基于用户确认的品牌双主线与四类需求反推；候选问题不是搜索量或真实用户记录。工具/指南每个具体问题对应一个页面；中英文分别服务本地语言。",
+  "description": "基于品牌双主线与四类需求反推；问题不是搜索量或真实用户记录。先合并重叠问题，围绕有独立价值的主题生成页面；中英分别服务本地语言。",
   "intents": {
     "find": {
       "label": "找工具 / 选产品",
@@ -346,6 +346,33 @@
       "title": "DeepSeek Chat Completions 与推理参数",
       "url": "https://api-docs.deepseek.com/api/create-chat-completion/",
       "checked_date": "2026-11-04"
+    },
+    {
+      "title": "discovery lead, not proof of causal effects",
+      "url": "https://x.com/RookieRicardoR/status/2120415469522018417"
+    },
+    {
+      "title": "primary interview and contextual case",
+      "url": "https://latent.space/p/resend/"
+    },
+    {
+      "title": "verified public implementation; not proof of lift",
+      "url": "https://resend.com/pricing.md"
+    },
+    {
+      "title": "verified public implementation",
+      "url": "https://resend.com/llms.txt"
+    },
+    {
+      "title": "official Google scope and limits; do not generalize to all AI services",
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide"
+    },
+    {
+      "title": "observational February 2026 Claude Code study; no causal website experiment",
+      "url": "https://amplifying.ai/research/claude-code-picks/report"
     }
-  ]
+  ],
+  "updated_date": "2026-11-11",
+  "methodology": "docs/agent-readable-method.md",
+  "knowhow_policy": "config/geo-knowhow.json"
 }

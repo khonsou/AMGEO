@@ -162,6 +162,9 @@ class GeoWorkspace:
         self.path = self.directory / "state.json"; self.lock = threading.RLock(); self.fetcher = fetcher or read_public
         self.page_runner = page_runner
         self.data = load(self.path, {"tasks": [], "traffic": None, "history": []})
+        if self.data['tasks'] and not any(t['id'] == 'agent-readability' for t in self.data['tasks']):
+            self.data['tasks'].append(next(t for t in self.base_tasks() if t['id'] == 'agent-readability'))
+            self.save()
 
     def playbook(self):
         book = load(self.root / "config/geo-playbook.json", {"questions": [], "intents": {}, "guidance_sources": []})
@@ -191,7 +194,7 @@ class GeoWorkspace:
             data = deepcopy(self.data)
             for task in data["tasks"]:
                 task.setdefault("execution_done", False)
-                task["group"] = {"page": "content", "robots": "foundation", "schema": "foundation", "traffic": "attribution"}.get(task["kind"], "other")
+                task["group"] = {"page": "content", "robots": "foundation", "schema": "foundation", "scan": "foundation", "traffic": "attribution"}.get(task["kind"], "other")
                 task["validation_status"] = "passed" if task.get("check_status") == "passed" else "failed" if task.get("check_status") == "needs_work" else "not_checked"
             return {**data, "playbook": self.playbook()}
 
@@ -234,6 +237,9 @@ class GeoWorkspace:
     @staticmethod
     def base_tasks():
         return [
+            {"id": "agent-readability", "kind": "scan", "title": "扫描 AI 可读正文、FAQ 与可选 Markdown", "target_url": PRODUCT, "status": "ready", "artifacts": [], "checks": [],
+             "steps": ["点击验证：读取产品 HTML、对应 .md 与同站 llms.txt，保存真实响应和时间。", "按型号、版本、市场核对价格／参数、图表文字等价、直接答案与来源。", "核对场景页和对比页是否有独立价值；Markdown 从同一数据源生成，缺失不计 GEO 扣分。", "改动后使用固定题组联网采样，分别记录引用、推荐、事实正确与 AI 引荐访问。"],
+             "acceptance": ["原始 HTML 的关键正文直接可提取", "参数与图表、FAQ、来源完成逐字段复核；自动线索不冒充事实验收", "若提供 Markdown，事实与 HTML 同源并同步", "抓取日志与人类访问分开，效果以真实联网证据验证"]},
             {"id": "ai-crawlers", "kind": "robots", "title": "确认 AI 搜索爬虫能访问公开页面", "status": "ready", "artifacts": [], "checks": [],
              "steps": ["检查官网与商城 robots.txt 的 OAI-SearchBot、PerplexityBot、bingbot 规则。", "只放行需公开的产品与工具页；保留后台、购物车等限制。", "用真实爬虫日志确认 CDN 放行；搜索放行与训练授权分别决定。"], "acceptance": ["两站点公开路径未被 robots 规则阻止", "CDN / WAF 的真实爬虫访问证据"]},
             {"id": "answer-schema", "kind": "schema", "title": "核对直接答案、FAQ 和匹配正文的结构化数据", "target_url": PRODUCT, "status": "ready", "artifacts": [], "checks": [],
@@ -270,6 +276,9 @@ class GeoWorkspace:
                         "public_paths": ["/products/am-infinity-97-wireless-gaming-mouse", "/products/am-infinity-mouse"] + [q["path"] for q in self.playbook()["questions"]],
                         "merge_rule": "先读取实际 robots.txt；已有规则放行时无需改动。合并特定 UA 组时继承已有私有路径限制，只增加目标公开路径的精确 Allow，不替换整份文件。", "training_policy": "GPTBot、Google-Extended 等训练/其他用途另行决策；本任务不自动放行。"}, ensure_ascii=False, indent=2),
                         "check.md": "点击检查线上，查看两站点 robots.txt 的实际结果。规则检查不证明真实爬虫 IP 已通过 CDN/WAF；需要访问日志。未连接真实站点源码时不输出冒充源码补丁的文件。\n"}
+            elif task["kind"] == "scan":
+                files = {"scan-policy.json": json.dumps(load(self.root / 'config/geo-knowhow.json', {}), ensure_ascii=False, indent=2),
+                         "acceptance.md": '\n'.join(task['steps'] + task['acceptance']) + '\n仅扫描公开页面；不修改站点、不调用付费模型、不改变 GEO 分数。\n'}
             else:
                 files = {"tracking.md": "GA4 → 报告 → 获取 → 流量获取。按会话来源/媒介查看 AI Assistant 渠道，导出聚合 CSV：Session source / medium,Sessions,Key events（可选）。在工作台指定报表站点与起止日期后导入。不要导出用户、订单或完整 URL。\n\n按导入报表口径显示会话、关键事件和来源，不跨文件求和以免重复。Direct 及 Google AI 搜索不能全部识别。当前 GA4 原生 AI Assistant 渠道已可用；自定义规则只用于补充并放在 Referral 之前。\n",
                          "source-rules.json": json.dumps({"native_medium": "ai-assistant", "exact_source_hosts": AI_HOSTS, "do_not_infer": ["direct", "google organic", "bot requests"], "documentation": "https://support.google.com/analytics/answer/9756891?hl=en"}, ensure_ascii=False, indent=2)}
@@ -290,7 +299,11 @@ class GeoWorkspace:
     def check(self, task_id):
         with self.lock: task = deepcopy(self.task(task_id))
         checks, captures = [], []
-        if task["kind"] == "traffic":
+        if task["kind"] == "scan":
+            from .readability_scan import scan
+            report, captures = scan(self.fetcher, task['target_url'])
+            checks = report['checks']
+        elif task["kind"] == "traffic":
             checks.append({"title": "真实聚合报表已导入", "passed": bool(self.data.get("traffic")), "detail": "未连接时不填零。"})
         else:
             targets = [origin + "/robots.txt" for origin in ORIGINS] if task["kind"] == "robots" else [task["target_url"]]
@@ -337,7 +350,12 @@ class GeoWorkspace:
                 directory.mkdir(parents=True, exist_ok=True); path = directory / f"{i}.txt"; path.write_text(capture["body"], encoding="utf-8")
                 evidence.append({k: v for k, v in capture.items() if k != "body"} | {"path": str(path.relative_to(self.root)), "saved_text_sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
             current["checks"] = checks; current["verification"] = {"checked_at": now(), "scope": "public_rule_or_html_diagnostic_only", "evidence": evidence}
-            current["check_status"] = "passed" if checks and all(c["passed"] for c in checks) else "needs_work"
+            required = [c for c in checks if c.get('required', True)]
+            current["check_status"] = "passed" if required and all(c["passed"] for c in required) else "needs_work"
+            if task['kind'] == 'scan':
+                current['scan_report'] = report
+                current['verification']['scope'] = report['scope']
+                current['next_action'] = '基础读取检查' + ('通过' if current['check_status'] == 'passed' else '未通过') + '；展开逐字段复核与建议。可选项不计 SEO / GEO 分数。'
             if task["kind"] == "robots":
                 invalid = [c["detail"] for c in checks if c["title"] == "取得 robots 规则文本" and not c["passed"]]
                 current["next_action"] = ("先修复返回 HTML 的 robots.txt 路由：" + "、".join(invalid)) if invalid else ("规则检查已通过；接着核对真实爬虫的 CDN / WAF 访问日志。" if current["check_status"] == "passed" else "展开未通过项，按目标公开路径修正规则后复查。")

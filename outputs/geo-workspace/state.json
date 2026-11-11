@@ -1243,6 +1243,150 @@
         "mode": "api-no-search",
         "reason": "API 问题未命中；生成对应内容优化候选，不声称优化已经生效。"
       }
+    },
+    {
+      "id": "agent-readability",
+      "kind": "scan",
+      "title": "扫描 AI 可读正文、FAQ 与可选 Markdown",
+      "target_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+      "status": "ready",
+      "artifacts": [],
+      "checks": [
+        {
+          "id": "html",
+          "title": "产品 HTML 可访问",
+          "passed": false,
+          "detail": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse · HTTP 429",
+          "required": true
+        },
+        {
+          "id": "markdown",
+          "title": "采集异常：markdown",
+          "passed": null,
+          "detail": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1002)>",
+          "required": false
+        },
+        {
+          "id": "llms",
+          "title": "采集异常：llms",
+          "passed": null,
+          "detail": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1002)>",
+          "required": false
+        },
+        {
+          "id": "facts_review",
+          "title": "事实与图表核对",
+          "passed": null,
+          "detail": "图表数据需文字等价表达；字段逐项核对来源，37g/39g 冲突继续省略。",
+          "required": false
+        },
+        {
+          "id": "intent_review",
+          "title": "场景页／对比页的独立价值",
+          "passed": null,
+          "detail": "核对是否解决真实选购、替代、操作、事实需求；合并仅改关键词的重复页。",
+          "required": false
+        },
+        {
+          "id": "external_review",
+          "title": "外部独立证据",
+          "passed": null,
+          "detail": "检查真实评测与使用经验；不以刷提及或第三方数量认定推荐提升。",
+          "required": false
+        },
+        {
+          "id": "measurement",
+          "title": "效果测量分离",
+          "passed": null,
+          "detail": "抓取日志、AI 引荐访问、回答引用、推荐与事实正确率分别记录；联网固定题组保存实际回答和引用 URL，未联网 API 仅作独立基线。",
+          "required": false
+        }
+      ],
+      "steps": [
+        "点击验证：读取产品 HTML、对应 .md 与同站 llms.txt，保存真实响应和时间。",
+        "按型号、版本、市场核对价格／参数、图表文字等价、直接答案与来源。",
+        "核对场景页和对比页是否有独立价值；Markdown 从同一数据源生成，缺失不计 GEO 扣分。",
+        "改动后使用固定题组联网采样，分别记录引用、推荐、事实正确与 AI 引荐访问。"
+      ],
+      "acceptance": [
+        "原始 HTML 的关键正文直接可提取",
+        "参数与图表、FAQ、来源完成逐字段复核；自动线索不冒充事实验收",
+        "若提供 Markdown，事实与 HTML 同源并同步",
+        "抓取日志与人类访问分开，效果以真实联网证据验证"
+      ],
+      "verification": {
+        "checked_at": "2026-11-11T13:48:45+00:00",
+        "scope": "raw_html_readability_signals_not_fact_or_geo_score",
+        "evidence": [
+          {
+            "url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "final_url": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse",
+            "status": 429,
+            "content_type": "text/plain",
+            "captured_at": "2026-11-11T13:48:35+00:00",
+            "sha256": "fa2dd01ed96d38758e89e354653c39f366bc7a34e485772c8aa2174b53a465d3",
+            "path": "outputs/geo-workspace/checks/agent-readability/20261111T134845747348Z/0.txt",
+            "saved_text_sha256": "fa2dd01ed96d38758e89e354653c39f366bc7a34e485772c8aa2174b53a465d3"
+          }
+        ]
+      },
+      "check_status": "needs_work",
+      "scan_report": {
+        "version": "agent-readable-content-v1",
+        "scope": "raw_html_readability_signals_not_fact_or_geo_score",
+        "checks": [
+          {
+            "id": "html",
+            "title": "产品 HTML 可访问",
+            "passed": false,
+            "detail": "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse · HTTP 429",
+            "required": true
+          },
+          {
+            "id": "markdown",
+            "title": "采集异常：markdown",
+            "passed": null,
+            "detail": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1002)>",
+            "required": false
+          },
+          {
+            "id": "llms",
+            "title": "采集异常：llms",
+            "passed": null,
+            "detail": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1002)>",
+            "required": false
+          },
+          {
+            "id": "facts_review",
+            "title": "事实与图表核对",
+            "passed": null,
+            "detail": "图表数据需文字等价表达；字段逐项核对来源，37g/39g 冲突继续省略。",
+            "required": false
+          },
+          {
+            "id": "intent_review",
+            "title": "场景页／对比页的独立价值",
+            "passed": null,
+            "detail": "核对是否解决真实选购、替代、操作、事实需求；合并仅改关键词的重复页。",
+            "required": false
+          },
+          {
+            "id": "external_review",
+            "title": "外部独立证据",
+            "passed": null,
+            "detail": "检查真实评测与使用经验；不以刷提及或第三方数量认定推荐提升。",
+            "required": false
+          },
+          {
+            "id": "measurement",
+            "title": "效果测量分离",
+            "passed": null,
+            "detail": "抓取日志、AI 引荐访问、回答引用、推荐与事实正确率分别记录；联网固定题组保存实际回答和引用 URL，未联网 API 仅作独立基线。",
+            "required": false
+          }
+        ]
+      },
+      "next_action": "基础读取检查未通过；展开逐字段复核与建议。可选项不计 SEO / GEO 分数。"
     }
   ],
   "traffic": null,
