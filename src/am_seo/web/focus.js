@@ -77,7 +77,9 @@ function focusTaskCard(task){
   if(task.next_action)title.append(node("p",task.next_action,"todo-next"));
   if(task.kind==="traffic")title.append(node("p",focusWorkspace().traffic?`${focusWorkspace().traffic.ai_sessions} 个 AI 来源会话 · ${focusWorkspace().traffic.start_date} — ${focusWorkspace().traffic.end_date}`:"等待真实访问报表","todo-next"));
   const status=task.validation_status||"not_checked",label={passed:"验证通过",failed:"验证不通过",not_checked:"待验证"}[status];
-  head.append(check,title,node("span",label,`todo-validation ${status}`));card.append(head);
+  const checkTarget=node("label",undefined,"todo-check-target");
+  checkTarget.append(check);
+  head.append(checkTarget,title,node("span",label,`todo-validation ${status}`));card.append(head);
   const details=node("details",undefined,"todo-details");details.dataset.taskId=task.id;details.append(node("summary","操作、产物与验证详情"));
   const controls=node("div",undefined,"focus-task-actions");controls.append(focusButton(task.question?.basis==="skill_generated"?"Agent 生成对应页面":task.artifacts?.length?"重新准备产物":"准备产物",()=>focusAction("prepare",{task_id:task.id})),focusButton("验证",()=>focusAction("check",{task_id:task.id})));
   if(task.kind==="traffic")controls.append(focusButton("设置 AI 流量来源",openTraffic));
@@ -92,7 +94,12 @@ function focusTaskCard(task){
 }
 function renderFocusTasks(){
   const tasks=focusWorkspace().tasks,filter=$("#focus-task-filter").value,done=tasks.filter(t=>t.execution_done).length,passed=tasks.filter(t=>t.validation_status==="passed").length,failed=tasks.filter(t=>t.validation_status==="failed").length;
-  $("#todo-progress").replaceChildren(node("span",`已勾选 ${done} / ${tasks.length}`),node("span",`验证通过 ${passed}`,"check-passed"),node("span",`验证不通过 ${failed}`,"check-pending"));
+  const counts=[["已勾选",`${done} / ${tasks.length}`],["验证通过",passed,"check-passed"],["验证不通过",failed,"check-pending"]];
+  $("#todo-progress").replaceChildren(...counts.map(([label,value,status])=>{
+    const item=node("div",undefined,status);
+    item.append(node("span",label), node("b",value));
+    return item;
+  }));
   const shown=tasks.filter(t=>filter==="all"||(filter==="pending"?!t.execution_done:filter==="done"?t.execution_done:t.validation_status==="failed"));
   const opened=new Set([...document.querySelectorAll('#focus-tasks details[open]')].map(el=>el.dataset.taskId)),groups=[];
   for(const [id,label] of Object.entries(TODO_GROUPS)){const rows=shown.filter(t=>(t.group||"other")===id);if(!rows.length)continue;const group=node("section",undefined,"todo-group");group.append(node("h2",`${label} · ${rows.length}`));rows.forEach(t=>group.append(focusTaskCard(t)));groups.push(group);}
@@ -131,7 +138,12 @@ function renderFocus(){
 }
 function routeFocus(){
   const raw=location.hash.slice(1)||"todo",alias={overview:"todo",tasks:"todo",traffic:"todo"},hash=alias[raw]||raw,views=['todo','questions','settings'],route=views.includes(hash)?hash:'settings';
-  const moved=hash!==activeFocusHash;activeFocusHash=hash;document.querySelectorAll('[data-view]').forEach(view=>{view.hidden=view.dataset.view!==route;});document.querySelectorAll('.nav-link').forEach(link=>link.classList.toggle('active',link.hash===`#${route}`));
+  const moved=hash!==activeFocusHash;activeFocusHash=hash;document.querySelectorAll('[data-view]').forEach(view=>{view.hidden=view.dataset.view!==route;});document.querySelectorAll('.nav-link').forEach(link=>{
+    const current=link.hash===`#${route}`;
+    link.classList.toggle('active',current);
+    if(current)link.setAttribute('aria-current','page');
+    else link.removeAttribute('aria-current');
+  });
   if(route==='settings'&&hash!=='settings'){const target=document.getElementById(hash);if(target){let parent=target.tagName==='DETAILS'?target:target.parentElement;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}if(moved)target.scrollIntoView();}}
   else if(moved)document.getElementById(route)?.scrollIntoView({block:'start'});
 }
@@ -145,7 +157,20 @@ $("#focus-evaluate").addEventListener('click',()=>$("#score-source").value==='ap
 $("#focus-evidence").addEventListener('click',()=>{if($("#score-source").value==='api')location.hash='questions';else{const measured=latestGeoCycle();if(measured){selectedCycleId=measured.id;render();location.hash='evaluation';}}routeFocus();});
 $("#score-source").addEventListener('change',()=>{scoreSourceChosen=true;renderFocusScore();renderFocusControls();});
 $("#score-float-toggle").addEventListener('click',()=>{const panel=$("#score-float-panel");panel.hidden=!panel.hidden;$("#score-float-toggle").setAttribute('aria-expanded',String(!panel.hidden));});
-$("#score-float-close").addEventListener('click',()=>{$("#score-float-panel").hidden=true;$("#score-float-toggle").setAttribute('aria-expanded','false');});
+function closeScorePanel(){
+  $("#score-float-panel").hidden=true;
+  $("#score-float-toggle").setAttribute("aria-expanded","false");
+  $("#score-float-toggle").focus();
+}
+$("#score-float-close").addEventListener("click",closeScorePanel);
+$("#geo-score-widget").addEventListener("keydown",event=>{
+  if(event.key==="Escape"&&!$("#score-float-panel").hidden){event.preventDefault();closeScorePanel();}
+});
+$(".skip-workspace").addEventListener("click",event=>{
+  event.preventDefault();
+  $("#workspace-main").focus();
+  $("#workspace-main").scrollIntoView();
+});
 $("#focus-generate").addEventListener('click',async()=>{if(await focusAction('generate',{question_ids:[...questionSelection]})){location.hash='todo';routeFocus();}});
 $("#focus-prepare-all").addEventListener('click',()=>focusAction('prepare-all'));
 $("#question-locale").addEventListener('change',renderFocusQuestions);$("#question-intent").addEventListener('change',renderFocusQuestions);$("#focus-task-filter").addEventListener('change',renderFocusTasks);

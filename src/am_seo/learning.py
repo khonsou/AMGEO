@@ -5,6 +5,27 @@ import re
 from copy import deepcopy
 
 
+def lesson_references(evidence, cycle):
+    """Resolve whole task IDs and existing metric paths in this cycle."""
+    tasks = {t["id"]: t for t in cycle.get("tasks", [])}
+    references = {}
+    for token in re.findall(r"(?<![\w.-])(?:metrics(?:\.[a-zA-Z_][a-zA-Z0-9_]*)+|[A-Za-z0-9_-]+)(?![\w-])", evidence):
+        if token in tasks:
+            references[token] = {"task_status": tasks[token]["status"]}
+        elif token.startswith("metrics."):
+            value = cycle.get("metrics")
+            for part in token.split(".")[1:]:
+                if not isinstance(value, dict) or part not in value:
+                    raise ValueError(f"本轮不存在复盘字段 {token}")
+                value = value[part]
+            if isinstance(value, (list, dict)):
+                raise ValueError(f"请引用具体指标值：{token}")
+            references[token] = value
+    if not references:
+        raise ValueError("经验须引用本轮完整任务 ID 或实际存在的具体指标字段。")
+    return references
+
+
 def runtime_failure(message):
     if not isinstance(message, str):
         return None

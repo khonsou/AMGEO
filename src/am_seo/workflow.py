@@ -23,8 +23,9 @@ from typing import Any
 from urllib.parse import urlsplit
 import uuid
 
-from .learning import process_lessons, runtime_failure, rebase_brand_direction
+from .learning import lesson_references, process_lessons, runtime_failure, rebase_brand_direction
 from .brand_context import load_brand_context, context_status
+from .console_evidence import console_evidence
 from .search_measurement import validate_search_measurement, preserve_search_measurement
 
 CHANNELS = {"search", "ai", "reviews", "community", "catalog", "owned"}
@@ -314,6 +315,15 @@ class WorkflowEngine:
         if brand_context.get("configured") and not brand_context["integrity"]["verified"]:
             raise ValueError("品牌资料完整性检查失败：" + "; ".join(brand_context["integrity"]["errors"]))
         cycle = {"project_snapshot": load(self.root / "config/project.json", {}), "brand_context_snapshot": brand_context, "id": identifier, "number": number, "previous_cycle_id": previous["id"] if previous else None, "goal": goal, "market": market, "channels": channels, "strategy_version": self.data["strategy"]["version"], "strategy_snapshot": deepcopy(self.data["strategy"]), "status": "queued", "phase": "queued", "created_at": now(), "updated_at": now(), "summary": "", "findings": [], "tasks": [], "metrics": None, "events": [], "error": None}
+        # Keep the method that governed this cycle alongside its strategy snapshot.
+        skill_path = self.root / "skills/am-seo-geo-loop/SKILL.md"
+        if skill_path.is_file():
+            source = skill_path.read_bytes()
+            cycle["method_skill"] = {
+                "path": str(skill_path.relative_to(self.root)), "sha256": hashlib.sha256(source).hexdigest(),
+                "content": source.decode("utf-8"),
+            }
+        cycle["console_evidence"] = console_evidence(self.root)
         self.data["cycles"].append(cycle)
         return cycle
 
@@ -574,6 +584,9 @@ Project input JSON:\n{json.dumps(data, ensure_ascii=False)}
     def _call(self, cycle, phase, schema, data, search=True):
         output_dir = self.directory / cycle["id"] / f"{phase}-{uuid.uuid4().hex[:8]}"
         prompt = self._prompt(phase, data)
+        skill = cycle.get("method_skill")
+        if skill:
+            prompt += "\nApply the project method frozen for this cycle within the authorization and output schema above.\n" + skill["content"]
         response = self.runner(prompt, deepcopy(schema), output_dir, search=search)
         if not isinstance(response, dict):
             raise ValueError("运行器必须返回结构化对象。")
@@ -596,6 +609,8 @@ Project input JSON:\n{json.dumps(data, ensure_ascii=False)}
             cycle["status"] = "analyzing"
             self._event(cycle, "analyze", "Agent 正在按当前策略检索公开资料并拆分执行任务。")
         data = self._context(cycle)
+        if "console_evidence" in cycle:
+            data["console_evidence"] = cycle["console_evidence"]
         data["output_instructions"] = "Return summary, evidence-linked findings and 1–6 executable tasks. Every task needs a concrete instruction, acceptance, owner, channel, market and prerequisites. Routine research/content belongs to agent. Human tasks are only brand decisions, physical measurements or granting specific missing access. Requires lists concrete missing capability IDs; do not assume credentials exist. Dependencies refer to T1/T2 in this returned array (or leave empty). Keep production edits blocked on actual source/CMS access; provide independent tasks that can proceed."
         result = self._call(cycle, "analysis", ANALYSIS_SCHEMA, data)
         self._apply_analysis(cycle, result)
@@ -892,20 +907,29 @@ Project input JSON:\n{json.dumps(data, ensure_ascii=False)}
             path = self.directory / cycle["id"] / "metrics-history" / f"{identifier}.json"
             atomic(path, cycle["metrics"])
             cycle.setdefault("metrics_history", []).append({"id": identifier, "path": str(path.relative_to(self.root)), "evaluated_at": cycle["metrics"].get("evaluated_at")})
-        metrics.setdefault("comparison", {"status": "not_comparable", "reason": "需要前后两轮同一固定面板、指标版本及采样设置的真实数据。"})
+        metrics["comparison"] = {"status": "not_comparable", "reason": "需要前后两轮同一固定面板、指标版本及采样设置的真实数据。"}
         previous = next((c for c in self.data["cycles"] if c["id"] == cycle.get("previous_cycle_id")), None)
         if previous and previous.get("metrics"):
             comparisons = {}
             for key in ("seo", "geo"):
                 before = previous["metrics"].get(key, {})
                 after = metrics[key]
-                if before.get("score") is not None and after.get("score") is not None and before.get("comparable_protocol") is True and after.get("comparable_protocol") is True and before.get("metric_version") == after.get("metric_version") and before.get("metric") == after.get("metric") and before.get("panel") == after.get("panel"):
+                if before.get("metric_version") != after.get("metric_version") or before.get("metric") != after.get("metric"):
+                    continue
+                def complete_groups(sample):
+                    groups = sample.get("groups") or []
+                    return bool(groups) and all(
+                        g.get("errors") == 0 and g.get("not_run", 0) == 0
+                        and g.get("attempted", 0) > 0
+                        and g["attempted"] == g.get("successful_tests", g.get("completed"))
+                        for g in groups)
+                if before.get("score") is not None and after.get("score") is not None and before.get("comparable_protocol") is True and after.get("comparable_protocol") is True and before.get("panel") and before["panel"] == after.get("panel") and complete_groups(before) and complete_groups(after):
                     comparisons[key] = {"before": before["score"], "after": after["score"], "delta": round(after["score"]-before["score"], 2), "scope": "observed_change_not_causal_attribution"}
                 if before.get("comparable_protocol") is True and after.get("comparable_protocol") is True and before.get("panel_fingerprint") and before.get("panel_fingerprint") == after.get("panel_fingerprint"):
                     for observed in after.get("groups", []):
                         identity = tuple(observed.get(field) for field in ("surface", "platform", "locale", "mode"))
                         baseline = next((group for group in before.get("groups", []) if tuple(group.get(field) for field in ("surface", "platform", "locale", "mode")) == identity), None)
-                        if baseline and isinstance(baseline.get("score"), (int, float)) and isinstance(observed.get("score"), (int, float)) and baseline.get("errors") == observed.get("errors") == 0 and baseline.get("successful_tests") == observed.get("successful_tests"):
+                        if baseline and isinstance(baseline.get("score"), (int, float)) and isinstance(observed.get("score"), (int, float)) and baseline.get("errors") == observed.get("errors") == 0 and baseline.get("not_run", 0) == observed.get("not_run", 0) == 0 and observed.get("successful_tests", 0) > 0 and baseline.get("successful_tests") == observed["successful_tests"]:
                             comparisons[f"{key}:{observed.get('locale')}"] = {"before": baseline["score"], "after": observed["score"], "delta": round(observed["score"]-baseline["score"], 2), "panel": identity, "scope": "small_panel_observed_change_not_causal_attribution"}
             if comparisons:
                 metrics["comparison"] = {"status": "comparable_panels", "panels": comparisons, "reason": "仅比较同面板观测，未证明改动造成变化。"}
@@ -919,6 +943,12 @@ Project input JSON:\n{json.dumps(data, ensure_ascii=False)}
             raise RuntimeError(self.data["runtime_block"]["detail"])
         if not cycle.get("metrics"):
             self._evaluate(cycle)
+        inputs = {"tasks": cycle["tasks"], "metrics": cycle["metrics"], "findings": cycle["findings"],
+                  "method": cycle.get("method_skill", {}).get("sha256")}
+        fingerprint = hashlib.sha256(json.dumps(inputs, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+        if cycle.get("model_review_fingerprint") == fingerprint:
+            self._event(cycle, "strategy_reviewed", "本轮相同证据已复盘。")
+            return
         with self.lock:
             cycle["status"] = "improving"
             self._event(cycle, "improve", "从执行和评估证据提炼下一版策略，效果判断保留为待验证假设。")
@@ -934,12 +964,13 @@ Project input JSON:\n{json.dumps(data, ensure_ascii=False)}
             if not isinstance(item, dict) or item.get("scope") not in {"process", "performance_hypothesis"}:
                 raise ValueError("策略经验范围无效。")
             evidence = text(item.get("evidence"), "lesson evidence", 4000)
-            if not any(token in evidence for token in ([t["id"] for t in cycle["tasks"]] + ["metrics", "seo", "geo", "execution", "score", "comparison"])):
-                raise ValueError("经验必须关联该轮任务 ID 或评估字段。")
-            normalized.append({"finding": text(item.get("finding"), "lesson finding", 4000), "change": text(item.get("change"), "lesson change", 4000), "evidence": evidence, "scope": item["scope"], "cycle_id": cycle["id"], "status": "adopted_process_candidate" if item["scope"] == "process" else "untested_hypothesis"})
+            refs = lesson_references(evidence, cycle)
+            normalized.append({"finding": text(item.get("finding"), "lesson finding", 4000), "change": text(item.get("change"), "lesson change", 4000), "evidence": evidence, "evidence_refs": refs, "scope": item["scope"], "cycle_id": cycle["id"], "status": "adopted_process_candidate" if item["scope"] == "process" else "untested_hypothesis"})
         with self.lock:
             old = self.data["strategy"]
-            strategy = {"version": old["version"]+1, "status": "candidate_for_next_cycle", "summary": summary, "priorities": priorities, "lessons": old.get("lessons", [])+normalized, "updated_at": now(), "source_cycle_id": cycle["id"], "previous_version": old["version"], "performance_validated": False, "scope": "下一轮执行方法候选；版本增加不代表 SEO/GEO 效果提升。"}
+            process_changes = [lesson["change"] for lesson in normalized if lesson["scope"] == "process"]
+            strategy = {**old, "version": old["version"]+1, "status": "candidate_for_next_cycle", "summary": summary, "priorities": list(dict.fromkeys(process_changes + old.get("priorities", [])))[:10], "lessons": old.get("lessons", [])+normalized, "updated_at": now(), "source_cycle_id": cycle["id"], "previous_version": old["version"], "method": "model_evidence_review_v2", "performance_validated": False, "scope": "下一轮执行方法候选；版本增加不代表 SEO/GEO 效果提升。"}
+            cycle["model_review_fingerprint"] = fingerprint
             self.data["strategy"] = strategy
             cycle.update(strategy_update={"version": strategy["version"], "summary": summary, "lessons": normalized, "status": strategy["status"]}, status="evaluated")
             atomic(self.directory / "strategies" / f"v{strategy['version']}.json", strategy)

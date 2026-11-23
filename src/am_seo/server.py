@@ -24,6 +24,7 @@ MAX_BODY = 32 * 1024
 MARKETS = {"both", "zh-CN", "en-US"}
 CHANNELS = {"search", "ai", "reviews", "community", "catalog", "owned"}
 ARTIFACTS = {
+    "loop-skill": ("SEO/GEO 优化循环与五道 Gate", "markdown", "skills/am-seo-geo-loop/SKILL.md"),
     "strategy": ("SEO / GEO 品牌策略", "markdown", "outputs/angrymiao-seo-geo-strategy.md"),
     "agent-plan": ("Agent 执行计划", "markdown", "outputs/agent-nextsteps.md"),
     "facts": ("产品事实与冲突", "json", "outputs/agent-kit/product-facts.json"),

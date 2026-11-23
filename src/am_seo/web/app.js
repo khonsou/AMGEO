@@ -18,7 +18,95 @@ function workflow(){return state?.workflow||{cycles:[],strategy:{},active:false,
 function cycles(){return [...(workflow().cycles||[])].sort((a,b)=>(a.number||0)-(b.number||0));}
 function cycle(){const all=cycles();return all.find(c=>c.id===selectedCycleId)||all.at(-1)||null;}
 function busy(){return Boolean(workflow().active||posting);}
-function canExecute(task){const all=cycle()?.tasks||[];return task.owner==="agent"&&!(task.requires||[]).length&&["ready","pending","failed","queued","waiting_dependency"].includes(task.status)&&(task.dependencies||[]).every(id=>all.some(t=>t.id===id&&t.status==="completed"));}
+function canExecute(task){return runnableInCycle(task,cycle()?.tasks||[]);}
+function runnableInCycle(task,tasks){
+  return task.owner==="agent" && !(task.requires||[]).length
+    && ["ready","pending","failed","queued","waiting_dependency"].includes(task.status)
+    && (task.dependencies||[]).every(id=>tasks.some(parent=>parent.id===id && parent.status==="completed"));
+}
+
+// The guide follows the running or newest round even when Settings is showing history.
+const guideRunningSteps={queued:null,analyzing:0,executing:1,evaluating:2,improving:3};
+function guideCycle(){
+  const rounds=cycles();
+  return (workflow().active && rounds.find(round=>Object.hasOwn(guideRunningSteps,round.status))) || rounds.at(-1);
+}
+
+function guideNext(round,wf){
+  const tasks=round?.tasks||[];
+  if(wf.active){
+    return {title:STATUS[round?.status]?.[0]||"工作流运行中",step:guideRunningSteps[round?.status],label:"查看执行动态",target:"event-list"};
+  }
+  if(wf.runtime?.blocked || wf.runtime?.available===false){
+    return {title:wf.runtime.block?.label||"Agent 运行时待连接",label:"查看运行条件",target:wf.runtime.blocked?"runtime-block":"runtime-status"};
+  }
+  if(!round || !tasks.length){
+    return {title:round?.error?"本轮分析中断":"等待启动分析",step:0,label:"设置目标并分析",target:"analysis-form"};
+  }
+  const review=tasks.filter(task=>["needs_review","submitted_review"].includes(task.status)).length;
+  if(review)return {title:`${review} 项产物待核验`,step:1,label:"核验本轮产物",control:"verify-all-button"};
+  const ready=tasks.filter(task=>runnableInCycle(task,tasks)).length;
+  if(ready)return {title:`${ready} 项 Agent 任务可执行`,step:1,label:"执行一批并复盘",control:"run-cycle-button",hint:"每批最多 3 项"};
+  const outstanding=tasks.filter(task=>task.status!=="completed");
+  if(round.strategy_update)return {title:"本轮已复盘，可启动下一轮",step:3,label:"按新策略开始下一轮",control:"next-cycle-button",
+    hint:outstanding.length?`${outstanding.length} 项仍待处理`:null};
+  if(outstanding.length){
+    const human=outstanding.filter(task=>task.owner==="human").length;
+    return {title:human?`${human} 项任务需要团队接手`:"任务等待前置条件",step:1,label:"查看待处理任务",target:"workflow-tasks"};
+  }
+  if(round.metrics)return {title:"已有评估记录，待复盘",step:3,label:"复盘并更新策略",control:"improve-button"};
+  return {title:"本轮任务已验收，待评估",step:2,label:"评估本轮表现",control:"evaluate-button"};
+}
+
+let guideOffline=false;
+function renderGuide(){
+  const wf=workflow(),round=guideCycle(),tasks=round?.tasks||[];
+  const next=guideNext(round,wf),button=$("#guide-action"),detail=$("#guide-detail");
+  const meta=round?[`第 ${round.number} 轮`,MARKETS[round.market],round.strategy_version!=null?`策略 v${round.strategy_version}`:null].filter(Boolean):["当前工作状态"];
+  const done=tasks.filter(task=>task.status==="completed").length;
+  const progress=round?[`本轮验收 ${done} / ${tasks.length} 项`,next.hint]:[];
+  if(round?.updated_at)progress.push(`记录更新于 ${date(round.updated_at)}`);
+  if(!round && !guideOffline)progress.push("分析完成后，这里会显示生成的任务和下一步。");
+  const title=guideOffline?"连接中断，等待重新同步":next.title;
+  if(changed("guide-summary",[meta,title,progress])){
+    $("#guide-round").textContent=meta.join(" · ");
+    const leadingCount=title.match(/^(\d+)( .+)$/);
+    const heading=$("#guide-status");
+    if(leadingCount)heading.replaceChildren(node("span",leadingCount[1],"guide-quantity"),document.createTextNode(leadingCount[2]));
+    else heading.textContent=title;
+    $("#guide-progress").textContent=progress.filter(Boolean).join(" · ");
+  }
+  document.querySelectorAll("#guide-steps li").forEach((item,index)=>{
+    if(!guideOffline && next.step===index)item.setAttribute("aria-current","step");
+    else item.removeAttribute("aria-current");
+  });
+  button.querySelector("span").textContent=guideOffline?"重新连接":posting?"正在提交…":next.label;
+  button.disabled=!guideOffline && posting;
+  detail.hidden=!round || guideOffline || next.target==="workflow-tasks";
+}
+function selectGuideCycle(){
+  const round=guideCycle();
+  if(round && selectedCycleId!==round.id){selectedCycleId=round.id;render();}
+}
+$("#guide-action").addEventListener("click",()=>{
+  if(guideOffline){refresh();return;}
+  if(!state||posting)return;
+  selectGuideCycle();
+  const next=guideNext(guideCycle(),workflow());
+  if(next.target){
+    if(next.target==="analysis-form")$("#analysis-form .analysis-options").open=true;
+    if(next.target==="workflow-tasks"){$("#task-filter").value="pending";renderTasks(true);}
+    location.hash=next.target;
+  }else if(next.control){
+    $("#"+next.control).click();
+  }
+});
+$(".guide-heading a").addEventListener("click",()=>{$("#analysis-form .analysis-options").open=true;});
+$("#guide-detail").addEventListener("click",()=>{
+  selectGuideCycle();
+  $("#task-filter").value="all";
+  renderTasks(true);
+});
 function safeLink(url,label){const a=node("a",label||url);try{const parsed=new URL(url);if(!["https:","http:"].includes(parsed.protocol))return node("span",label||url);a.href=parsed.href;a.target="_blank";a.rel="noopener noreferrer";}catch{return node("span",label||url);}return a;}
 function sourceLinks(urls){const wrap=node("div",undefined,"source-links");[...new Set(urls||[])].forEach((url,index)=>{try{wrap.append(safeLink(url,`${index+1}. ${new URL(url).hostname}`));}catch{}});return wrap;}
 async function api(path,data){const options={headers:{Accept:"application/json"},cache:"no-store"};if(data!==undefined){options.method="POST";options.headers["Content-Type"]="application/json";options.headers["X-AMSEO-Token"]=state?.csrf_token||"";options.body=JSON.stringify(data);}const response=await fetch(path,options);let body;try{body=await response.json();}catch{throw new Error("服务返回格式异常，请刷新后重试。");}if(!response.ok)throw new Error(body.error||`请求失败（${response.status}）`);return body;}
@@ -26,7 +114,7 @@ function openContent(title,content){$("#artifact-title").textContent=title;$("#a
 async function openArtifact(item){openContent((ARTIFACTS[item.id]||[item.title])[0],"正在读取…");try{const result=await api(`/api/artifacts/${encodeURIComponent(item.id)}`);$("#artifact-content").textContent=result.content||"暂无内容。";}catch(error){$("#artifact-content").textContent=error.message;}}
 function analysisPayload(){return {goal:$("#goal").value.trim(),market:$("#market").value,channels:[...document.querySelectorAll('input[name="channel"]:checked')].map(el=>el.value)};}
 async function action(name,extra={}){if(busy())return;posting=true;renderControls();try{const current=cycle();const payload={action:name,...(current&&name!=="analyze"?{cycle_id:current.id}:{}),...extra};const result=await api("/api/workflow",payload);if(result.cycle?.id){selectedCycleId=result.cycle.id;if(state){const wf=state.workflow||(state.workflow={cycles:[],strategy:{},runtime:{}});const found=(wf.cycles||[]).findIndex(c=>c.id===result.cycle.id);if(found>=0)wf.cycles[found]=result.cycle;else(wf.cycles||(wf.cycles=[])).push(result.cycle);wf.active=["queued","analyzing","executing","evaluating","improving"].includes(result.cycle.status);render();}}toast(({analyze:"分析已启动，正在搜索证据并生成任务。",execute:"执行已启动，进度会自动更新。",evaluate:"评估已启动。",improve:"复盘已启动，结果将写入策略记忆。",verify:"独立 Agent 核验已启动。","run-cycle":"本批执行、核验、评估与复盘已启动，需数分钟。",review:"验收决定已保存。","local-review":"已有证据本地复盘已保存；没有调用模型。","technical-check":"公开页面技术检查已启动；没有调用模型。","retry-runtime":"已提交一次明确的连接重试。","next-cycle":"下一轮分析已启动。",handoff:"执行结果已提交，等待核验。"})[name]||"操作已提交。");await refresh(true);}catch(error){toast(error.message);$("#analysis-result").textContent=error.message;}finally{posting=false;renderControls();}}
-function renderControls(){const current=cycle(),active=busy(),runtime=workflow().runtime||{},blocked=Boolean(runtime.blocked);$("#analyze-button").disabled=active||blocked||runtime.available===false;$("#analyze-button").textContent=active?"Agent 正在工作…":blocked?"模型额度 / 认证待恢复":"开始分析 ↗";$("#execute-all-button").disabled=active||blocked||!current||!(current.tasks||[]).some(canExecute);$("#verify-all-button").disabled=active||blocked||!current||!(current.tasks||[]).some(t=>["needs_review","submitted_review"].includes(t.status));$("#run-cycle-button").disabled=active||blocked||!current||!(current.tasks||[]).some(canExecute);$("#evaluate-button").disabled=active||blocked||!current;$("#technical-check-button").disabled=active||!current;$("#local-review-button").disabled=active||!current;$("#retry-runtime-button").disabled=active||!current;$("#improve-button").disabled=active||blocked||!current?.metrics;$("#next-cycle-button").disabled=active||blocked||!current||runtime.available===false;$("#brand-reanalyze-button").disabled=active||blocked||!current||runtime.available===false;document.querySelectorAll('.task-run-button').forEach(el=>{el.disabled=active||blocked||el.dataset.requiresPendingReview==="true";});document.querySelectorAll('.handoff-form button').forEach(el=>{el.disabled=active;});}
+function renderControls(){renderGuide();const current=cycle(),active=busy(),runtime=workflow().runtime||{},blocked=Boolean(runtime.blocked);$("#analyze-button").disabled=active||blocked||runtime.available===false;$("#analyze-button").textContent=active?"Agent 正在工作…":blocked?"模型额度 / 认证待恢复":"开始分析 ↗";$("#execute-all-button").disabled=active||blocked||!current||!(current.tasks||[]).some(canExecute);$("#verify-all-button").disabled=active||blocked||!current||!(current.tasks||[]).some(t=>["needs_review","submitted_review"].includes(t.status));$("#run-cycle-button").disabled=active||blocked||!current||!(current.tasks||[]).some(canExecute);$("#evaluate-button").disabled=active||blocked||!current;$("#technical-check-button").disabled=active||!current;$("#local-review-button").disabled=active||!current;$("#retry-runtime-button").disabled=active||!current;$("#improve-button").disabled=active||blocked||!current?.metrics;$("#next-cycle-button").disabled=active||blocked||!current||runtime.available===false;$("#brand-reanalyze-button").disabled=active||blocked||!current||runtime.available===false;document.querySelectorAll('.task-run-button').forEach(el=>{el.disabled=active||blocked||el.dataset.requiresPendingReview==="true";});document.querySelectorAll('.handoff-form button').forEach(el=>{el.disabled=active;});}
 function renderCycleSelector(){const all=cycles(),current=cycle();if(current)selectedCycleId=current.id;if(changed("selector",all.map(c=>[c.id,c.number,c.goal,c.status]))){const select=$("#cycle-select");select.replaceChildren(...(all.length?all.slice().reverse().map(c=>{const option=node("option",`第 ${c.number} 轮 · ${String(c.goal||"品牌优化").slice(0,30)}`);option.value=c.id;return option;}):[node("option","尚未开始分析")]));}$("#cycle-select").value=current?.id||"";const badge=pill(current?.status||"not_run");badge.id="cycle-status";if(!current)badge.textContent="待开始";$("#cycle-status").replaceWith(badge);$("#cycle-meta").textContent=current?`策略 v${current.strategy_version??"—"} · ${date(current.created_at)} · ${MARKETS[current.market]||current.market}`:"每轮保留目标、任务、证据与策略版本。";}
 function brandDetail(value){if(typeof value==="string")return value;if(Array.isArray(value))return value.map(brandDetail).filter(Boolean).join(" · ");if(!value||typeof value!=="object")return "";return value.summary||value.statement||value.description||value.name||value.title||value.detail||"";}
 function renderBrandContext(){
@@ -160,7 +248,7 @@ function renderStrategy(){const strategy=workflow().strategy||{},all=cycles();if
 function renderLibrary(){if(!changed("library",[state.artifacts,state.tasks,state.requests,state.feedback]))return;const artifacts=state.artifacts||[];$("#artifact-count").textContent=`${artifacts.length} 份支撑资料`;$("#artifact-list").replaceChildren(...artifacts.map(item=>{const [title,description]=ARTIFACTS[item.id]||[item.title,item.kind],button=node("button",undefined,"artifact-card");button.type="button";button.append(node("span","▤","artifact-icon"));const text=node("span");text.append(node("strong",title),node("small",description));button.append(text,node("span","↗","artifact-arrow"));button.addEventListener("click",()=>openArtifact(item));return button;}));const legacy=Array.isArray(state.tasks)?state.tasks:state.tasks?.tasks||[];$("#legacy-tasks").replaceChildren(...legacy.map(task=>{const row=node("div",undefined,"history-row");row.append(node("span",`${task.id} · ${task.action||"历史任务"}`),pill(task.status));return row;}));const previous=[...(state.requests||[]),...(state.feedback||[])];$("#legacy-requests").replaceChildren(...previous.map(record=>node("p",`${record.task_id||"历史目标"} · ${record.goal||record.text} · ${date(record.created_at)}`,"form-note")));}
 function renderConnections(){if(changed("connections",[state.project,state.capabilities,state.upstreams,workflow().runtime])){const project=state.project||{},cap=state.capabilities||{},runtime=workflow().runtime||{};const rows=[["搜索分析与模型执行",runtime.available===true&&!runtime.blocked,"运行时可用",runtime.blocked?(runtime.block?.label||"执行器受限"):"待连接"],["本地检查与证据复盘",true,"可用"],["生产站点 / CMS",project.production_site_connected===true,"已接入"],["搜索与分析数据",cap.search_console_analytics==="available","已接入"],["定时执行服务",project.recurring_service_configured===true,"已配置"]];$("#capability-list").replaceChildren(...rows.map(([title,ready,label,pendingLabel])=>{const row=node("div",undefined,"capability-row");row.append(node("span",title),node("span",ready?label:(pendingLabel||"待连接"),`pill ${ready?"good":"muted"}`));return row;}));$("#upstream-list").replaceChildren(...(state.upstreams||[]).map(upstream=>{const row=node("div",undefined,"upstream-row");row.append(safeLink(upstream.url,upstream.name),node("span",upstream.license||"许可已记录","license"),node("code",String(upstream.commit||"").slice(0,8)));return row;}));}const job=(state.jobs||[]).at(-1),active=(state.jobs||[]).some(j=>["running","queued"].includes(j.status));$("#validate-button").disabled=active;$("#verify-upstreams-button").disabled=active;$("#validation-summary").textContent=state.validation?`资料验收：${state.validation.status==="passed"?"通过":"未通过"} · ${state.validation.checks_total??"—"} 项 · ${date(state.validation.validated_at_utc)}`:"尚无资料验收记录";$("#job-log").hidden=!(job?.output||job?.error);$("#job-log").textContent=`${job?.output||""}${job?.error?`\n${job.error}`:""}`;}
 function render(){renderCycleSelector();renderBrandContext();renderOverview();renderTasks();renderMetrics();renderStrategy();renderLibrary();renderConnections();renderControls();if(typeof renderFocus==="function")renderFocus();$("#connection-error").hidden=true;$("#connection-indicator").className="pill good";$("#connection-indicator").textContent="本机已连接";$("#last-updated").textContent=`状态同步于 ${date(new Date().toISOString())} · 上海时间`;}
-async function refresh(silent=false){if(fetching)return;fetching=true;try{state=await api("/api/state");render();}catch(error){$("#connection-indicator").className="pill bad";$("#connection-indicator").textContent="连接中断";$("#connection-error").textContent=`无法读取本机服务：${error.message} 请确认服务仍在运行，然后刷新。`;$("#connection-error").hidden=false;if(!silent)toast(error.message);}finally{fetching=false;clearTimeout(polling);polling=setTimeout(()=>refresh(true),(workflow().active||state?.question_lab?.active)?1500:8000);}}
+async function refresh(silent=false){if(fetching)return;fetching=true;try{state=await api("/api/state");guideOffline=false;render();}catch(error){guideOffline=true;renderGuide();$("#connection-indicator").className="pill bad";$("#connection-indicator").textContent="连接中断";$("#connection-error").textContent=`无法读取本机服务：${error.message} 请确认服务仍在运行，然后刷新。`;$("#connection-error").hidden=false;if(!silent)toast(error.message);}finally{fetching=false;clearTimeout(polling);polling=setTimeout(()=>refresh(true),(workflow().active||state?.question_lab?.active)?1500:8000);}}
 async function startJob(kind){try{await api("/api/jobs",{kind});toast("检查已启动，执行输出将自动更新。");await refresh(true);}catch(error){toast(error.message);}}
 $("#analysis-form").addEventListener("submit",event=>{event.preventDefault();const payload=analysisPayload();if(!payload.channels.length){toast("请至少选择一个关注渠道。");return;}$("#analysis-result").textContent="";action("analyze",payload);});
 $("#execute-all-button").addEventListener("click",()=>action("execute"));

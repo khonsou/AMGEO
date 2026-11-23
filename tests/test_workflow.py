@@ -335,6 +335,50 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('Carry source links', self.runner.calls[-1]['prompt'])
         self.assertIsNone(cycle['metrics']['geo']['score'])
 
+    def test_missing_evidence_field_rejects_strategy_before_version_change(self):
+        cycle = self.action('evaluate', self.analyze())
+        for evidence in ['score looks good', 'metrics.seo.invented']:
+            self.runner.strategy['lessons'][0]['evidence'] = evidence
+            review = self.action('improve', cycle)
+            self.assertEqual(review['status'], 'failed')
+            self.assertEqual(self.engine.state()['strategy']['version'], 1)
+
+    def test_effect_hypothesis_cannot_become_priority_and_repeat_is_idempotent(self):
+        cycle = self.action('evaluate', self.analyze())
+        self.runner.strategy['priorities'] = ['publish duplicate pages']
+        self.runner.strategy['lessons'][0].update(scope='performance_hypothesis',
+            change='publish duplicate pages', evidence='metrics.geo.score')
+        cycle = self.action('improve', cycle)
+        self.action('improve', cycle)
+        strategy = self.engine.state()['strategy']
+        self.assertEqual(strategy['version'], 2)
+        self.assertEqual(strategy['lessons'][-1]['evidence_refs'], {'metrics.geo.score': None})
+        self.assertEqual(strategy['lessons'][-1]['status'], 'untested_hypothesis')
+        self.assertNotIn('publish duplicate pages', strategy['priorities'])
+        self.assertEqual(sum(c['schema']['title']=='AMSEOStrategy' for c in self.runner.calls), 1)
+
+    def test_cycle_freezes_method_and_reads_only_planning_evidence(self):
+        skill = self.root / 'skills/am-seo-geo-loop/SKILL.md'
+        skill.parent.mkdir(parents=True)
+        skill.write_text('FROZEN_METHOD_ONE')
+        self.write_json('outputs/runtime/console/question-lab/runs/R-fixture/run.json', {
+            'id':'R-fixture', 'panel_id':'P-test', 'status':'completed', 'finished_at':'2026-11-20',
+            'protocol':{'mode':'api-no-search'}, 'observations':[
+                {'id':'Q01', 'status':'completed', 'hit':False, 'answer_text':'NOT_FOR_PLANNER'}]})
+        self.write_json('outputs/geo-workspace/state.json', {'tasks':[{'id':'agent-readability',
+            'check_status':'needs_work','verification':{'evidence':[{'status':429}]}}]})
+        cycle = self.analyze()
+        self.assertEqual(cycle['console_evidence']['api_observation']['miss_ids'], ['Q01'])
+        self.assertIn('429', self.runner.calls[0]['prompt'])
+        self.assertNotIn('NOT_FOR_PLANNER', self.runner.calls[0]['prompt'])
+        skill.write_text('NEW_METHOD_TWO')
+        self.action('execute', cycle)
+        self.assertIn('FROZEN_METHOD_ONE', self.runner.calls[-1]['prompt'])
+        self.assertNotIn('NEW_METHOD_TWO', self.runner.calls[-1]['prompt'])
+        self.engine.start('next-cycle', cycle_id=cycle['id'])
+        self.wait_idle()
+        self.assertIn('NEW_METHOD_TWO', self.runner.calls[-1]['prompt'])
+
     def test_second_action_is_rejected_while_a_run_is_active(self):
         self.runner.entered, self.runner.release = threading.Event(), threading.Event()
         self.addCleanup(self.runner.release.set)

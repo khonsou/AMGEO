@@ -17,6 +17,7 @@ This entire repository is the Angry Miao SEO/GEO project. Continue the current c
 - `work/`: ignored research material and scratch work.
 
 ## Execute
+- When running or reviewing a full SEO/GEO cycle, use `skills/am-seo-geo-loop/SKILL.md`. Use `skills/geo-question-eval/SKILL.md` for the question-sampling step.
 - Read `outputs/agent-kit/RUN-AGENT.md` and `outputs/agent-kit/tasks.json` before continuing task execution.
 - The human-facing entry is the local browser console; keep its workflow usable without CLI or JSON editing.
 - Check recorded console requests and feedback under `outputs/runtime/console/` when continuing work; a recorded request is not an executed optimization or new access authority.
