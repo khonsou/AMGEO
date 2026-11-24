@@ -1,0 +1,25 @@
+.snapshot-label { color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
+#tasks-heading { margin-bottom: 14px; }
+.public-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; padding-block: 16px; border-block: 1px solid var(--line); }
+.public-filter { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+.public-filter select { cursor: pointer; max-width: 100%; width: auto; margin: 0; min-height: 40px; padding: 5px 9px; background: var(--paper); color: var(--ink); font: inherit; border: 1px solid #827f74; border-radius: 4px; }
+.snapshot-meta { font-size: 13px; line-height: 1.65; color: var(--muted); margin-block: 12px; overflow-wrap: anywhere; }
+.public-questions { list-style: none; margin: 0; padding: 0; }
+.public-questions li { padding: 16px; display: grid; gap: 4px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.public-questions small,.public-task summary small { color: var(--muted); font-size: 13px; }
+.public-task { background: var(--paper); margin: 0; padding: 0 14px; border-bottom: 1px solid var(--line); }
+.public-task summary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px; cursor: pointer; padding: 13px 0; color: var(--ink); }
+.public-task summary::-webkit-details-marker { display: none; }
+.public-task summary strong { min-width: 0; overflow-wrap: anywhere; }
+.public-task summary small { grid-column: 1; }
+.public-task summary .todo-validation { grid-column: 2; grid-row: 1/3; align-self: center; }
+.public-task[open] summary strong { text-decoration: underline; text-underline-offset: 3px; }
+.public-task .public-instructions { padding-block: 0 16px; color: var(--ink); overflow-wrap: anywhere; }
+.public-instructions h4 { margin: 10px 0 4px; font-size: 14px; }
+.public-instructions ol,.public-instructions ul { margin: 0; padding-left: 24px; font-size: 14px; }
+.public-settings-body { padding: 4px 16px 20px; max-width: 70ch; }
+.public-settings-body a { text-decoration: underline; text-underline-offset: 3px; }
+.public-settings-body p + p { margin-top: 12px; }
+@media (pointer: coarse) { .public-filter select { min-height: 44px; } .public-settings-body a { display: inline-flex; align-items: center; min-height: 44px; } }
+.guide-actions a.button.primary { color: var(--on-accent); text-decoration: none; }
+.public-secondary { min-height: 44px; padding: 0; border: 0; background: transparent; color: white; font: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }

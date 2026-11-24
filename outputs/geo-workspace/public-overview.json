@@ -1,0 +1,58 @@
+{
+  "cycle": {
+    "number": 5,
+    "strategy_version": 3,
+    "market": "both",
+    "updated_at": "2026-11-04T05:15:53+00:00",
+    "total": 4,
+    "ready": 4,
+    "verified": 0
+  },
+  "geo": {
+    "verified_at": "2026-11-04T10:36:26+00:00",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "groups": [
+      {
+        "locale": "zh-CN",
+        "test_group": "discovery",
+        "score": 0.0,
+        "hits": 0,
+        "successful_tests": 3,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 3
+      },
+      {
+        "locale": "zh-CN",
+        "test_group": "branded",
+        "score": 100.0,
+        "hits": 1,
+        "successful_tests": 1,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 1
+      },
+      {
+        "locale": "en-US",
+        "test_group": "discovery",
+        "score": 0.0,
+        "hits": 0,
+        "successful_tests": 3,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 3
+      },
+      {
+        "locale": "en-US",
+        "test_group": "branded",
+        "score": 100.0,
+        "hits": 1,
+        "successful_tests": 1,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 1
+      }
+    ]
+  }
+}

@@ -42,3 +42,9 @@ node --check src/am_seo/web/app.js
 技术解析 v1.1 只读取文档标题，排除 SVG 图标的可访问性标题。新技术检查使用新采集时间和版本，旧评估与 GEO 原始时间仍保留。
 
 当前聊天 Agent 也可经 `submit-result` 写回已授权且前置任务已验收的 Agent 任务。接口校验原任务条件、逐项检查、正文和来源，保存真实文件与哈希后进入待核验；提交不会直接完成任务，也不扩展任何外部访问权限。这个通道供 Agent 使用，不要求日常用户编辑 JSON 或复制文档。
+
+## 发布 GitHub Pages
+
+公开入口为 [AMGEO](https://khonsou.github.io/AMGEO/)。Pages 的发布源是 `gh-pages` 分支根目录，`main` 保存源代码。在源代码提交后运行 `python3 scripts/build_pages.py dist/pages`，目标须为新目录或空目录。核验输出后，将生成目录的内容提交并推送至 `gh-pages`。提交至 `main` 和发布公开快照是两个独立操作。
+
+`snapshot.json` 从已提交的 Todo、题库和评分摘要生成。更新轮次与较新的 API 评分时，将对应观测时间和汇总值写入 `outputs/geo-workspace/public-overview.json`。构建仅输出公开网页资源与投影数据，本机执行服务仍监听回环地址。
