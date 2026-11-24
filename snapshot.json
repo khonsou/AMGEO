@@ -1,0 +1,537 @@
+{
+  "cycle": {
+    "number": 5,
+    "strategy_version": 3,
+    "total": 4,
+    "ready": 4,
+    "verified": 0,
+    "market": "both",
+    "updated_at": "2026-11-04T05:15:53+00:00"
+  },
+  "todo_updated_at": "2026-11-04T10:36:26+00:00",
+  "tasks": [
+    {
+      "title": "确认 AI 搜索爬虫能访问公开页面",
+      "kind": "robots",
+      "done": false,
+      "check": "failed",
+      "steps": [
+        "检查官网与商城 robots.txt 的 OAI-SearchBot、PerplexityBot、bingbot 规则。",
+        "只放行需公开的产品与工具页；保留后台、购物车等限制。",
+        "用真实爬虫日志确认 CDN 放行；搜索放行与训练授权分别决定。"
+      ],
+      "acceptance": [
+        "两站点公开路径未被 robots 规则阻止",
+        "CDN / WAF 的真实爬虫访问证据"
+      ]
+    },
+    {
+      "title": "核对现有 Product 数据、直接答案与 FAQ",
+      "kind": "schema",
+      "done": false,
+      "check": "passed",
+      "steps": [
+        "在型号对应页直接回答价格、尺寸、重量、兼容性，字段须有来源。",
+        "添加与可见正文一致的 Product / WebPage 数据；价格库存取商城实时值。",
+        "校验 JSON 并与页面逐字段核对；冲突字段继续省略。"
+      ],
+      "acceptance": [
+        "JSON-LD 可解析且包含 Product",
+        "价格、型号与页面可见内容逐字段一致",
+        "不把 FAQ 标记当作 AI 推荐保证"
+      ]
+    },
+    {
+      "title": "单独记录 AI 带来的访问与关键事件",
+      "kind": "traffic",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "GA4 流量获取选择会话维度，查看 AI Assistant 渠道。",
+        "按来源/媒介导出 Sessions、Key events 聚合报表和日期范围。",
+        "在 AI 访问页导入；核对 ChatGPT、Perplexity 等来源，保留未归因访问。"
+      ],
+      "acceptance": [
+        "已导入有站点与时间范围的真实聚合报表",
+        "会话与关键事件分开记录"
+      ]
+    },
+    {
+      "title": "可换电池的电竞鼠标怎么选？",
+      "kind": "page",
+      "done": false,
+      "check": "failed",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "Which gaming mouse with a swappable battery fits me?",
+      "kind": "page",
+      "done": false,
+      "check": "failed",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "什么桌面 AI 工具适合语音输入和设备控制？",
+      "kind": "page",
+      "done": false,
+      "check": "failed",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "Which desktop AI tools fit voice input and device control?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "怎样安排鼠标备用电池轮换，减少插线使用？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "How do I plan a gaming mouse battery rotation?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "怎样把语音输入和设备控制接入日常工作流？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "How do I add voice input and device control to my workflow?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "想买一只适合 FPS 游戏、重量在 60 克以内的无线电竞鼠标，有哪些值得比较的选择？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "无线电竞鼠标的接收器延长线应该怎么摆，才能减少桌面遮挡和信号干扰？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "What AI desktop input devices with programmable controls and a small display are worth considering for a work-from-home setup?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "What are some alternatives to the Angry Miao AM Infinity Mouse for a lightweight wireless gaming mouse under 60 g?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "How do I set up custom macros and lighting profiles on a desktop AI input device using its on-device controls?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "我想买一款轻量化的无线电竞鼠标，主要玩FPS游戏，预算一千元左右，有什么值得考虑的？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "What are good alternatives to the Logitech G Pro X Superlight for competitive FPS gaming in a similar price range?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "AI 键盘这类设备第一次使用要怎么配对连接电脑，并且设置自定义按键和灯效？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "I want a lightweight wireless gaming mouse for FPS games with a reliable sensor and comfortable grip at around $150 — what should I look at?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "除了罗技 G Pro X Superlight，还有哪些重量接近、适合 FPS 竞技的无线电竞鼠标可以选？",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "How do I connect an AI-enabled keyboard to my computer for the first time and customize its keys and backlighting?",
+      "kind": "page",
+      "done": false,
+      "check": "not_checked",
+      "steps": [
+        "先给出直接答案，再提供可操作的选择器或步骤。",
+        "加入适用场景、限制、来源和对应产品内链。",
+        "发布到目标 URL 后重新检查正文与工具；固定评分题组保持不变。"
+      ],
+      "acceptance": [
+        "页面可访问且问题出现在 H1",
+        "正文有直接答案、来源与限制",
+        "工具输入能产生有用结果",
+        "人工复核事实并完成真实站点发布"
+      ]
+    },
+    {
+      "title": "扫描 AI 可读正文、FAQ 与可选 Markdown",
+      "kind": "scan",
+      "done": false,
+      "check": "failed",
+      "steps": [
+        "点击验证：读取产品 HTML、对应 .md 与同站 llms.txt，保存真实响应和时间。",
+        "按型号、版本、市场核对价格／参数、图表文字等价、直接答案与来源。",
+        "核对场景页和对比页是否有独立价值；Markdown 从同一数据源生成，缺失不计 GEO 扣分。",
+        "改动后使用固定题组联网采样，分别记录引用、推荐、事实正确与 AI 引荐访问。"
+      ],
+      "acceptance": [
+        "原始 HTML 的关键正文直接可提取",
+        "参数与图表、FAQ、来源完成逐字段复核；自动线索不冒充事实验收",
+        "若提供 Markdown，事实与 HTML 同源并同步",
+        "抓取日志与人类访问分开，效果以真实联网证据验证"
+      ]
+    }
+  ],
+  "question_updated_date": "2026-11-11",
+  "intents": {
+    "find": "找工具 / 选产品",
+    "alternatives": "找替代",
+    "how": "怎么做",
+    "facts": "查事实"
+  },
+  "questions": [
+    {
+      "prompt": "可换电池的电竞鼠标怎么选？",
+      "locale": "zh-CN",
+      "intent": "find"
+    },
+    {
+      "prompt": "Which gaming mouse with a swappable battery fits me?",
+      "locale": "en-US",
+      "intent": "find"
+    },
+    {
+      "prompt": "什么桌面 AI 工具适合语音输入和设备控制？",
+      "locale": "zh-CN",
+      "intent": "find"
+    },
+    {
+      "prompt": "Which desktop AI tools fit voice input and device control?",
+      "locale": "en-US",
+      "intent": "find"
+    },
+    {
+      "prompt": "怎样安排鼠标备用电池轮换，减少插线使用？",
+      "locale": "zh-CN",
+      "intent": "how"
+    },
+    {
+      "prompt": "How do I plan a gaming mouse battery rotation?",
+      "locale": "en-US",
+      "intent": "how"
+    },
+    {
+      "prompt": "怎样把语音输入和设备控制接入日常工作流？",
+      "locale": "zh-CN",
+      "intent": "how"
+    },
+    {
+      "prompt": "How do I add voice input and device control to my workflow?",
+      "locale": "en-US",
+      "intent": "how"
+    },
+    {
+      "prompt": "AM Infinity Mouse 有哪些替代方案？",
+      "locale": "zh-CN",
+      "intent": "alternatives"
+    },
+    {
+      "prompt": "What are the alternatives to AM Infinity Mouse?",
+      "locale": "en-US",
+      "intent": "alternatives"
+    },
+    {
+      "prompt": "CYBERBOARD R6 之外，有哪些桌面 AI 方案？",
+      "locale": "zh-CN",
+      "intent": "alternatives"
+    },
+    {
+      "prompt": "What desktop AI alternatives to CYBERBOARD R6 should I compare?",
+      "locale": "en-US",
+      "intent": "alternatives"
+    },
+    {
+      "prompt": "AM Infinity Mouse .97 的重量、尺寸和价格是多少？",
+      "locale": "zh-CN",
+      "intent": "facts"
+    },
+    {
+      "prompt": "What are the weight, dimensions and price of AM Infinity Mouse .97?",
+      "locale": "en-US",
+      "intent": "facts"
+    },
+    {
+      "prompt": "CYBERBOARD R6 支持哪些 AI 功能，哪些需要外部软件？",
+      "locale": "zh-CN",
+      "intent": "facts"
+    },
+    {
+      "prompt": "Which CYBERBOARD R6 AI features require external software?",
+      "locale": "en-US",
+      "intent": "facts"
+    }
+  ],
+  "geo": {
+    "verified_at": "2026-11-04T10:36:26+00:00",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "groups": [
+      {
+        "locale": "zh-CN",
+        "test_group": "discovery",
+        "hits": 0,
+        "successful_tests": 3,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 3,
+        "score": 0.0
+      },
+      {
+        "locale": "zh-CN",
+        "test_group": "branded",
+        "hits": 1,
+        "successful_tests": 1,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 1,
+        "score": 100.0
+      },
+      {
+        "locale": "en-US",
+        "test_group": "discovery",
+        "hits": 0,
+        "successful_tests": 3,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 3,
+        "score": 0.0
+      },
+      {
+        "locale": "en-US",
+        "test_group": "branded",
+        "hits": 1,
+        "successful_tests": 1,
+        "errors": 0,
+        "not_run": 0,
+        "planned": 1,
+        "score": 100.0
+      }
+    ]
+  }
+}
