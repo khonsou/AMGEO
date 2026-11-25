@@ -8,10 +8,12 @@
   <title>AM SEO / GEO 公开工作台 · Angry Miao</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./pages.css">
+  <link rel="stylesheet" href="./lifestyle.css">
   <script src="./pages.js" defer></script>
 </head>
 <body>
   <a class="skip-workspace" href="#workspace-main">跳到工作区</a>
+  <div class="workbench-frame">
   <header class="workspace-header">
     <div class="workspace-nav">
       <a class="workspace-brand" href="#todo" aria-label="Angry Miao 工作台首页"><span class="workspace-monogram" aria-hidden="true">AM</span><span>Angry Miao</span></a>
@@ -31,7 +33,7 @@
     <section id="todo" data-view="todo" aria-labelledby="guide-heading">
       <section class="cycle-guide" aria-labelledby="guide-heading">
         <header class="guide-heading"><h1 id="guide-heading">SEO / GEO 优化流程</h1></header>
-        <p class="guide-start">在这里查看任务与验收记录。运行 Agent、发布修改与重新采样，请使用已启动服务的本机工作台。</p>
+        <p class="guide-start">查看任务与验收记录。运行 Agent 或重新采样，请先启动本机执行台。</p>
         <div class="guide-workspace">
           <div class="guide-current">
             <div role="status">
@@ -40,8 +42,8 @@
               <p id="guide-progress" class="guide-progress"></p>
             </div>
             <div class="guide-actions">
-              <a href="http://127.0.0.1:8787/#todo" class="button primary" rel="noreferrer">打开本机执行台 ↗</a>
-              <button type="button" id="review-tasks" class="public-secondary" disabled>查看优化 Todo</button>
+              <button type="button" id="review-tasks" class="button primary" disabled>查看优化 Todo</button>
+              <a href="http://127.0.0.1:8787/#todo" rel="noreferrer">打开本机执行台 ↗</a>
             </div>
           </div>
           <ol id="guide-steps" aria-label="每轮工作流程">
@@ -88,6 +90,7 @@
       </details>
     </section>
   </main></div>
+  </div>
   <aside id="geo-score-widget" class="geo-score-widget" aria-label="GEO 评分浮窗">
     <button id="score-float-toggle" class="score-float-toggle" type="button" aria-expanded="false" aria-controls="score-float-panel">GEO 评分 ↗</button>
     <section id="score-float-panel" class="score-float-panel" aria-labelledby="score-title" hidden>

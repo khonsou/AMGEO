@@ -23,6 +23,15 @@ from .question_lab import QuestionLab
 MAX_BODY = 32 * 1024
 MARKETS = {"both", "zh-CN", "en-US"}
 CHANNELS = {"search", "ai", "reviews", "community", "catalog", "owned"}
+WEB_ASSETS = {
+    "/": ("index.html", "text/html; charset=utf-8"),
+    "/index.html": ("index.html", "text/html; charset=utf-8"),
+    "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+    "/focus.js": ("focus.js", "text/javascript; charset=utf-8"),
+    "/styles.css": ("styles.css", "text/css; charset=utf-8"),
+    "/lifestyle.css": ("lifestyle.css", "text/css; charset=utf-8"),
+    "/studio-desk.webp": ("studio-desk.webp", "image/webp"),
+}
 ARTIFACTS = {
     "loop-skill": ("SEO/GEO 优化循环与五道 Gate", "markdown", "skills/am-seo-geo-loop/SKILL.md"),
     "strategy": ("SEO / GEO 品牌策略", "markdown", "outputs/angrymiao-seo-geo-strategy.md"),
@@ -221,8 +230,7 @@ class ConsoleHandler(BaseHTTPRequestHandler):
                 return
             self._json(200, {"id": artifact_id, "title": item[0], "kind": item[1], "content": content})
         else:
-            assets = {"/": ("index.html", "text/html; charset=utf-8"), "/index.html": ("index.html", "text/html; charset=utf-8"), "/app.js": ("app.js", "text/javascript; charset=utf-8"), "/focus.js": ("focus.js", "text/javascript; charset=utf-8"), "/styles.css": ("styles.css", "text/css; charset=utf-8")}
-            asset = assets.get(path)
+            asset = WEB_ASSETS.get(path)
             if not asset:
                 self._error(404, "页面不存在。")
                 return

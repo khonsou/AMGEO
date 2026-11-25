@@ -16,6 +16,8 @@ ASSETS = {
     "pages.css": "pages/pages.css",
     "pages.js": "pages/pages.js",
     "styles.css": "src/am_seo/web/styles.css",
+    "lifestyle.css": "src/am_seo/web/lifestyle.css",
+    "studio-desk.webp": "src/am_seo/web/studio-desk.webp",
 }
 CHECKS = {"passed": "passed", "needs_work": "failed"}
 
