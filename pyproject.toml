@@ -19,4 +19,4 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-am_seo = ["web/*.html", "web/*.css", "web/*.js", "web/*.webp"]
+am_seo = ["web/*.html", "web/*.css", "web/*.js"]

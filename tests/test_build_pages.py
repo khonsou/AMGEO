@@ -40,8 +40,6 @@ class PagesBuildTests(unittest.TestCase):
             for name, path in ASSETS.items():
                 (root / path).parent.mkdir(parents=True, exist_ok=True)
                 (root / path).write_text(name)
-            background = b"RIFF\x10\x00\x00\x00WEBP\x00\xff"
-            (root / ASSETS["studio-desk.webp"]).write_bytes(background)
 
             subprocess.run(["git", "init", "-q"], cwd=root, check=True)
             subprocess.run(["git", "add", "config", "outputs"], cwd=root, check=True)
@@ -54,7 +52,6 @@ class PagesBuildTests(unittest.TestCase):
             destination.mkdir()
             build(root, destination)
             self.assertEqual({p.name for p in destination.iterdir()}, set(ASSETS) | {".nojekyll", "snapshot.json"})
-            self.assertEqual((destination / "studio-desk.webp").read_bytes(), background)
             public = (destination / "snapshot.json").read_text()
             self.assertNotIn(marker, public)
             data = json.loads(public)

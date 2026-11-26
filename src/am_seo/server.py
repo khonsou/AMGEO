@@ -29,8 +29,6 @@ WEB_ASSETS = {
     "/app.js": ("app.js", "text/javascript; charset=utf-8"),
     "/focus.js": ("focus.js", "text/javascript; charset=utf-8"),
     "/styles.css": ("styles.css", "text/css; charset=utf-8"),
-    "/lifestyle.css": ("lifestyle.css", "text/css; charset=utf-8"),
-    "/studio-desk.webp": ("studio-desk.webp", "image/webp"),
 }
 ARTIFACTS = {
     "loop-skill": ("SEO/GEO 优化循环与五道 Gate", "markdown", "skills/am-seo-geo-loop/SKILL.md"),
