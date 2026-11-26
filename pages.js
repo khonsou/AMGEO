@@ -47,11 +47,16 @@ function renderOverview() {
       "第 " + cycle.number + " 轮", marketName[cycle.market], cycle.strategy_version != null ? "策略 v" + cycle.strategy_version : ""
     ].filter(Boolean).join(" · ");
     heading.replaceChildren(element("span", cycle.ready, "guide-quantity"), "项 Agent 任务可执行");
-    byId("guide-progress").textContent = "本轮验收 " + cycle.verified + " / " + cycle.total + " 项 · 轮次快照 " + recordDate(cycle.updated_at);
+    const updated = element("time", recordDate(cycle.updated_at));
+    updated.dateTime = cycle.updated_at;
+    byId("guide-progress").replaceChildren("本轮验收 " + cycle.verified + " / " + cycle.total + " 项 · 轮次快照 ", updated);
   } else {
     heading.replaceChildren(element("span", tasks.length, "guide-quantity"), "项优化 Todo");
     byId("guide-progress").textContent = "验证通过 " + passed + " 项 · 验证不通过 " + failed + " 项";
   }
+  const executionStep = byId("guide-steps").children[1];
+  if (cycle?.ready > 0) executionStep.setAttribute("aria-current", "step");
+  else executionStep.removeAttribute("aria-current");
   const rows = [["已勾选", finished + " / " + tasks.length, ""], ["验证通过", passed, "check-passed"], ["验证不通过", failed, "check-pending"]];
   byId("task-counts").replaceChildren(...rows.map(([label, count, style]) => {
     const row = element("div", undefined, style);
